@@ -1,5 +1,6 @@
 import "../css/index.css";
 import "../css/iconfont.css";
+import "../css/normalize.css";
 import "../js/flexible.js";
 document.querySelector("#icon-link").href = require("../images/favicon.ico");
 
