@@ -1,60 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&family=Roboto:wght@100;300;400;700&display=swap");
+html {
+  font-family: "Nunito", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+@media screen and (max-width: 1200px) {
+  html body .mainContainer {
+    width: 100%;
+    transition: all 0.6s;
+  }
+}
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 37.5px !important;
+  }
+}
+@media screen and (min-width: 1201px) {
+  html body .mainContainer {
+    width: 80%;
+    max-width: 80%;
+    transition: all 0.6s;
+  }
+}
 body {
-  overflow-x: hidden;
   background: url(../images/bg.png) no-repeat;
   background-size: auto cover;
   background-position: center center;
   background-attachment: fixed;
 }
 
-body::before {
-  display: block;
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+.mainContainer {
+  position: relative;
+  margin: 0 auto;
+  width: 32rem;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: -99;
+  max-width: 32rem;
 }
-
-body::after {
-  display: block;
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
+.mainContainer .headerBox {
   width: 100%;
-  height: 100%;
-  clip-path: inset(5% 10% 5% 10% round 0.5333rem);
-  background: url(../images/bg.png) no-repeat;
-  background-size: auto cover;
-  background-position: center center;
-  z-index: -99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
 }
-
-.container {
-  width: 80%;
-  height: 640px;
-  max-width: 1200px;
-  margin: 3% auto 0;
-  padding: 2%;
-  border: 1px solid red;
-}
-
-.container .navContainer {
+.mainContainer .headerBox .navBanner {
   display: flex;
 }
-
-.container .navContainer .navLogo {
-  width: 100px;
-  height: 50px;
+.mainContainer .headerBox .navBanner span {
+  margin-right: 2.6667rem;
+  display: block;
+  width: 4.2667rem;
+  height: 2rem;
+}
+.mainContainer .headerBox .navBanner span a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../images/logoWhite.png) no-repeat;
+  background-size: 100%;
+  transition: all 0.3s;
+}
+.mainContainer .headerBox .navBanner span a:hover {
   background: url(../images/logo72.png) no-repeat;
   background-size: 100%;
 }
-
-.container .navContainer ul {
+.mainContainer .headerBox .navBanner ul {
   display: flex;
+  align-items: center;
+}
+.mainContainer .headerBox .navBanner ul li {
+  padding: 0 0.8rem;
+}
+.mainContainer .headerBox .navBanner ul li a {
+  position: relative;
+  font-size: 0.64rem;
+  color: var(--cl-fontColor);
+}
+.mainContainer .headerBox .navBanner ul li .navBorder::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0.0533rem;
+  bottom: -0.4rem;
+  background-color: var(--cl-fontColor);
+  transition: all 0.3s;
+  left: 50%;
+}
+.mainContainer .headerBox .navBanner ul li .navBorder:hover:after {
+  left: 0;
+  width: 100%;
+}
+.mainContainer .headerBox .navBanner ul li .navBorder::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.4rem;
+  transform: translateX(-0.0667rem);
+  width: 0.1333rem;
+  height: 0.1333rem;
+  border-radius: 50%;
+  border: 1px solid rgb(255, 255, 255);
+  transition: all 0.3s;
+}
+.mainContainer .headerBox .navBanner ul li .navBorder:hover:before {
+  width: 0;
+  height: 0;
+  border: 0;
+}
+.mainContainer .headerBox .search {
+  margin: 0 auto;
+  width: 0.9333rem;
+  height: 0.9333rem;
+  background: url(../images/search.png) no-repeat;
+  background-size: 100%;
+}
+.mainContainer .contentBox {
+  margin: 3.2rem 0 0 0.8rem;
+}
+.mainContainer .contentBox ul li {
+  font-size: 1.0667rem;
+  color: var(--cl-fontColor);
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 0.0533rem;
+  margin: 0.4rem 0;
+}
+.mainContainer .contentBox ul li:last-child {
+  margin-top: 2.1333rem;
+  width: 4.8rem;
+  height: 1.3333rem;
+  line-height: 1.3333rem;
+  border-radius: 1.5em;
+  text-align: center;
+  font-weight: 400;
+  font-size: 0.5867rem;
+  cursor: pointer;
+  background-color: rgba(43, 23, 23, 0.45);
+  box-shadow: 0 0 0.1067rem #ccc;
+}
+.mainContainer .contentBox ul li:last-child:hover {
+  background-color: rgba(255, 255, 255, 0.603);
+  color: rgb(70, 70, 70);
+  text-shadow: 1px 1px 2px #ffffff;
+}
+.mainContainer .contactBox {
+  margin-top: 3.2rem;
+}
+.mainContainer .contactBox ul {
+  display: flex;
+}
+.mainContainer .contactBox ul li {
+  position: relative;
+  margin: 0 0.8rem;
+  width: 2.6667rem;
+  height: 2.6667rem;
+  border-radius: 50%;
+  backdrop-filter: blur(1px);
+  font-size: 0.7467rem;
+  font-weight: 700;
+  color: var(--cl-fontColor);
+  text-align: center;
+  line-height: 2.6667rem;
+  box-shadow: 0 0 20px rgba(204, 204, 204, 0.699);
+}
+.mainContainer .contactBox ul li .timeBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.6667rem;
+  height: 2.6667rem;
+  border-radius: 50%;
+  transform: rotate(0deg);
+}
+.mainContainer .contactBox ul li .timeBox div {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  display: block;
+  width: 0.0533rem;
+  height: 50%;
+  background-color: var(--i);
+  filter: blur(0.0213rem);
+}
+.mainContainer .contactBox ul li .timeBox div em {
+  position: absolute;
+  transform: translate(-0.1333rem, -0.1333rem);
+  width: 0.2667rem;
+  height: 0.2667rem;
+  border-radius: 50%;
+  background-color: var(--i);
+}
+.mainContainer .contactBox .textBox {
+  display: flex;
+  justify-content: space-around;
+  width: 12.8rem;
+  font-size: 0.4267rem;
+  color: var(--cl-fontColor);
+  margin-top: 0.5333rem;
+}
+.mainContainer .InformationCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 30%;
+  left: 58%;
+  padding: 0.2667rem;
+  width: 6.9333rem;
+  height: 10.6667rem;
+  backdrop-filter: blur(0.1333rem);
+  box-shadow: 0 0 0.2667rem rgba(15, 15, 15, 0.1);
+  color: var(--cl-fontColor);
+}
+.mainContainer .InformationCard .avatar {
+  position: relative;
+  margin: 0.5333rem 0;
+  width: 2.6667rem;
+  height: 2.6667rem;
+  border-radius: 50%;
+  background: url(../images/avatar.png) no-repeat;
+  background-size: 100%;
+  box-shadow: 0 0 0.32rem rgba(112, 214, 255, 0.836);
+}
+.mainContainer .InformationCard .avatar::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-0.1333rem, -0.1333rem);
+  content: "";
+  display: block;
+  width: 2.9333rem;
+  height: 2.9333rem;
+  border-radius: 50%;
+  border: 1px solid skyblue;
+}
+.mainContainer .InformationCard span {
+  font-size: 0.3733rem;
+  font-weight: 300;
+}
+.mainContainer .InformationCard em {
+  margin-top: 0.5333rem;
+  display: block;
+  width: 100%;
+  height: 0.04rem;
+  background-color: rgba(233, 233, 233, 0.24);
+}
+.mainContainer .InformationCard table {
+  width: 100%;
+  margin: 0.5333rem 0 0.4rem 0;
+}
+.mainContainer .InformationCard table tr {
+  width: 100%;
+  height: 0.8rem;
+}
+.mainContainer .InformationCard table tr td:first-child {
+  padding-left: 0.5333rem;
+  width: 40%;
+}
+.mainContainer .InformationCard table tr td:nth-child(2) {
+  padding-left: 0.5333rem;
+}
+.mainContainer .InformationCard .infoLogo {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+}
+.mainContainer .InformationCard .infoLogo a {
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 1px solid rgba(204, 204, 204, 0.301);
+  border-radius: 50%;
+}
+.mainContainer .InformationCard .infoLogo a:nth-child(1) {
+  background: url("../images/weChat.png") no-repeat;
+  background-size: 100%;
+}
+.mainContainer .InformationCard .infoLogo a:nth-child(2) {
+  background: url("../images/qq.png") no-repeat;
+  background-size: 100%;
+}
+.mainContainer .InformationCard .infoLogo a:nth-child(3) {
+  background: url("../images/weBo.png") no-repeat;
+  background-size: 100%;
+}
+.mainContainer .InformationCard .infoLogo a:nth-child(4) {
+  background: url("../images/github.png") no-repeat;
+  background-size: 100%;
 }
 
 /*# sourceMappingURL=index.css.map */
