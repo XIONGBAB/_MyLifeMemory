@@ -23,3 +23,19 @@ if ("serviceWorker" in navigator) {
             });
     });
 }
+
+// JavaScript
+let navList = document.querySelectorAll(".navBanner ul li");
+navList.forEach(item => {
+    item.addEventListener("mouseenter", () => {
+        item.querySelector("a").classList.add("navBorder");
+    });
+    item.addEventListener("click", () => {
+        item.classList.add("navCircle");
+        navList.forEach(sibling => {
+            if (sibling !== item) {
+                sibling.classList.remove("navCircle");
+            }
+        });
+    });
+});
