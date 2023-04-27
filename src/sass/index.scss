@@ -222,6 +222,8 @@ body {
     }
     .contactBox {
         margin-top: 2.9333rem;
+        transition: all 5s;
+        opacity: 0;
         ul {
             display: flex;
             li {
@@ -237,6 +239,9 @@ body {
                 text-align: center;
                 line-height: 2.6667rem;
                 box-shadow: 0 0 20px rgba(204, 204, 204, 0.699);
+                span {
+                    transition: all 2s;
+                }
                 .timeBox {
                     position: absolute;
                     top: 0;

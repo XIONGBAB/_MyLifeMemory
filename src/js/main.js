@@ -39,3 +39,33 @@ navList.forEach(item => {
         });
     });
 });
+function updateTime() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, "0");
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+    const seconds = now.getSeconds().toString().padStart(2, "0");
+
+    // const lis = document.querySelectorAll(".contactBox ul li");
+    // lis.forEach((li, index) => {
+    //     console.log(index);
+    //     const span = li.querySelector("span");
+    //     const timeBox = li.querySelector(".timeBox");
+    //     span[0].textContent = `${hour}`;
+    //     span[1].textContent = `${minute}`;
+    //     span[2].textContent = `${second}`;
+    //     const degrees = index * 120 + hour * 30 + minute * 0.5;
+    //     timeBox.style.transform = `rotate(${degrees}deg)`;
+    // });
+    const lis = document.querySelectorAll("li");
+    console.log(lis);
+    lis.forEach((li, index) => {
+        const span = li.querySelector("span");
+        console.log(span);
+        const timeBox = li.querySelector(".timeBox");
+        span.innerText = `${hours}:${minutes}:${seconds}`;
+        const degrees = index * 120 + hours * 30 + minutes * 0.5;
+        timeBox.style.transform = `rotate(${degrees}deg)`;
+    });
+}
+console.log(updateTime());
+// setInterval(updateTime, 1000);
