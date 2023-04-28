@@ -190,7 +190,7 @@ body {
         }
     }
     .contentBox {
-        margin: 3.2rem 0 0 0.8rem;
+        margin: 3.2rem 0 2.9333rem 0.8rem;
         ul {
             li {
                 font-size: 1.0667rem;
@@ -220,10 +220,10 @@ body {
             }
         }
     }
-    .contactBox {
-        margin-top: 2.9333rem;
+    .timerBox {
         transition: all 5s;
         opacity: 0;
+        display: none;
         ul {
             display: flex;
             li {
