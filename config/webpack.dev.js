@@ -7,7 +7,7 @@ const threads = os.cpus().length;
 module.exports = {
     entry: {
         main: "./src/js/main.js",
-        wdpage: "./src/js/wdpage.js",
+        memory: "./src/js/memory.js",
         flexible: "./src/js/flexible.js",
     },
     output: {
@@ -74,10 +74,10 @@ module.exports = {
             chunks: ["main"],
         }),
         new HtmlWebpackPlugin({
-            title: "分页",
-            template: path.resolve(__dirname, "../public/index.html"),
-            filename: "wdpage.html",
-            chunks: ["wdpage,flexible"],
+            title: "Memory",
+            template: path.resolve(__dirname, "../public/memory.html"),
+            filename: "memory.html",
+            chunks: ["memory"],
         }),
     ],
     devServer: {

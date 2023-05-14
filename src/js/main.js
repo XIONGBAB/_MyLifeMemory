@@ -75,4 +75,30 @@ window.addEventListener("load", function () {
             });
         });
     });
+
+    // click menu button
+    const searchBox = document.querySelector("#searchContainer");
+    const menuBox = document.querySelector("#menuBtnContainer");
+    document.querySelector(".menuBtnOpen").addEventListener("click", () => {
+        const searchBoxText = searchBox.classList.toggle("searchBox");
+        const searchBoxOpenText = searchBox.classList.toggle("searchBoxOpen");
+        searchBox.className == "searchBoxOpen" ? searchBoxText : searchBoxOpenText;
+
+        const menuBoxText = menuBox.classList.toggle("menuBtn");
+        const menuBoxOpenText = menuBox.classList.toggle("menuBtnOpen");
+        menuBox.className == "menuBtnOpen" ? menuBoxText : menuBoxOpenText;
+        searchBox.addEventListener("mouseenter", () => {
+            if (menuBox.className == "menuBtn" && searchBox.className == "searchBox") {
+                menuBox.classList.add("menuBtnOpen");
+                menuBox.classList.remove("menuBtn");
+            }
+        });
+
+        searchBox.addEventListener("mouseleave", () => {
+            if (menuBox.className == "menuBtnOpen" && searchBox.className == "searchBox") {
+                menuBox.classList.remove("menuBtnOpen");
+                menuBox.classList.add("menuBtn");
+            }
+        });
+    });
 });

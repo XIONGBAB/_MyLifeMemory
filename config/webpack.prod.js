@@ -29,7 +29,7 @@ const getStyleLoaders = preProcessor => {
 module.exports = {
     entry: {
         main: "./src/js/main.js",
-        wdpage: "./src/js/wdpage.js",
+        memory: "./src/js/memory.js",
     },
     output: {
         path: path.resolve(__dirname, "../dist"),
@@ -96,10 +96,10 @@ module.exports = {
             chunks: ["main"],
         }),
         new HtmlWebpackPlugin({
-            title: "分页",
-            template: path.resolve(__dirname, "../public/index.html"),
-            filename: "wdpage.html",
-            chunks: ["wdpage"],
+            title: "Memory",
+            template: path.resolve(__dirname, "../public/memory.html"),
+            filename: "memory.html",
+            chunks: ["memory"],
         }),
         new MiniCssExtractPlugin({
             filename: "static/css/[name].[contenthash:8].css",
