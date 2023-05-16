@@ -3,8 +3,7 @@
     font-size: 37.5px !important;
   }
 }
-body em,
-body i {
+body em, body i {
   font-style: normal;
 }
 
@@ -224,7 +223,7 @@ body .container .containerRight .rightBackground .goButton {
 }
 
 body .container .containerRight .rightBackground .goButton:hover {
-  color: white;
+  color: #fff;
   background-color: rgba(41, 41, 41, 0.69);
   box-shadow: 1px 1px 0.08rem #f5f5f5;
 }
@@ -235,4 +234,4 @@ body .container .containerRight .rightContent {
   transition: all 2s;
 }
 
-/*# sourceMappingURL=memory.css.map */
+/*# sourceMappingURL=memory.min.css.map */

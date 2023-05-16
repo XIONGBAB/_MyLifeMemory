@@ -13,6 +13,7 @@ document.querySelector(".goButton").addEventListener("click", () => {
     setTimeout(() => {
         rightBackground.style.display = "none";
         setTimeout(() => {
+            rightContent.style.display = "block";
             rightContent.style.opacity = 1;
             rightBackground.remove(); // 自杀
         }, 500);

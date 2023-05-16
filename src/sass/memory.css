@@ -3,6 +3,7 @@
     font-size: 37.5px !important;
   }
 }
+
 body em,
 body i {
   font-style: normal;
@@ -234,5 +235,3 @@ body .container .containerRight .rightContent {
   opacity: 0;
   transition: all 2s;
 }
-
-/*# sourceMappingURL=memory.css.map */

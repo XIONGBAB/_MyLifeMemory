@@ -173,6 +173,7 @@ body {
                             display: block;
                             font-size: 0.5333rem;
                             &:last-child {
+                                width: 85%;
                                 margin-top: 0.2667rem;
                                 font-size: 0.48rem;
                                 text-transform: capitalize;
@@ -183,7 +184,7 @@ body {
                 }
                 .goButton {
                     position: absolute;
-                    top: 60%;
+                    bottom: 25%;
                     left: 5.3333rem;
                     width: 4.8rem;
                     height: 1.6rem;
@@ -205,6 +206,7 @@ body {
                 }
             }
             .rightContent {
+                display: none;
                 opacity: 0;
                 transition: all 2s;
             }
