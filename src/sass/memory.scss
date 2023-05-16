@@ -67,43 +67,19 @@ body {
                     margin-top: 0.5333rem;
                     width: 100%;
                     font-size: 0.3733rem;
-                    color: #b6b6b6;
-                    .titleBox {
-                        position: relative;
-                        padding-left: 1.2rem;
+                    color: #cccccc;
+                    .navMenu {
                         width: 100%;
-                        height: 0.8rem;
-                        line-height: 0.8rem;
-                        cursor: pointer;
-                        em {
-                            position: absolute;
-                            top: 50%;
-                            left: 0.5333rem;
-                            transform: translateY(-0.24rem);
-                            display: inline-block;
-                            width: 0.48rem;
-                            height: 0.48rem;
-                            background: url(../images/book.svg) no-repeat;
-                            background-size: 100%;
-                            opacity: 0.7;
-                        }
-                    }
-
-                    ul {
-                        li {
-                            padding-left: 0.8rem;
+                        .navSubMenu {
                             width: 100%;
-                            height: 0.8rem;
-                            line-height: 0.8rem;
-                            cursor: pointer;
-                            .title {
-                                position: relative;
+                            a {
+                                padding: 0.16rem 0;
+                                display: flex;
+                                align-items: center;
+                                width: 100%;
                                 em {
-                                    position: absolute;
-                                    top: 50%;
-                                    left: 0;
-                                    transform: translateY(-0.24rem);
                                     display: inline-block;
+                                    margin: 0 0.16rem 0 0.6667rem;
                                     width: 0.48rem;
                                     height: 0.48rem;
                                     background: url(../images/bookOpen.svg) no-repeat;
@@ -111,20 +87,47 @@ body {
                                     opacity: 0.7;
                                 }
                                 span {
-                                    margin-left: 0.6667rem;
+                                    color: #949494;
+                                    i {
+                                        display: inline-block;
+                                        width: 0.5333rem;
+                                        height: 100%;
+                                    }
+                                }
+                                &:hover {
+                                    background-color: #fd3a44;
+                                    em {
+                                        opacity: 1;
+                                    }
+                                    span {
+                                        color: #ffffff;
+                                    }
                                 }
                             }
-                        }
-                        li:hover {
-                            background-color: #ff404b;
-                            color: #fff;
-                            .title {
+                            &:first-child {
+                                a {
+                                    em {
+                                        background-image: url(../images/book.svg);
+                                        margin: 0 0.16rem 0 0.4267rem;
+                                    }
+                                }
+                            }
+                            .active {
+                                background-color: #fd3a44;
                                 em {
                                     opacity: 1;
                                 }
                                 span {
-                                    color: #fff;
-                                    text-shadow: 0 0 0.0533rem #5f5f5f;
+                                    color: #ffffff;
+                                }
+                            }
+                            // ul
+                            .secondMenuBox {
+                                overflow: hidden;
+                                width: 100%;
+                                height: 0;
+                                transition: height 1s ease-in-out;
+                                li {
                                 }
                             }
                         }
