@@ -30,6 +30,17 @@ body .container .navLeft .navContainer {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+body .container .navLeft .navContainer .searchBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6.1333rem;
+  height: 1.3333rem;
+  background-color: #979797;
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.5s;
+}
 body .container .navLeft .navContainer .searchBoxOpen {
   position: sticky;
   top: 0.2667rem;
@@ -44,6 +55,7 @@ body .container .navLeft .navContainer .searchBoxOpen {
   border-radius: 0.4rem;
   border: 1px solid transparent;
   background-color: #6a6a6a;
+  z-index: 120;
 }
 body .container .navLeft .navContainer .searchBoxOpen .searchIcon {
   display: block;
@@ -77,13 +89,18 @@ body .container .navLeft .navContainer .navListBox .navMenu {
 body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu {
   width: 100%;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu a {
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu:first-child .navSubMenuATag .navSubMenuEmTag {
+  background-image: url(../images/book.svg);
+  margin: 0 0.16rem 0 0.4267rem;
+  opacity: 1;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .navSubMenuATag {
   padding: 0.16rem 0;
   display: flex;
   align-items: center;
   width: 100%;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu a em {
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .navSubMenuATag .navSubMenuEmTag {
   display: inline-block;
   margin: 0 0.16rem 0 0.6667rem;
   width: 0.48rem;
@@ -92,41 +109,106 @@ body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu a em {
   background-size: 100%;
   opacity: 0.7;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu a span {
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .navSubMenuATag .navSubMenuSpanTag {
   color: #949494;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu a span i {
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .navSubMenuATag .navSubMenuSpanTag .navSubMenuITag {
   display: inline-block;
   width: 0.5333rem;
   height: 100%;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu a:hover {
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .navSubMenuATag:hover {
   background-color: #fd3a44;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu a:hover em {
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .navSubMenuATag:hover em {
   opacity: 1;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu a:hover span {
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .navSubMenuATag:hover span {
   color: #ffffff;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu:first-child a em {
-  background-image: url(../images/book.svg);
-  margin: 0 0.16rem 0 0.4267rem;
 }
 body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .active {
   background-color: #fd3a44;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .active em {
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .active .navSubMenuEmTag {
   opacity: 1;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .active span {
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .active .navSubMenuSpanTag {
   color: #ffffff;
 }
 body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox {
   overflow: hidden;
   width: 100%;
-  height: 0;
-  transition: height 1s ease-in-out;
+  transition: height 0.8s ease-in-out;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag {
+  width: 100%;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .secondSubMenuATag {
+  padding: 0.16rem 0 0.16rem 0.7467rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .secondSubMenuATag:hover {
+  background-color: #585856;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .secondSubMenuATag:hover .secondSubMenuEmTag {
+  opacity: 1;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .secondSubMenuATag:hover .secondSubMenuSpanTag {
+  color: #ffffff;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .secondSubMenuATag .secondSubMenuEmTag {
+  display: inline-block;
+  margin: 0 0.16rem 0 0.1333rem;
+  width: 0.48rem;
+  height: 0.48rem;
+  background: url(../images/bookOpen.svg) no-repeat;
+  background-size: 100%;
+  opacity: 0.7;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .secondSubMenuATag .secondSubMenuSpanTag {
+  color: #949494;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .secondSubMenuATag .secondSubMenuSpanTag .navSubMenuITag {
+  display: inline-block;
+  width: 0.5333rem;
+  height: 100%;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox {
+  width: 100%;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox .thirdSubMenuLiTag {
+  width: 100%;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox .thirdSubMenuLiTag .thirdSubMenuATag {
+  padding: 0.16rem 0 0.16rem 0.96rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox .thirdSubMenuLiTag .thirdSubMenuATag:hover .thirdSubMenuEmTag {
+  opacity: 1;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox .thirdSubMenuLiTag .thirdSubMenuATag:hover .thirdSubMenuSpanTag {
+  color: #e4ff00;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox .thirdSubMenuLiTag .thirdSubMenuATag .thirdSubMenuEmTag {
+  display: inline-block;
+  margin: 0 0.16rem 0 0.1333rem;
+  width: 0.48rem;
+  height: 0.48rem;
+  background: url(../images/bookOpen.svg) no-repeat;
+  background-size: 100%;
+  opacity: 0.7;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox .thirdSubMenuLiTag .thirdSubMenuATag .thirdSubMenuSpanTag {
+  color: #949494;
+}
+body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox .thirdSubMenuLiTag .thirdSubMenuATag .thirdSubMenuSpanTag .navSubMenuITag {
+  display: inline-block;
+  width: 0.5333rem;
+  height: 100%;
 }
 body .container .navLeft .navContainer::-webkit-scrollbar {
   display: none;

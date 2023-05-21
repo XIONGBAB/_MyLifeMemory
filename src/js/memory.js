@@ -16,27 +16,46 @@ document.querySelector(".goButton").addEventListener("click", () => {
         setTimeout(() => {
             rightContent.style.display = "block";
             rightContent.style.opacity = 1;
-            rightBackground.remove(); // 自杀
+            rightBackground.remove(); // 干掉自己
         }, 500);
     }, 500);
 });
 
 // left nav js
 let navSubMenuBox = document.querySelectorAll(".navSubMenu a");
-let secondMenuBox = document.querySelectorAll(".secondMenuBox");
-let secondMenuLiBox = document.querySelectorAll(".subMenu");
+let navSubMenuB = document.querySelectorAll(".navSubMenu ul");
+
 navSubMenuBox.forEach(item => {
-    item.addEventListener("click", () => {
-        navSubMenuBox.forEach(otherItem => {
-            if (otherItem != item) {
-                otherItem.classList.remove("active");
+    item.addEventListener("click", function () {
+        navSubMenuB.forEach(items => {
+            if (items != item) {
+                items.style.height = "0px";
             }
         });
-        item.classList.add("active");
-        secondMenuBox.forEach(secondBoxItem => {
-            let secondMenuBoxHight = secondMenuLiBox[0].clientHeight;
-            console.log(secondMenuLiBox.length);
-            secondBoxItem.style.height = secondMenuBoxHight * secondMenuLiBox.length + "px";
-        });
+        let itemSum = item.nextElementSibling;
+        if (itemSum !== null) {
+            let lis = itemSum.querySelectorAll("li");
+            this.classList.add("active");
+            navSubMenuBox.forEach(otherItem => {
+                if (otherItem != item) {
+                    otherItem.classList.remove("active");
+                }
+            });
+            if (item.nextElementSibling) {
+                this.nextElementSibling.style.height = lis.length * lis[0].clientHeight + "px";
+            }
+        }
     });
+});
+
+//left scroll js
+let navContainerScroll = document.querySelector(".navContainer");
+navContainerScroll.addEventListener("scroll", () => {
+    let searchBg = document.querySelector(".searchBgBox");
+    if (navContainerScroll.scrollTop > 50) {
+        searchBg.classList.add("searchBg");
+        searchBg.style.opacity = "1";
+    } else if (navContainerScroll.scrollTop < 10) {
+        searchBg.style.opacity = "0";
+    }
 });
