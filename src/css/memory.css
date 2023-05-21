@@ -138,6 +138,7 @@ body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .active 
 body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox {
   overflow: hidden;
   width: 100%;
+  height: 0;
   transition: height 0.8s ease-in-out;
 }
 body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag {
@@ -176,7 +177,10 @@ body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondM
   height: 100%;
 }
 body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox {
+  overflow: hidden;
   width: 100%;
+  height: 0;
+  transition: height 0.8s ease-in-out;
 }
 body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox .thirdSubMenuLiTag {
   width: 100%;

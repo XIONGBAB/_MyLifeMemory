@@ -22,33 +22,67 @@ document.querySelector(".goButton").addEventListener("click", () => {
 });
 
 // left nav js
-let navSubMenuBox = document.querySelectorAll(".navSubMenu a");
-let navSubMenuB = document.querySelectorAll(".navSubMenu ul");
 
-navSubMenuBox.forEach(item => {
-    item.addEventListener("click", function () {
-        navSubMenuB.forEach(items => {
-            if (items != item) {
-                items.style.height = "0px";
-            }
-        });
-        let itemSum = item.nextElementSibling;
-        if (itemSum !== null) {
-            let lis = itemSum.querySelectorAll("li");
-            this.classList.add("active");
-            navSubMenuBox.forEach(otherItem => {
-                if (otherItem != item) {
-                    otherItem.classList.remove("active");
+function addNavSubFunction(variableOne, variableTwo, isTrue) {
+    let elementResultOne = document.querySelectorAll(`${variableOne}`);
+    let elementResultTwo = document.querySelectorAll(`${variableTwo}`);
+    elementResultOne.forEach(item => {
+        item.addEventListener("click", function () {
+            let lisElementTag = null;
+            let itemSum = item.nextElementSibling;
+            let lisVariable = null;
+            elementResultTwo.forEach(items => {
+                if (items != item) {
+                    items.style.height = "0px";
                 }
             });
-            if (item.nextElementSibling) {
-                this.nextElementSibling.style.height = lis.length * lis[0].clientHeight + "px";
+            if (itemSum) {
+                itemSum.childNodes.forEach(nodeLists => {
+                    if (nodeLists.className) {
+                        lisElementTag = nodeLists.className;
+                    }
+                });
+                lisVariable = itemSum.querySelectorAll(`.${lisElementTag}`);
+                if (isTrue) {
+                    this.classList.add("active");
+                    elementResultOne.forEach(otherItem => {
+                        if (otherItem != item) {
+                            otherItem.classList.remove("active");
+                        }
+                    });
+                }
+                let elementID = null;
+                if (item.nextElementSibling) {
+                    elementID++;
+                    this.nextElementSibling.id = "secondMenuBox" + elementID;
+                    this.nextElementSibling.style.height = lisVariable.length * lisVariable[0].clientHeight + "px";
+                }
             }
-        }
+            addNavSubFunction(".secondSubMenuATag", ".thirdMenuBox", false);
+            if (itemSum) {
+                let secondMenuBox1 = document.getElementById("secondMenuBox1");
+                secondMenuBox1.style.height = this.nextElementSibling.style.height;
+            }
+        });
     });
-});
+}
+addNavSubFunction(".navSubMenuATag", ".secondMenuBox", true, ".navSubMenu");
+
+// function isClick(variableThird, variableTwo) {
+//     let elementResultThird = document.querySelectorAll(`${variableThird}`);
+//     elementResultThird.forEach(items => {
+//         items.addEventListener("click", function () {
+//             console.log(this.querySelector(variableTwo).style.height);
+//             if (this.querySelector(variableTwo).style.height != "0px") {
+//                 this.querySelector(variableTwo).style.height = "0px";
+//             }
+//         });
+//     });
+// }
+// isClick(variableThird, variableTwo);
 
 //left scroll js
+
 let navContainerScroll = document.querySelector(".navContainer");
 navContainerScroll.addEventListener("scroll", () => {
     let searchBg = document.querySelector(".searchBgBox");
