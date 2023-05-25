@@ -83,24 +83,48 @@ body .container .navLeft .navContainer .navListBox {
   font-size: 0.3733rem;
   color: #cccccc;
 }
-body .container .navLeft .navContainer .navListBox .navMenu {
+body .container .navLeft .navContainer .navListBox .navMenuTitle {
+  display: flex;
+  align-items: center;
   width: 100%;
+  height: 0.8rem;
+  background-color: #fd3a44;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu {
-  width: 100%;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu:first-child .navSubMenuATag .navSubMenuEmTag {
-  background-image: url(../images/book.svg);
+body .container .navLeft .navContainer .navListBox .navMenuTitle .navSubMenuEmTag {
+  display: inline-block;
   margin: 0 0.16rem 0 0.4267rem;
+  width: 0.48rem;
+  height: 0.48rem;
+  background: url(../images/book.svg) no-repeat;
+  background-size: 100%;
   opacity: 1;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .navSubMenuATag {
-  padding: 0.16rem 0;
+body .container .navLeft .navContainer .navListBox .navMenuTitle .navSubMenuSpanTag {
+  color: #ffffff;
+}
+body .container .navLeft .navContainer .navListBox .navMenuItem {
+  width: 100%;
+  line-height: 0.8rem;
+}
+body .container .navLeft .navContainer .navListBox .navMenuItem input[type=checkbox] {
+  display: none;
+}
+body .container .navLeft .navContainer .navListBox .navMenuItem #menuItem1:checked ~ .secondMenuBox {
+  height: 0;
+  transition: height 0.3s ease-in;
+}
+body .container .navLeft .navContainer .navListBox .navMenuItem label {
+  display: block;
+  width: 100%;
+  height: 0.8rem;
+}
+body .container .navLeft .navContainer .navListBox .navMenuItem label .navSubMenuATag {
+  pointer-events: none;
   display: flex;
   align-items: center;
   width: 100%;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .navSubMenuATag .navSubMenuEmTag {
+body .container .navLeft .navContainer .navListBox .navMenuItem label .navSubMenuATag .navSubMenuEmTag {
   display: inline-block;
   margin: 0 0.16rem 0 0.6667rem;
   width: 0.48rem;
@@ -109,95 +133,29 @@ body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .navSubM
   background-size: 100%;
   opacity: 0.7;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .navSubMenuATag .navSubMenuSpanTag {
+body .container .navLeft .navContainer .navListBox .navMenuItem label .navSubMenuATag .navSubMenuSpanTag {
   color: #949494;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .navSubMenuATag .navSubMenuSpanTag .navSubMenuITag {
-  display: inline-block;
-  width: 0.5333rem;
-  height: 100%;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .navSubMenuATag:hover {
-  background-color: #fd3a44;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .navSubMenuATag:hover em {
-  opacity: 1;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .navSubMenuATag:hover span {
-  color: #ffffff;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .active {
-  background-color: #fd3a44;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .active .navSubMenuEmTag {
-  opacity: 1;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .active .navSubMenuSpanTag {
-  color: #ffffff;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox {
+body .container .navLeft .navContainer .navListBox .navMenuItem .secondMenuBox {
+  width: 100%;
+  height: 2.4rem;
   overflow: hidden;
-  width: 100%;
-  height: 0;
-  transition: height 0.8s ease-in-out;
+  color: #949494;
+  transition: height 0.3s ease-in;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag {
+body .container .navLeft .navContainer .navListBox .navMenuItem .secondMenuBox .secondSubMenuLiTag {
   width: 100%;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .secondSubMenuATag {
-  padding: 0.16rem 0 0.16rem 0.7467rem;
+body .container .navLeft .navContainer .navListBox .navMenuItem .secondMenuBox .secondSubMenuLiTag .navSubMenuATag {
   display: flex;
   align-items: center;
   width: 100%;
+  padding-left: 1.0133rem;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .secondSubMenuATag:hover {
-  background-color: #585856;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .secondSubMenuATag:hover .secondSubMenuEmTag {
-  opacity: 1;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .secondSubMenuATag:hover .secondSubMenuSpanTag {
-  color: #ffffff;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .secondSubMenuATag .secondSubMenuEmTag {
-  display: inline-block;
-  margin: 0 0.16rem 0 0.1333rem;
-  width: 0.48rem;
-  height: 0.48rem;
-  background: url(../images/bookOpen.svg) no-repeat;
-  background-size: 100%;
-  opacity: 0.7;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .secondSubMenuATag .secondSubMenuSpanTag {
-  color: #949494;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .secondSubMenuATag .secondSubMenuSpanTag .navSubMenuITag {
-  display: inline-block;
-  width: 0.5333rem;
-  height: 100%;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox {
-  overflow: hidden;
-  width: 100%;
-  height: 0;
-  transition: height 0.8s ease-in-out;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox .thirdSubMenuLiTag {
-  width: 100%;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox .thirdSubMenuLiTag .thirdSubMenuATag {
-  padding: 0.16rem 0 0.16rem 0.96rem;
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox .thirdSubMenuLiTag .thirdSubMenuATag:hover .thirdSubMenuEmTag {
-  opacity: 1;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox .thirdSubMenuLiTag .thirdSubMenuATag:hover .thirdSubMenuSpanTag {
+body .container .navLeft .navContainer .navListBox .navMenuItem .secondMenuBox .secondSubMenuLiTag .navSubMenuATag:hover {
   color: #e4ff00;
 }
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox .thirdSubMenuLiTag .thirdSubMenuATag .thirdSubMenuEmTag {
+body .container .navLeft .navContainer .navListBox .navMenuItem .secondMenuBox .secondSubMenuLiTag .navSubMenuATag .navSubMenuEmTag {
   display: inline-block;
   margin: 0 0.16rem 0 0.1333rem;
   width: 0.48rem;
@@ -205,14 +163,6 @@ body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondM
   background: url(../images/bookOpen.svg) no-repeat;
   background-size: 100%;
   opacity: 0.7;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox .thirdSubMenuLiTag .thirdSubMenuATag .thirdSubMenuSpanTag {
-  color: #949494;
-}
-body .container .navLeft .navContainer .navListBox .navMenu .navSubMenu .secondMenuBox .secondSubMenuLiTag .thirdMenuBox .thirdSubMenuLiTag .thirdSubMenuATag .thirdSubMenuSpanTag .navSubMenuITag {
-  display: inline-block;
-  width: 0.5333rem;
-  height: 100%;
 }
 body .container .navLeft .navContainer::-webkit-scrollbar {
   display: none;

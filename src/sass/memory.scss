@@ -72,7 +72,6 @@ body {
                         }
                     }
                 }
-
                 .searchBoxOpen:hover {
                     box-shadow: 0 0 0.1067rem #ffffff;
                 }
@@ -81,22 +80,41 @@ body {
                     width: 100%;
                     font-size: 0.3733rem;
                     color: #cccccc;
-                    // first ul
-                    .navMenu {
+                    .navMenuTitle {
+                        display: flex;
+                        align-items: center;
                         width: 100%;
-                        .navSubMenu {
-                            &:first-child {
-                                .navSubMenuATag {
-                                    .navSubMenuEmTag {
-                                        background-image: url(../images/book.svg);
-                                        margin: 0 0.16rem 0 0.4267rem;
-                                        opacity: 1;
-                                    }
-                                }
-                            }
+                        height: 0.8rem;
+                        background-color: #fd3a44;
+                        .navSubMenuEmTag {
+                            display: inline-block;
+                            margin: 0 0.16rem 0 0.4267rem;
+                            width: 0.48rem;
+                            height: 0.48rem;
+                            background: url(../images/book.svg) no-repeat;
+                            background-size: 100%;
+                            opacity: 1;
+                        }
+                        .navSubMenuSpanTag {
+                            color: #ffffff;
+                        }
+                    }
+                    .navMenuItem {
+                        width: 100%;
+                        line-height: 0.8rem;
+                        input[type="checkbox"] {
+                            display: none;
+                        }
+                        #menuItem1:checked ~ .secondMenuBox {
+                            height: 0;
+                            transition: height 0.3s ease-in;
+                        }
+                        label {
+                            display: block;
                             width: 100%;
+                            height: 0.8rem;
                             .navSubMenuATag {
-                                padding: 0.16rem 0;
+                                pointer-events: none;
                                 display: flex;
                                 align-items: center;
                                 width: 100%;
@@ -111,111 +129,33 @@ body {
                                 }
                                 .navSubMenuSpanTag {
                                     color: #949494;
-                                    .navSubMenuITag {
-                                        display: inline-block;
-                                        width: 0.5333rem;
-                                        height: 100%;
-                                    }
-                                }
-                                &:hover {
-                                    background-color: #fd3a44;
-                                    em {
-                                        opacity: 1;
-                                    }
-                                    span {
-                                        color: #ffffff;
-                                    }
                                 }
                             }
-                            .active {
-                                background-color: #fd3a44;
-                                .navSubMenuEmTag {
-                                    opacity: 1;
-                                }
-                                .navSubMenuSpanTag {
-                                    color: #ffffff;
-                                }
-                            }
-                            // second ul
-                            .secondMenuBox {
-                                overflow: hidden;
+                        }
+                        .secondMenuBox {
+                            width: 100%;
+                            height: 2.4rem;
+                            overflow: hidden;
+                            color: #949494;
+                            transition: height 0.3s ease-in;
+                            .secondSubMenuLiTag {
                                 width: 100%;
-                                height: 0;
-                                transition: height 0.8s ease-in-out;
-                                .secondSubMenuLiTag {
-                                    width: 100%;
-                                    .secondSubMenuATag {
-                                        &:hover {
-                                            background-color: #585856;
-                                            .secondSubMenuEmTag {
-                                                opacity: 1;
-                                            }
-                                            .secondSubMenuSpanTag {
-                                                color: #ffffff;
-                                            }
-                                        }
-                                        padding: 0.16rem 0 0.16rem 0.7467rem;
-                                        display: flex;
-                                        align-items: center;
-                                        width: 100%;
-                                        .secondSubMenuEmTag {
-                                            display: inline-block;
-                                            margin: 0 0.16rem 0 0.1333rem;
-                                            width: 0.48rem;
-                                            height: 0.48rem;
-                                            background: url(../images/bookOpen.svg) no-repeat;
-                                            background-size: 100%;
-                                            opacity: 0.7;
-                                        }
-                                        .secondSubMenuSpanTag {
-                                            color: #949494;
-                                            .navSubMenuITag {
-                                                display: inline-block;
-                                                width: 0.5333rem;
-                                                height: 100%;
-                                            }
-                                        }
+                                .navSubMenuATag {
+                                    &:hover {
+                                        color: #e4ff00;
                                     }
-                                    // third ul
-                                    .thirdMenuBox {
-                                        overflow: hidden;
-                                        width: 100%;
-                                        height: 0;
-                                        transition: height 0.8s ease-in-out;
-                                        .thirdSubMenuLiTag {
-                                            width: 100%;
-                                            .thirdSubMenuATag {
-                                                &:hover {
-                                                    .thirdSubMenuEmTag {
-                                                        opacity: 1;
-                                                    }
-                                                    .thirdSubMenuSpanTag {
-                                                        color: #e4ff00;
-                                                    }
-                                                }
-                                                padding: 0.16rem 0 0.16rem 0.96rem;
-                                                display: flex;
-                                                align-items: center;
-                                                width: 100%;
-                                                .thirdSubMenuEmTag {
-                                                    display: inline-block;
-                                                    margin: 0 0.16rem 0 0.1333rem;
-                                                    width: 0.48rem;
-                                                    height: 0.48rem;
-                                                    background: url(../images/bookOpen.svg) no-repeat;
-                                                    background-size: 100%;
-                                                    opacity: 0.7;
-                                                }
-                                                .thirdSubMenuSpanTag {
-                                                    color: #949494;
-                                                    .navSubMenuITag {
-                                                        display: inline-block;
-                                                        width: 0.5333rem;
-                                                        height: 100%;
-                                                    }
-                                                }
-                                            }
-                                        }
+                                    display: flex;
+                                    align-items: center;
+                                    width: 100%;
+                                    padding-left: 1.0133rem;
+                                    .navSubMenuEmTag {
+                                        display: inline-block;
+                                        margin: 0 0.16rem 0 0.1333rem;
+                                        width: 0.48rem;
+                                        height: 0.48rem;
+                                        background: url(../images/bookOpen.svg) no-repeat;
+                                        background-size: 100%;
+                                        opacity: 0.7;
                                     }
                                 }
                             }
