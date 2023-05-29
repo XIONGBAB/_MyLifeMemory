@@ -3,6 +3,8 @@
         font-size: 37.5px !important;
     }
 }
+:root {
+}
 body {
     em,
     i {
@@ -17,7 +19,7 @@ body {
             flex: 0 0 6.1333rem;
             height: 100%;
             .navContainer {
-                .searchBg {
+                .searchBgBox {
                     position: fixed;
                     top: 0;
                     left: 0;
@@ -40,6 +42,9 @@ body {
                 overflow-y: scroll;
                 overflow-x: hidden;
                 .searchBoxOpen {
+                    &:hover {
+                        box-shadow: 0 0 0.1067rem #ffffff;
+                    }
                     position: sticky;
                     top: 0.2667rem;
                     left: 0;
@@ -72,15 +77,13 @@ body {
                         }
                     }
                 }
-                .searchBoxOpen:hover {
-                    box-shadow: 0 0 0.1067rem #ffffff;
-                }
-                .navListBox {
+                .navListContainer {
                     margin-top: 0.5333rem;
                     width: 100%;
                     font-size: 0.3733rem;
                     color: #cccccc;
-                    .navMenuTitle {
+                    cursor: pointer;
+                    .MenuTitle {
                         display: flex;
                         align-items: center;
                         width: 100%;
@@ -105,57 +108,153 @@ body {
                         input[type="checkbox"] {
                             display: none;
                         }
-                        #menuItem1:checked ~ .secondMenuBox {
-                            height: 0;
-                            transition: height 0.3s ease-in;
-                        }
-                        label {
+                        .navMenuLabel,
+                        .navSecondLabel,
+                        .navThirdLabel {
                             display: block;
                             width: 100%;
                             height: 0.8rem;
-                            .navSubMenuATag {
-                                pointer-events: none;
-                                display: flex;
-                                align-items: center;
-                                width: 100%;
-                                .navSubMenuEmTag {
+                            cursor: pointer;
+                        }
+                        .secondMenuBox,
+                        .thirdSubMenuBox {
+                            width: 100%;
+                            overflow: hidden;
+                            transition: height 0.3s ease-in; // 速度也需要JS来根据长度改变速度
+                        }
+                        .secondSubMenuLiTag,
+                        .thirdMenuLiTag {
+                            width: 100%;
+                        }
+                        .navSubMenuATag {
+                            pointer-events: none;
+                            display: flex;
+                            align-items: center;
+                            width: 100%;
+                            .navSubMenuEmTag {
+                                display: inline-block;
+                                margin: 0 0.16rem 0 0.6667rem;
+                                width: 0.48rem;
+                                height: 0.48rem;
+                                background: url(../images/bookOpen.svg) no-repeat;
+                                background-size: 100%;
+                                opacity: 0.7;
+                            }
+                            .navSubMenuSpanTag {
+                                color: #949494;
+                                em {
                                     display: inline-block;
-                                    margin: 0 0.16rem 0 0.6667rem;
-                                    width: 0.48rem;
-                                    height: 0.48rem;
-                                    background: url(../images/bookOpen.svg) no-repeat;
-                                    background-size: 100%;
-                                    opacity: 0.7;
-                                }
-                                .navSubMenuSpanTag {
-                                    color: #949494;
+                                    width: 0.8rem;
                                 }
                             }
                         }
-                        .secondMenuBox {
-                            width: 100%;
-                            height: 2.4rem;
-                            overflow: hidden;
-                            color: #949494;
+                        // js控制，点击了谁，谁就添加上这个id ,且label 也需要添加for
+                        #menuItem:checked ~ .secondMenuBox {
+                            height: 4rem;
                             transition: height 0.3s ease-in;
+                        }
+                        #menuItem:checked ~ .navMenuLabel {
+                            background-color: #fd3a44;
+                            .navSubMenuEmTag {
+                                opacity: 1;
+                            }
+                            .navSubMenuSpanTag {
+                                color: #fff;
+                            }
+                        }
+                        .secondMenuBox {
+                            height: 0; // 后续用js修改secondMenuBox的大小
                             .secondSubMenuLiTag {
-                                width: 100%;
-                                .navSubMenuATag {
-                                    &:hover {
-                                        color: #e4ff00;
+                                .navSecondLabel {
+                                    .navSubMenuATag {
+                                        padding-left: 1.0133rem;
+                                        .navSubMenuEmTag {
+                                            margin: 0 0.16rem 0 0.1333rem;
+                                            color: #ffffff;
+                                        }
+                                        &:hover {
+                                            padding-left: 0.9067rem;
+                                            transition: all 0.3s;
+                                            background-color: rgba(78, 78, 78, 0.69);
+                                            .navSubMenuEmTag {
+                                                transition: all 0.3s;
+                                                opacity: 1;
+                                            }
+                                            .navSubMenuSpanTag {
+                                                transition: all 0.3s;
+                                                font-size: 0.4rem;
+                                                color: rgb(207, 207, 207);
+                                            }
+                                        }
                                     }
-                                    display: flex;
-                                    align-items: center;
-                                    width: 100%;
-                                    padding-left: 1.0133rem;
+                                }
+                                &:hover {
+                                    .navSecondLabel {
+                                        .navSubMenuATag {
+                                            background-color: #5f5f5f;
+                                            .navSubMenuEmTag {
+                                                opacity: 1;
+                                            }
+                                            .navSubMenuSpanTag {
+                                                color: #ccc;
+                                            }
+                                        }
+                                    }
+                                }
+                                .thirdSubMenuBox {
+                                    height: 0; // 后续用js修改secondMenuBox的大小
+                                    .thirdMenuLiTag {
+                                        .navThirdLabel {
+                                            .navSubMenuATag {
+                                                transition: all 0.3s;
+                                                .navSubMenuEmTag {
+                                                    margin-left: 1.5467rem;
+                                                }
+                                            }
+                                            &:hover {
+                                                .navSubMenuATag {
+                                                    padding-left: 0.0533rem;
+                                                    transition: all 0.3s;
+                                                    .navSubMenuEmTag {
+                                                        opacity: 1;
+                                                        transition: 0.3s;
+                                                    }
+                                                    .navSubMenuSpanTag {
+                                                        color: yellow;
+                                                        font-size: 0.4rem;
+                                                        transition: all 0.3s;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                #navSecond:checked ~ .navSecondLabel {
+                                    .navSubMenuATag {
+                                        background-color: #5f5f5f;
+                                        .navSubMenuEmTag {
+                                            opacity: 1;
+                                        }
+                                        .navSubMenuSpanTag {
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+                                #navSecond:checked ~ .thirdSubMenuBox {
+                                    height: 1.6rem;
+                                    transition: height 0.3s ease-in;
+                                }
+                            }
+                        }
+                        &:hover {
+                            .navMenuLabel {
+                                background-color: #fd3a44;
+                                .navSubMenuATag {
                                     .navSubMenuEmTag {
-                                        display: inline-block;
-                                        margin: 0 0.16rem 0 0.1333rem;
-                                        width: 0.48rem;
-                                        height: 0.48rem;
-                                        background: url(../images/bookOpen.svg) no-repeat;
-                                        background-size: 100%;
-                                        opacity: 0.7;
+                                        opacity: 1;
+                                    }
+                                    .navSubMenuSpanTag {
+                                        color: #ffffff;
                                     }
                                 }
                             }
@@ -163,12 +262,14 @@ body {
                     }
                 }
             }
+            // scroll hidden
             .navContainer::-webkit-scrollbar {
                 display: none;
             }
         }
 
-        .containerRight {
+        // right container
+        .mainRight {
             position: relative;
             flex: 1;
             height: 100%;
@@ -182,7 +283,6 @@ body {
                 background-position: center;
                 background-attachment: fixed;
                 opacity: 1;
-                transition: all 1s;
                 .memoryTitle {
                     position: absolute;
                     left: 5.3333rem;
