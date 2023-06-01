@@ -148,7 +148,7 @@ body {
                         }
                         // js控制，点击了谁，谁就添加上这个id ,且label 也需要添加for
                         #menuItem:checked ~ .secondMenuBox {
-                            height: 4rem;
+                            height: 2.4rem;
                             transition: height 0.3s ease-in;
                         }
                         #menuItem:checked ~ .navMenuLabel {
@@ -227,20 +227,19 @@ body {
                                         }
                                     }
                                 }
-                                #navSecond:checked ~ .navSecondLabel {
-                                    .navSubMenuATag {
-                                        background-color: #5f5f5f;
-                                        .navSubMenuEmTag {
-                                            opacity: 1;
-                                        }
-                                        .navSubMenuSpanTag {
-                                            color: #fff;
-                                        }
-                                    }
-                                }
-                                #navSecond:checked ~ .thirdSubMenuBox {
-                                    height: 1.6rem;
+
+                                #menuItem1:checked ~ .thirdSubMenuBox {
+                                    height: 4rem;
                                     transition: height 0.3s ease-in;
+                                }
+                                #menuItem1:checked ~ .navSecondLabel {
+                                    background-color: #fd3a44;
+                                    .navSubMenuEmTag {
+                                        opacity: 1;
+                                    }
+                                    .navSubMenuSpanTag {
+                                        color: #fff;
+                                    }
                                 }
                             }
                         }
