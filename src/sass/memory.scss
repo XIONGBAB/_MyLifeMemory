@@ -160,6 +160,19 @@ body {
                                 color: #fff;
                             }
                         }
+                        #menuItem2:checked ~ .thirdSubMenuBox {
+                            height: 3.2rem;
+                            transition: height 0.3s ease-in;
+                        }
+                        #menuItem2:checked ~ .navSecondLabel {
+                            background-color: #575757;
+                            .navSubMenuEmTag {
+                                opacity: 1;
+                            }
+                            .navSubMenuSpanTag {
+                                color: #fff;
+                            }
+                        }
                         .secondMenuBox {
                             height: 0; // 后续用js修改secondMenuBox的大小
                             .secondSubMenuLiTag {
@@ -202,43 +215,27 @@ body {
                                 .thirdSubMenuBox {
                                     height: 0; // 后续用js修改secondMenuBox的大小
                                     .thirdMenuLiTag {
-                                        .navThirdLabel {
+                                        .navSubMenuATag {
+                                            transition: all 0.3s;
+                                            .navSubMenuEmTag {
+                                                margin-left: 1.5467rem;
+                                            }
+                                        }
+                                        &:hover {
                                             .navSubMenuATag {
+                                                padding-left: 0.0533rem;
                                                 transition: all 0.3s;
                                                 .navSubMenuEmTag {
-                                                    margin-left: 1.5467rem;
+                                                    opacity: 1;
+                                                    transition: 0.3s;
                                                 }
-                                            }
-                                            &:hover {
-                                                .navSubMenuATag {
-                                                    padding-left: 0.0533rem;
+                                                .navSubMenuSpanTag {
+                                                    color: yellow;
+                                                    font-size: 0.4rem;
                                                     transition: all 0.3s;
-                                                    .navSubMenuEmTag {
-                                                        opacity: 1;
-                                                        transition: 0.3s;
-                                                    }
-                                                    .navSubMenuSpanTag {
-                                                        color: yellow;
-                                                        font-size: 0.4rem;
-                                                        transition: all 0.3s;
-                                                    }
                                                 }
                                             }
                                         }
-                                    }
-                                }
-
-                                #menuItem1:checked ~ .thirdSubMenuBox {
-                                    height: 4rem;
-                                    transition: height 0.3s ease-in;
-                                }
-                                #menuItem1:checked ~ .navSecondLabel {
-                                    background-color: #fd3a44;
-                                    .navSubMenuEmTag {
-                                        opacity: 1;
-                                    }
-                                    .navSubMenuSpanTag {
-                                        color: #fff;
                                     }
                                 }
                             }

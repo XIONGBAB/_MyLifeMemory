@@ -163,6 +163,19 @@ body .container .navLeft .navContainer .navListContainer .navMenuItem #menuItem:
 body .container .navLeft .navContainer .navListContainer .navMenuItem #menuItem:checked ~ .navMenuLabel .navSubMenuSpanTag {
   color: #fff;
 }
+body .container .navLeft .navContainer .navListContainer .navMenuItem #menuItem2:checked ~ .thirdSubMenuBox {
+  height: 3.2rem;
+  transition: height 0.3s ease-in;
+}
+body .container .navLeft .navContainer .navListContainer .navMenuItem #menuItem2:checked ~ .navSecondLabel {
+  background-color: #575757;
+}
+body .container .navLeft .navContainer .navListContainer .navMenuItem #menuItem2:checked ~ .navSecondLabel .navSubMenuEmTag {
+  opacity: 1;
+}
+body .container .navLeft .navContainer .navListContainer .navMenuItem #menuItem2:checked ~ .navSecondLabel .navSubMenuSpanTag {
+  color: #fff;
+}
 body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox {
   height: 0;
 }
@@ -199,37 +212,24 @@ body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMen
 body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox {
   height: 0;
 }
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox .thirdMenuLiTag .navThirdLabel .navSubMenuATag {
+body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox .thirdMenuLiTag .navSubMenuATag {
   transition: all 0.3s;
 }
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox .thirdMenuLiTag .navThirdLabel .navSubMenuATag .navSubMenuEmTag {
+body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox .thirdMenuLiTag .navSubMenuATag .navSubMenuEmTag {
   margin-left: 1.5467rem;
 }
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox .thirdMenuLiTag .navThirdLabel:hover .navSubMenuATag {
+body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox .thirdMenuLiTag:hover .navSubMenuATag {
   padding-left: 0.0533rem;
   transition: all 0.3s;
 }
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox .thirdMenuLiTag .navThirdLabel:hover .navSubMenuATag .navSubMenuEmTag {
+body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox .thirdMenuLiTag:hover .navSubMenuATag .navSubMenuEmTag {
   opacity: 1;
   transition: 0.3s;
 }
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox .thirdMenuLiTag .navThirdLabel:hover .navSubMenuATag .navSubMenuSpanTag {
+body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox .thirdMenuLiTag:hover .navSubMenuATag .navSubMenuSpanTag {
   color: yellow;
   font-size: 0.4rem;
   transition: all 0.3s;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag #menuItem1:checked ~ .thirdSubMenuBox {
-  height: 4rem;
-  transition: height 0.3s ease-in;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag #menuItem1:checked ~ .navSecondLabel {
-  background-color: #fd3a44;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag #menuItem1:checked ~ .navSecondLabel .navSubMenuEmTag {
-  opacity: 1;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag #menuItem1:checked ~ .navSecondLabel .navSubMenuSpanTag {
-  color: #fff;
 }
 body .container .navLeft .navContainer .navListContainer .navMenuItem:hover .navMenuLabel {
   background-color: #fd3a44;
