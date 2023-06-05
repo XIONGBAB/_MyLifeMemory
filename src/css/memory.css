@@ -78,7 +78,8 @@ body .container .navLeft .navContainer .searchBoxOpen .searchContent::placeholde
   color: #ebebeb;
 }
 body .container .navLeft .navContainer .navListContainer {
-  margin-top: 0.5333rem;
+  position: absolute;
+  top: 2.1333rem;
   width: 100%;
   font-size: 0.3733rem;
   color: #cccccc;

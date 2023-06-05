@@ -17,7 +17,218 @@ window.addEventListener("load", function () {
         })
         .join("");
     programList.innerHTML = newData;
+    let thirdMenuLiTag = document.querySelectorAll(".thirdMenuLiTag");
+    for (let t = 0; t < thirdMenuLiTag.length; t++) {
+        thirdMenuLiTag[t].addEventListener("click", e => {
+            e.stopPropagation();
+            e.preventDefault();
+        });
+    }
 });
+
+// left nav style js   backup
+// (function () {
+//     // 先获取所有的navMenuItems
+//     let navMenuItems = document.querySelectorAll(".navMenuItem");
+//     let activeItem = null; // 用一个变量来跟踪当前的菜单
+//     let heightArr = [];
+//     let isAnMenu = false;
+//     for (let i = 0; i < navMenuItems.length; i++) {
+//         navMenuItems[i].addEventListener("click", function (event) {
+//             event.preventDefault();
+//             event.stopPropagation();
+//             // 获取input 和 label 来设置id 和for  值
+//             let input = this.querySelector(".navMenuInput");
+//             let navMenuLabel = this.querySelector(".navMenuLabel");
+//             let secondMenuBox = this.querySelector(".secondMenuBox");
+//             let secondSubMenuLiTag = this.querySelectorAll(".secondSubMenuLiTag");
+//             // 折叠以前展开的菜单，判断：如果我点击了其他菜单
+//             if (activeItem && activeItem !== this) {
+//                 let activeInput = activeItem.querySelector(".navMenuInput");
+//                 let activeLabel = activeItem.querySelector(".navMenuLabel");
+//                 // 因为点击了其他列表，状态就为true ，那么先把当前状态调成false后就会进入下面的语句input.checked = !input.checked;
+//                 activeInput.checked = false;
+//                 // 并且把id和for值清空
+//                 activeInput.id = "";
+//                 activeLabel.setAttribute("for", "");
+//                 activeLabel.nextElementSibling.style.height = "0";
+//             }
+//             // 当点击时，因为状态是为false,点击后才会是true,所以要转换成true,再次点击的时候，原本是true 变false,进入else语句
+//             input.checked = !input.checked;
+//             if (input.checked) {
+//                 input.id = "menuItem";
+//                 navMenuLabel.setAttribute("for", input.id);
+//                 activeItem = this;
+//                 if (isAnMenu == false) {
+//                     secondMenuBox.style.height = secondSubMenuLiTag.length * 30 + "px";
+//                 } else {
+//                     secondMenuBox.style.height = heightArr[0];
+//                 }
+//             } else {
+//                 input.id = "";
+//                 navMenuLabel.setAttribute("for", "");
+//                 activeItem = null;
+//                 secondMenuBox.removeAttribute("style");
+//             }
+//         });
+//     }
+//     // second sub js
+//     let activeItem2 = null;
+//     let secondSubMenuLiTag = document.querySelectorAll(".secondSubMenuLiTag");
+//     for (let s = 0; s < secondSubMenuLiTag.length; s++) {
+//         secondSubMenuLiTag[s].addEventListener("click", function (event) {
+//             event.stopPropagation(); // 阻止事件冒泡
+//             event.preventDefault();
+//             let navSecondInput = this.querySelector(".navSecondInput");
+//             let navSecondLabel = this.querySelector(".navSecondLabel");
+//             let thirdSubMenuBox = this.querySelector(".thirdSubMenuBox ");
+//             let thirdHeight = thirdSubMenuBox.querySelectorAll(".thirdMenuLiTag");
+//             let secondParent = this.parentElement;
+//             let secondSubMenuLiTagList = secondParent.querySelectorAll(".secondSubMenuLiTag");
+//             if (activeItem2 && activeItem2 !== this) {
+//                 let secondInput = activeItem2.querySelector(".navSecondInput");
+//                 let secondLabel = activeItem2.querySelector(".navSecondLabel");
+//                 secondInput.checked = false;
+//                 secondInput.id = "";
+//                 secondLabel.setAttribute("for", navSecondInput.id);
+//                 secondLabel.nextElementSibling.style.height = "0";
+//             }
+//             navSecondInput.checked = !navSecondInput.checked;
+//             if (navSecondInput.checked) {
+//                 isAnMenu = true;
+//                 heightArr.splice(0);
+//                 navSecondInput.id = "menuItem2";
+//                 navSecondLabel.setAttribute("for", navSecondInput.id);
+//                 activeItem2 = this;
+//                 thirdSubMenuBox.style.height = thirdHeight.length * 30 + "px";
+//                 secondParent.style.height = parseInt(thirdSubMenuBox.style.height) + secondSubMenuLiTagList.length * 30 + "px";
+//                 if (secondParent.style.height !== "") {
+//                     heightArr.push(secondParent.style.height);
+//                 }
+//             } else {
+//                 isAnMenu = false;
+//                 navSecondInput.id = "";
+//                 navSecondLabel.setAttribute("for", navSecondInput.id);
+//                 activeItem2 = null;
+//                 thirdSubMenuBox.style.height = "0";
+//                 secondParent.removeAttribute("style");
+//                 heightArr.splice(0);
+//             }
+//         });
+//     }
+// })();
+
+// optimize the js
+(function () {
+    let navMenuItems = document.querySelectorAll(".navMenuItem"); // 获取第一层元素
+    let activeItem = null; // 存储变量 当点击不是当前标签时，将之前的标签传给变量，并处理状态，清空状态
+    let heightArr = []; // 存储高度变量
+    let isAnMenu = false; // 检查是否展开
+
+    function collapseMenu(activeItem) {
+        let activeInput = activeItem.querySelector(".navMenuInput"); // 获取存储变量中的input和label标签
+        let activeLabel = activeItem.querySelector(".navMenuLabel");
+        activeInput.checked = false; // 将状态改为false,好收缩
+        activeInput.id = ""; // 给input id 为空，取消label 的关联
+        activeLabel.setAttribute("for", "");
+        activeLabel.nextElementSibling.style.height = "0"; // 将label下一个兄弟secondMenuBox 高度设置为0，收缩状态
+    }
+
+    function expandMenu(input, label, secondMenuBox, navHeight) {
+        input.id = "menuItem"; // 点击标签，给标签赋值
+        label.setAttribute("for", input.id);
+        activeItem = input.parentElement; // 获取点击标签的父亲navMenuItem
+        // 判断second菜单是否被展开过
+        isAnMenu ? (secondMenuBox.style.height = heightArr[0]) : (secondMenuBox.style.height = navHeight * 30 + "px");
+    }
+
+    function toggleMenu(event) {
+        event.preventDefault(); // 阻止默认事件
+        event.stopPropagation(); // 阻止冒泡
+        let input = this.querySelector(".navMenuInput"); // 获取传进来的event input和label参数
+        let label = this.querySelector(".navMenuLabel");
+        let secondMenuBox = this.querySelector(".secondMenuBox"); // 获取第二层标签
+        let secondSubMenuLiTag = this.querySelectorAll(".secondSubMenuLiTag"); // 获取第二层菜单下拉菜单
+        if (activeItem && activeItem !== this) {
+            // 如果 存储变量activeItem不是空，且传进来的存储变量不等于当前点击标签，也就是判断点击了其他二层标签了
+            collapseMenu(); // 调用展开函数，将状态和高度等清空
+        }
+        input.checked = !input.checked; // 刚开始没点第一层的标签状态是false,要切换成true
+        if (input.checked) {
+            // 当第一层的状态为真时，调用展开函数，并传入input ,label,第二层标签，第二层的子标签，以及获取第二层下拉菜单的数量
+            expandMenu(input, label, secondMenuBox, secondSubMenuLiTag.length);
+        } else {
+            // 否则再次点击时状态改成了false，清空id之前的label关联
+            input.id = "";
+            label.setAttribute("for", "");
+            activeItem = null; // 将存储变量清空
+            secondMenuBox.removeAttribute("style"); // 去除style，让高度自动
+        }
+    }
+    for (let i = 0; i < navMenuItems.length; i++) {
+        navMenuItems[i].addEventListener("click", toggleMenu); // 给每个第一层添加一个点击事件，并调用切换函数
+    }
+    // 处理第三层的js
+    let activeItem2 = null; // 存储变量2 当点击不是当前标签时，将之前的标签传给变量2，并处理状态，清空状态
+    function collapseSecondMenu() {
+        let secondInput = activeItem2.querySelector(".navSecondInput"); // 处理存储变量2的input和label
+        let secondLabel = activeItem2.querySelector(".navSecondLabel");
+        secondInput.checked = false; // 并将存储变量2的状态改为false
+        secondInput.id = ""; // 处理存储变量2 id和label，和高度为0
+        secondLabel.setAttribute("for", secondInput.id);
+        secondLabel.nextElementSibling.style.height = "0";
+    }
+
+    function expandSecondMenu(navSecondInput, navSecondLabel, thirdSubMenuBox, thirdHeight) {
+        // 处理第三层和第二层的逻辑，跟第一层差不多
+        isAnMenu = true; // 判断第二层是否展开状态
+        heightArr.splice(0); // 高度数组，永远只存储一个值
+        navSecondInput.id = "menuItem2"; // 赋值并关联label
+        navSecondLabel.setAttribute("for", navSecondInput.id);
+        activeItem2 = navSecondInput.parentElement;
+        thirdSubMenuBox.style.height = thirdHeight * 30 + "px";
+        let secondParent = activeItem2.parentElement; // 获取点击标签的父亲secondMenuBox
+        // 给点击标签后的父亲重新设置高度，第二层的下拉子菜单的高度 + 第二层元素的个数 * 每行的行高是30
+        secondParent.style.height = parseInt(thirdSubMenuBox.style.height) + secondParent.querySelectorAll(".secondSubMenuLiTag").length * 30 + "px";
+        if (secondParent.style.height !== "") {
+            // secondMenuBox的高度不为空的状态下，将高度传给高度数组进行存储
+            heightArr.push(secondParent.style.height);
+        }
+    }
+
+    function toggleSecondMenu(event) {
+        event.preventDefault(); // 阻止冒泡和默认事件
+        event.stopPropagation();
+        let navSecondInput = this.querySelector(".navSecondInput"); // 获取传进来的event input和label参数
+        let navSecondLabel = this.querySelector(".navSecondLabel");
+        let thirdSubMenuBox = this.querySelector(".thirdSubMenuBox"); // 获取第三层元素标签
+        let thirdHeight = thirdSubMenuBox.querySelectorAll(".thirdMenuLiTag").length; // 获取第三层下拉菜单的个数
+        if (activeItem2 && activeItem2 !== this) {
+            // 如果 存储变量activeItem2不是空，且传进来的存储变量不等于当前点击标签，也就是判断点击了其他二层标签了
+            collapseSecondMenu(); // 调用处理第二层的函数，收缩其他第二层
+        }
+        navSecondInput.checked = !navSecondInput.checked; // 刚开始没点第二层的标签状态是false,要切换成true
+        if (navSecondInput.checked) {
+            // 当第二层的状态为真时，调用展开函数，并传入第三层的input ,label,第三层标签，第三层的子标签，以及获取第三层下拉菜单的数量
+            expandSecondMenu(navSecondInput, navSecondLabel, thirdSubMenuBox, thirdHeight);
+        } else {
+            // 否则再次点击时状态改成了false，清空id之前的label关联，并把是否展开的状态改为false
+            isAnMenu = false;
+            navSecondInput.id = "";
+            navSecondLabel.setAttribute("for", "");
+            activeItem2 = null;
+            thirdSubMenuBox.style.height = "0";
+            let secondParent = this.parentElement;
+            secondParent.removeAttribute("style");
+            heightArr.splice(0);
+        }
+    }
+
+    let secondSubMenuLiTag = document.querySelectorAll(".secondSubMenuLiTag");
+    for (let s = 0; s < secondSubMenuLiTag.length; s++) {
+        secondSubMenuLiTag[s].addEventListener("click", toggleSecondMenu); // 给每个第二层添加一个点击事件，并调用切换函数
+    }
+})();
 
 //left scroll js
 let navContainerScroll = document.querySelector(".navContainer");
@@ -31,122 +242,6 @@ navContainerScroll.addEventListener("scroll", () => {
         searchBg.style.opacity = "0";
     }
 });
-
-// left nav style js
-(function () {
-    // 先获取所有的navMenuItems
-    let navMenuItems = document.querySelectorAll(".navMenuItem");
-    let activeItem = null; // 用一个变量来跟踪当前的菜单
-    let heightArr = [];
-    let heightArr2 = [];
-    for (let i = 0; i < navMenuItems.length; i++) {
-        navMenuItems[i].addEventListener("click", function (event) {
-            event.preventDefault();
-            event.stopPropagation();
-            // 获取input 和 label 来设置id 和for  值
-            let input = this.querySelector(".navMenuInput");
-            let navMenuLabel = this.querySelector(".navMenuLabel");
-            let secondMenuBox = this.querySelector(".secondMenuBox");
-            let navHeight = secondMenuBox.querySelectorAll(".secondSubMenuLiTag");
-            // 折叠以前展开的菜单，判断：如果我点击了其他菜单
-            if (activeItem && activeItem !== this) {
-                let activeInput = activeItem.querySelector(".navMenuInput");
-                let activeLabel = activeItem.querySelector(".navMenuLabel");
-                // 因为点击了其他列表，状态就为true ，那么先把当前状态调成false后就会进入下面的语句input.checked = !input.checked;
-                activeInput.checked = false;
-                // 并且把id和for值清空
-                activeInput.id = "";
-                activeLabel.setAttribute("for", "");
-                activeLabel.nextElementSibling.style.height = "4px";
-            }
-            // 当点击时，因为状态是为false,点击后才会是true,所以要转换成true,再次点击的时候，原本是true 变false,进入else语句
-            input.checked = !input.checked;
-            if (input.checked) {
-                input.id = "menuItem";
-                navMenuLabel.setAttribute("for", input.id);
-                activeItem = this;
-                for (let n = 0; n < navHeight.length; n++) {
-                    let checkList = navHeight[i].querySelector(".navSecondInput");
-                    let thirdHeight = secondMenuBox.querySelector(".thirdSubMenuBox");
-                    if (checkList.checked) {
-                        secondMenuBox.style.height = navHeight.length * 30 + parseInt(thirdHeight.style.height) + "px";
-                    } else {
-                        secondMenuBox.style.height = heightArr[1];
-                    }
-                }
-            } else {
-                input.id = "";
-                navMenuLabel.setAttribute("for", "");
-                activeItem = null;
-                secondMenuBox.removeAttribute("style");
-                for (let n = 0; n < navHeight.length; n++) {
-                    let checkList = navHeight[i].querySelector(".navSecondInput");
-                    if (checkList.checked) {
-                        secondMenuBox.style.height = "0";
-                    } else {
-                        if (secondMenuBox.style.height !== "") {
-                            secondMenuBox.style.height == heightArr2[0];
-                        }
-                    }
-                }
-            }
-        });
-    }
-
-    // second sub js
-
-    let activeItem2 = null;
-    let secondSubMenuLiTag = document.querySelectorAll(".secondSubMenuLiTag");
-    for (let s = 0; s < secondSubMenuLiTag.length; s++) {
-        secondSubMenuLiTag[s].addEventListener("click", function (event) {
-            event.stopPropagation(); // 阻止事件冒泡
-            event.preventDefault();
-            let navSecondInput = this.querySelector(".navSecondInput");
-            let navSecondLabel = this.querySelector(".navSecondLabel");
-            let thirdSubMenuBox = this.querySelector(".thirdSubMenuBox ");
-            let thirdHeight = thirdSubMenuBox.querySelectorAll(".thirdMenuLiTag");
-            let secondParent = this.parentElement;
-            let secondSubMenuLiTagList = secondParent.querySelectorAll(".secondSubMenuLiTag");
-            if (activeItem2 && activeItem2 !== this) {
-                heightArr.splice(0);
-                let secondInput = activeItem2.querySelector(".navSecondInput");
-                let secondLabel = activeItem2.querySelector(".navSecondLabel");
-                secondInput.checked = false;
-                secondInput.id = "";
-                secondLabel.setAttribute("for", navSecondInput.id);
-                heightArr.push(secondLabel.style.height);
-                secondLabel.nextElementSibling.style.height = "0";
-            }
-            navSecondInput.checked = !navSecondInput.checked;
-            if (navSecondInput.checked) {
-                navSecondInput.id = "menuItem2";
-                navSecondLabel.setAttribute("for", navSecondInput.id);
-                activeItem2 = this;
-                thirdSubMenuBox.style.height = thirdHeight.length * 30 + "px";
-                secondParent.style.height = parseInt(thirdSubMenuBox.style.height) + secondSubMenuLiTagList.length * 30 + "px";
-                if (secondParent.style.height !== "") {
-                    heightArr.push(secondParent.style.height);
-                    heightArr2.push(secondParent.style.height);
-                }
-            } else {
-                navSecondInput.id = "";
-                navSecondLabel.setAttribute("for", navSecondInput.id);
-                activeItem2 = null;
-                thirdSubMenuBox.style.height = "0";
-                secondParent.removeAttribute("style");
-                heightArr.splice(0);
-            }
-        });
-    }
-
-    let thirdMenuLiTag = document.querySelectorAll(".thirdMenuLiTag");
-    for (let t = 0; t < thirdMenuLiTag.length; t++) {
-        thirdMenuLiTag[t].addEventListener("click", e => {
-            e.stopPropagation();
-            e.preventDefault();
-        });
-    }
-})();
 
 // right container goButton js
 let rightBackground = document.querySelector(".rightBackground");
