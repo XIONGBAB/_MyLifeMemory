@@ -2,7 +2,8 @@ import "../css/memory.css";
 import "../css/iconfont.css";
 import "../css/normalize.css";
 import "../js/flexible.js";
-import menuDate from "./menuData";
+import {menuDate, studyOther} from "./menuData";
+console.log(studyOther);
 
 // web icon js
 document.querySelector("#icon-link").href = require("../images/favicon.ico");

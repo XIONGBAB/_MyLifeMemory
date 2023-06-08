@@ -27,4 +27,16 @@ const menuDate = [
     { id: 26, name: "Pro_ChatGPT" },
 ];
 
-export default menuDate;
+const studyOther  = [
+    {id:1,name:"O_Video"},
+    {id:2,name:"O_VIPN"},
+    {id:3,name:"O_English"},
+    {id:4,name:"O_Excel Word"},
+    {id:5,name:"O_Homebrew"},
+    {id:6,name:"O_Unit conversion"},
+    {id:7,name:"O_Visual Studio Code"},
+    {id:8,name:"O_MarkDown"},
+    {id:9,name:"O_Iterm2"},
+]
+
+export {menuDate,studyOther};
