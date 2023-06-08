@@ -2,8 +2,7 @@ import "../css/memory.css";
 import "../css/iconfont.css";
 import "../css/normalize.css";
 import "../js/flexible.js";
-import {menuDate, studyOther} from "./menuData";
-console.log(studyOther);
+import { programming, studyOther, working, sourceMaterial, softwareList, adobeList, systemList, subTitleList, lifeList } from "./menuData";
 
 // web icon js
 document.querySelector("#icon-link").href = require("../images/favicon.ico");
@@ -12,12 +11,77 @@ document.querySelector("#icon-link").href = require("../images/favicon.ico");
 
 window.addEventListener("load", function () {
     let programList = document.getElementById("programList");
-    let newData = menuDate
+    let programMenu = programming
         .map(e => {
             return `<li class="thirdMenuLiTag"> <a class="navSubMenuATag" href="#"><em class="navSubMenuEmTag"></em> <span class="navSubMenuSpanTag">${e.name}</span></a></li>`;
         })
         .join("");
-    programList.innerHTML = newData;
+    programList.innerHTML = programMenu;
+    let studyOtherList = document.querySelector(".setMenuOther");
+    let studyOtherMenu = studyOther
+        .map(e => {
+            return `<li class="thirdMenuLiTag"> <a class="navSubMenuATag" href="#"><em class="navSubMenuEmTag"></em> <span class="navSubMenuSpanTag">${e.name}</span></a></li>`;
+        })
+        .join("");
+    studyOtherList.innerHTML = studyOtherMenu;
+
+    let workMenuList = document.getElementById("workingMenu");
+    let workMenu = working
+        .map(e => {
+            return `<li class="secondSubMenuLiTag"><input type="checkbox" name="" id="" /><label class="navSecondLabel" for=""><a class="navSubMenuATag" href="#"> <em class="navSubMenuEmTag"></em>
+              <span class="navSubMenuSpanTag">${e.name}</span></a></label></li>`;
+        })
+        .join("");
+    workMenuList.innerHTML = workMenu;
+    let sourceList = document.getElementById("sourceMaterial");
+    let sourceMenu = sourceMaterial
+        .map(e => {
+            return `<li class="secondSubMenuLiTag"><input type="checkbox" name="" id="" /><label class="navSecondLabel" for=""><a class="navSubMenuATag" href="#"> <em class="navSubMenuEmTag"></em>
+              <span class="navSubMenuSpanTag">${e.name}</span></a></label></li>`;
+        })
+        .join("");
+    sourceList.innerHTML = sourceMenu;
+
+    let adobeLists = document.getElementById("adobeList");
+    let adobeMenu = adobeList
+        .map(e => {
+            return `<li class="thirdMenuLiTag"> <a class="navSubMenuATag" href="#"><em class="navSubMenuEmTag"></em> <span class="navSubMenuSpanTag">${e.name}</span></a></li>`;
+        })
+        .join("");
+    adobeLists.innerHTML = adobeMenu;
+
+    let systemLists = document.getElementById("systemList");
+    let systemMenu = systemList
+        .map(e => {
+            return `<li class="thirdMenuLiTag"> <a class="navSubMenuATag" href="#"><em class="navSubMenuEmTag"></em> <span class="navSubMenuSpanTag">${e.name}</span></a></li>`;
+        })
+        .join("");
+    systemLists.innerHTML = systemMenu;
+
+    let softwareLists = document.getElementById("softwareList");
+    let softwareMenu = softwareList
+        .map(e => {
+            return `<li class="thirdMenuLiTag"> <a class="navSubMenuATag" href="#"><em class="navSubMenuEmTag"></em> <span class="navSubMenuSpanTag">${e.name}</span></a></li>`;
+        })
+        .join("");
+    softwareLists.innerHTML = softwareMenu;
+
+    let subTitleLists = document.getElementById("subTitle");
+    let subTitleMenu = subTitleList
+        .map(e => {
+            return `<li class="thirdMenuLiTag"> <a class="navSubMenuATag" href="#"><em class="navSubMenuEmTag"></em> <span class="navSubMenuSpanTag">${e.name}</span></a></li>`;
+        })
+        .join("");
+    subTitleLists.innerHTML = subTitleMenu;
+
+    let lifeLists = document.getElementById("documentLife");
+    let lifeMenu = lifeList
+        .map(e => {
+            return `<li class="thirdMenuLiTag"> <a class="navSubMenuATag" href="#"><em class="navSubMenuEmTag"></em> <span class="navSubMenuSpanTag">${e.name}</span></a></li>`;
+        })
+        .join("");
+    lifeLists.innerHTML = lifeMenu;
+
     let thirdMenuLiTag = document.querySelectorAll(".thirdMenuLiTag");
     for (let t = 0; t < thirdMenuLiTag.length; t++) {
         thirdMenuLiTag[t].addEventListener("click", e => {
