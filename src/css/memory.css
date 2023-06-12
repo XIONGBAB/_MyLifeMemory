@@ -21,6 +21,7 @@ body .container .navLeft {
   height: 100%;
 }
 body .container .navLeft .navContainer {
+  z-index: 10;
   position: fixed;
   left: 0;
   top: 0;
@@ -319,12 +320,15 @@ body .container .mainRight .rightBackground .goButton:hover {
 }
 body .container .mainRight .rightContent {
   padding: 0 0.5333rem;
-  transition: all 2s;
+  font-size: 0.4267rem;
 }
 body .container .mainRight .rightContent .topTitle {
   position: absolute;
   top: 0;
   left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 1.3333rem;
   background-color: #fff;
@@ -356,18 +360,78 @@ body .container .mainRight .rightContent .topTitle .titleBox span:nth-child(1) {
   font-size: 0.48rem;
 }
 body .container .mainRight .rightContent .topTitle .titleBox span:nth-child(3) {
-  color: #03aec5;
+  color: #029eb3;
   font-size: 0.4267rem;
 }
 body .container .mainRight .rightContent .topTitle .titleBox span:last-child {
-  color: #4400fd;
+  color: #8300fd;
   font-size: 0.3733rem;
+}
+body .container .mainRight .rightContent .topTitle .modifyTime {
+  font-size: 0.3733rem;
+  margin-right: 1.3333rem;
+  color: #979797;
+  letter-spacing: 0.0267rem;
 }
 body .container .mainRight .rightContent .rContainer {
   height: 100vh;
-  margin-top: 2.1333rem;
+  margin-top: 2rem;
+  padding: 0.8rem 0.8rem 0;
   background-color: #fff;
   box-shadow: 0 0 0.1067rem rgb(202, 202, 202);
+}
+body .container .mainRight .rightContent .rContainer .contentBox .topBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #008080;
+  padding: 0 0 0.5333rem;
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+body .container .mainRight .rightContent .rContainer .contentBox .topBox h1 {
+  margin: 0;
+  font-size: 0.8rem;
+}
+body .container .mainRight .rightContent .rContainer .contentBox .centerBox {
+  margin-top: 1.3333rem;
+}
+body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipBtn {
+  display: inline-block;
+  margin-right: 0.5333rem;
+  width: 2.1333rem;
+  height: 0.8rem;
+  text-align: center;
+  line-height: 0.8rem;
+  color: #fff;
+  background-color: #ef335c;
+}
+body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipContent {
+  display: flex;
+  height: 1.8667rem;
+  margin-bottom: 1.6rem;
+}
+body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipContent .tipBtn {
+  background-color: #ef335c;
+}
+body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipContent .tipText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipContent .tipText i {
+  font-weight: 700;
+}
+body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipContent .tipText i:nth-child(2) {
+  color: #fd3a44;
+}
+body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipContent .tipText i:nth-child(3) {
+  color: #6a9955;
+}
+body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipContent .tipText i:nth-child(4) {
+  color: #b3843d;
+}
+body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tagContent .tipBtn {
+  background-color: #00aeff;
 }
 
 /*# sourceMappingURL=memory.css.map */
