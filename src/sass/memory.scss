@@ -395,7 +395,70 @@ body {
                     }
                 }
                 .rContainer {
-                    height: 100vh;
+                    // common css start
+                    a {
+                        color: blue;
+                    }
+                    .redTag {
+                        color: #fd3a44;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    .blackTag {
+                        color: black;
+                    }
+                    .greenTag {
+                        color: #6a9955;
+                    }
+                    .brownTag {
+                        color: #b3843d;
+                    }
+                    .noList {
+                        li {
+                            list-style: none;
+                            margin: 0.2667rem;
+                        }
+                    }
+                    ul {
+                        margin: 0.5333rem 0 1.0667rem;
+                        li {
+                            list-style: decimal;
+                            margin: 0.2667rem 0.8rem;
+                            ol {
+                                li {
+                                    list-style: square;
+                                }
+                            }
+                        }
+                    }
+                    table {
+                        border-collapse: collapse;
+                        border: 1px solid rgb(190, 190, 190);
+                        color: #575757;
+                        caption {
+                            font-weight: 700;
+                            font-size: 0.48rem;
+                            padding: 0.1333rem 0;
+                            border: 1px solid rgb(190, 190, 190);
+                        }
+                        tr {
+                            th {
+                                text-align: center;
+                                border: 1px solid rgb(190, 190, 190);
+                                padding: 0.1333rem;
+                            }
+                            td {
+                                padding: 0.2133rem 1.3333rem 0.1333rem 0.1333rem;
+                                font-weight: 400;
+                                font-size: 0.3733rem;
+                                text-align: left;
+                                border: 1px solid rgb(190, 190, 190);
+                                border-collapse: collapse;
+                            }
+                        }
+                    }
+                    // common css end
+                    height: 10000px;
                     margin-top: 2rem;
                     padding: 0.8rem 0.8rem 0;
                     background-color: #fff;
@@ -453,6 +516,7 @@ body {
                             .tagContent {
                                 .tipBtn {
                                     background-color: #00aeff;
+                                    margin-bottom: 0.8rem;
                                 }
                             }
                         }

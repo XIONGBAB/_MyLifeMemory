@@ -374,11 +374,66 @@ body .container .mainRight .rightContent .topTitle .modifyTime {
   letter-spacing: 0.0267rem;
 }
 body .container .mainRight .rightContent .rContainer {
-  height: 100vh;
+  height: 10000px;
   margin-top: 2rem;
   padding: 0.8rem 0.8rem 0;
   background-color: #fff;
   box-shadow: 0 0 0.1067rem rgb(202, 202, 202);
+}
+body .container .mainRight .rightContent .rContainer a {
+  color: blue;
+}
+body .container .mainRight .rightContent .rContainer .redTag {
+  color: #fd3a44;
+  padding: 0;
+  margin: 0;
+}
+body .container .mainRight .rightContent .rContainer .blackTag {
+  color: black;
+}
+body .container .mainRight .rightContent .rContainer .greenTag {
+  color: #6a9955;
+}
+body .container .mainRight .rightContent .rContainer .brownTag {
+  color: #b3843d;
+}
+body .container .mainRight .rightContent .rContainer .noList li {
+  list-style: none;
+  margin: 0.2667rem;
+}
+body .container .mainRight .rightContent .rContainer ul {
+  margin: 0.5333rem 0 1.0667rem;
+}
+body .container .mainRight .rightContent .rContainer ul li {
+  list-style: decimal;
+  margin: 0.2667rem 0.8rem;
+}
+body .container .mainRight .rightContent .rContainer ul li ol li {
+  list-style: square;
+}
+body .container .mainRight .rightContent .rContainer table {
+  border-collapse: collapse;
+  border: 1px solid rgb(190, 190, 190);
+  color: #575757;
+}
+body .container .mainRight .rightContent .rContainer table caption {
+  font-weight: 700;
+  font-size: 0.48rem;
+  padding: 0.1333rem 0;
+  border: 1px solid rgb(190, 190, 190);
+}
+body .container .mainRight .rightContent .rContainer table tr th {
+  text-align: center;
+  border: 1px solid rgb(190, 190, 190);
+  padding: 0.1333rem;
+}
+body .container .mainRight .rightContent .rContainer table tr td {
+  padding: 0.2133rem 1.3333rem 0.1333rem 0.1333rem;
+  font-weight: 400;
+  font-size: 0.3733rem;
+  text-align: left;
+  border: 1px solid rgb(190, 190, 190);
+  border-collapse: collapse;
 }
 body .container .mainRight .rightContent .rContainer .contentBox .topBox {
   display: flex;
@@ -432,6 +487,7 @@ body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tip
 }
 body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tagContent .tipBtn {
   background-color: #00aeff;
+  margin-bottom: 0.8rem;
 }
 
 /*# sourceMappingURL=memory.css.map */
