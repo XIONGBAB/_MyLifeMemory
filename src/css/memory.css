@@ -469,10 +469,8 @@ body .container .mainRight .rightContent .rContainer .preBox .preButton {
   margin: 0;
   cursor: pointer;
 }
-body .container .mainRight .rightContent .rContainer .preBox .preButton:before {
+body .container .mainRight .rightContent .rContainer .preBox .preButton:before, body .container .mainRight .rightContent .rContainer .preBox .preButton::after {
   position: absolute;
-  top: -0.0267rem;
-  left: -0.96rem;
   content: "";
   display: block;
   width: 0.4rem;
@@ -480,21 +478,16 @@ body .container .mainRight .rightContent .rContainer .preBox .preButton:before {
   border: 1px solid #fff;
   border-radius: 0.0533rem;
 }
+body .container .mainRight .rightContent .rContainer .preBox .preButton:before {
+  top: -0.0267rem;
+  left: -0.96rem;
+}
 body .container .mainRight .rightContent .rContainer .preBox .preButton::after {
-  position: absolute;
   top: 0.1067rem;
   left: -0.8rem;
-  content: "";
-  display: block;
-  width: 0.4rem;
-  height: 0.4rem;
-  border: 1px solid #fff;
-  border-radius: 0.0533rem;
   clip-path: polygon(0.2667rem 0, 0.4267rem 0, 0.4267rem 0.4267rem, -0.1067rem 0.4rem);
 }
 body .container .mainRight .rightContent .rContainer .preBox pre {
-  margin: 0;
-  padding: 0.8rem 0.2667rem 0.5333rem 0.8rem;
   background-color: #181a22;
   border-radius: 0.4rem 0.4rem 0 0;
 }
