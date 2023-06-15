@@ -10,6 +10,7 @@
         <meta http-equiv="Window-target" content="_top" />
         <meta name="viewport" content="widtd=device-widtd,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0 user-scalable=no" />
         <link id="icon-link" rel="Shortcut Icon" href="" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" />
         <title><%=htmlWebpackPlugin.options.title%></title>
     </head>
     <body>
@@ -408,6 +409,37 @@
                                     </ul>
                                     <span class="tipBtn" style="background-color: #238d9f">标签语法</span>
                                     <h3>六、html的文档结构</h3>
+                                    <ul class="noList">
+                                        <li class="codeListContainer">
+                                            <div class="preBox">
+                                                <span class="preSpan">Html</span>
+                                                <button class="preButton">Copy&nbsp;code</button>
+                                                <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;   &lt;!-- 声明文档类型,告诉浏览器我的当前页面是那个版本的html H5 --&gt;
+&lt;html lang="en"&gt;  &lt;!-- 告诉浏览器后面的代码是html代码 --&gt;
+&lt;html lang="zh"&gt;  &lt;!-- 告诉浏览器这是中文网站 这样就不会弹出需要翻译的窗口--&gt;
+&lt;head&gt;            &lt;!-- 告诉浏览器，这是网页的头部，包括了定义网页的一些内容的标签，如：标题、字符集等 --&gt; 
+    &lt;!-- &lt;meta&gt; 标签就是定义网页字符集、描述、关键词等内容的。 --&gt;
+    &lt;meta charset="UTF-8"&gt;  &lt;!-- 字符集-功能：告诉浏览器，如何翻译汉字。 utf-8 gb2312等--&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;  &lt;!-- 告诉浏览器如果是IE浏览器，用最高版本执行 --&gt;
+    &lt;meta name="author" content=""&gt; &lt;!-- 作者 --&gt;
+    &lt;meta name="description" content=""&gt; &lt;!-- 简介，网页定义描述内容 --&gt;
+    &lt;meta name="keywords" content=""&gt; &lt;!-- 关键字 --&gt;
+    &lt;meta http-equiv="pragma" content="no-cache"&gt; &lt;!-- // 禁止浏览器从本地机的缓存中调阅页面内容 --&gt;
+    &lt;meta http-equiv="window-target" content="_top"&gt; &lt;!-- // 用来防止别人在框架里调用你的页面 --&gt;
+    &lt;meta http-equiv="Refresh" content="5;URL=http://www.baidu.com"&gt;&lt;!-- // 自动跳转 5指5秒 url不写就是刷新--&gt;
+    &lt;!-- 网页搜索机器人向导。用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。 CONTENT的参数有all,none,index,noindex,follow,nofollow。默认是all。 --&gt;
+    &lt;meta name="robots" content="none"&gt;
+    &lt;meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"&gt;
+    &lt;link rel="Shortcut Icon" href=""&gt; &lt;!-- 收藏夹图标 --&gt;
+    &lt;title&gt;&lt;/title&gt; &lt;!-- 网页标题，参考SEO优化 --&gt;
+&lt;/head&gt;
+&lt;body bgcolor="#fff"&gt;&lt;/body&gt;  &lt;!-- 网页的主体部分,网页中主要内容都要写到body里。 --&gt;
+&lt;/html&gt;</code>
+</pre>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="footerBox"></div>
@@ -417,4 +449,10 @@
             </div>
         </div>
     </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            Prism.highlightAll();
+        });
+    </script>
 </html>
