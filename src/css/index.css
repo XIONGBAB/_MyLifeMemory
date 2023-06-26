@@ -1,122 +1,81 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&family=Roboto:wght@100;300;400;700&display=swap");
-html {
-  font-family: "Nunito", sans-serif;
-  font-family: "Roboto", sans-serif;
-}
-
-@media screen and (max-width: 1200px) {
-  html body .mainContainer {
-    width: 100%;
-    transition: all 0.6s;
-  }
-}
 @media screen and (min-width: 750px) {
   html {
     font-size: 37.5px !important;
   }
 }
-@media screen and (min-width: 1201px) {
-  html body .mainContainer {
-    width: 80%;
-    max-width: 80%;
-    transition: all 0.6s;
-  }
-}
 body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   background: url(../images/bg.png) no-repeat;
+  background-position: center;
   background-size: auto cover;
-  background-position: center center;
-  background-attachment: fixed;
+  backdrop-filter: blur(3px);
+  color: var(--cl-text-color);
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.315);
 }
 
-.mainContainer {
-  position: relative;
-  margin: 0 auto;
-  width: 32rem;
-  height: 100%;
-  max-width: 32rem;
-}
-.mainContainer .headerBox {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem;
-}
-.mainContainer .headerBox .navBanner {
-  display: flex;
-}
-.mainContainer .headerBox .navBanner span {
-  margin-right: 2.6667rem;
-  display: block;
-  width: 4.2667rem;
-  height: 2rem;
-}
-.mainContainer .headerBox .navBanner span a {
-  display: block;
+.main {
   width: 100%;
   height: 100%;
-  background: url(../images/logoWhite.png) no-repeat;
-  background-size: 100%;
-  transition: all 0.3s;
 }
-.mainContainer .headerBox .navBanner span a:hover {
-  background: url(../images/logo72.png) no-repeat;
-  background-size: 100%;
-}
-.mainContainer .headerBox .navBanner ul {
-  display: flex;
-  align-items: center;
-}
-.mainContainer .headerBox .navBanner ul li {
-  position: relative;
-  padding: 0 0.8rem;
-}
-.mainContainer .headerBox .navBanner ul li a {
-  position: relative;
-  font-size: 0.64rem;
-  color: var(--cl-fontColor);
-}
-.mainContainer .headerBox .navBanner ul li .navBorder::after {
-  content: "";
+.main .focus {
   position: absolute;
-  width: 0;
-  height: 0.0533rem;
-  bottom: -0.4rem;
-  background-color: var(--cl-fontColor);
-  transition: all 0.3s;
-  left: 50%;
-}
-.mainContainer .headerBox .navBanner ul li .navBorder:hover:after {
+  top: 0;
   left: 0;
   width: 100%;
-  transition: all 0.3s;
+  height: 100%;
+  background: url(../images/bg.png) no-repeat;
+  background-position: center;
+  background-size: auto cover;
+  clip-path: inset(1.3333rem 10% round 0.8rem);
 }
-.mainContainer .headerBox .navBanner ul .navCircle::before {
-  content: "";
+.main .container {
+  overflow: hidden;
   position: absolute;
-  left: 50%;
-  bottom: -0.4rem;
-  transform: translateX(-0.0667rem);
-  width: 0.1333rem;
-  height: 0.1333rem;
-  border-radius: 50%;
-  border: 1px solid rgb(255, 255, 255);
-  transition: all 0.3s;
-  opacity: 0.4;
+  inset: 1.6rem 12% 1.3333rem 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.mainContainer .headerBox .navBanner ul .navCircle:hover:before {
-  width: 0;
-  height: 0;
-  border: 0;
-  transition: all 0.3s;
-  opacity: 0.4;
+.main .container .nav_banner {
+  display: flex;
+  align-items: center;
+  height: 1.6rem;
 }
-.mainContainer .headerBox .navBannerRight {
+.main .container .nav_banner a {
+  color: var(--cl-text-color);
+}
+.main .container .nav_banner .nav_logo {
+  flex: 0 0 4.2667rem;
+  font-size: var(--cl-font-24);
+  margin-left: 0.5333rem;
+}
+.main .container .nav_banner .nav_list {
+  flex: 0 0 11.5733rem;
+  display: flex;
+  justify-content: center;
+  font-size: var(--cl-font-18);
+}
+.main .container .nav_banner .nav_list li {
+  margin: 0 0.8rem;
+  text-transform: capitalize;
+}
+.main .container .nav_banner .navBannerRight {
+  margin-left: auto;
   display: flex;
 }
-.mainContainer .headerBox .navBannerRight .searchBox,
-.mainContainer .headerBox .navBannerRight .searchBoxOpen {
+.main .container .nav_banner .navBannerRight .searchBox,
+.main .container .nav_banner .navBannerRight .searchBoxOpen {
   display: flex;
   align-items: center;
   height: 1.0667rem;
@@ -124,58 +83,58 @@ body {
   border: 1px solid white;
   transition: all 0.3s;
 }
-.mainContainer .headerBox .navBannerRight .searchBox .searchIcon,
-.mainContainer .headerBox .navBannerRight .searchBoxOpen .searchIcon {
+.main .container .nav_banner .navBannerRight .searchBox .searchIcon,
+.main .container .nav_banner .navBannerRight .searchBoxOpen .searchIcon {
   display: block;
   width: 0.7467rem;
   height: 0.7467rem;
   background: url(../images/search.png) no-repeat;
   background-size: 100%;
 }
-.mainContainer .headerBox .navBannerRight .searchBox .searchContent,
-.mainContainer .headerBox .navBannerRight .searchBoxOpen .searchContent {
+.main .container .nav_banner .navBannerRight .searchBox .searchContent,
+.main .container .nav_banner .navBannerRight .searchBoxOpen .searchContent {
   font-size: 0.4267rem;
   transition: all 0.3s;
   color: #ccc;
 }
-.mainContainer .headerBox .navBannerRight .searchBox .searchContent::placeholder,
-.mainContainer .headerBox .navBannerRight .searchBoxOpen .searchContent::placeholder {
+.main .container .nav_banner .navBannerRight .searchBox .searchContent::placeholder,
+.main .container .nav_banner .navBannerRight .searchBoxOpen .searchContent::placeholder {
   color: #ccc;
 }
-.mainContainer .headerBox .navBannerRight .searchBox {
+.main .container .nav_banner .navBannerRight .searchBox {
   justify-content: center;
   width: 1.0667rem;
   border-radius: 0.9333rem;
 }
-.mainContainer .headerBox .navBannerRight .searchBox:hover {
+.main .container .nav_banner .navBannerRight .searchBox:hover {
   padding: 0 0.2667rem;
   width: 5.3333rem;
   justify-content: flex-start;
 }
-.mainContainer .headerBox .navBannerRight .searchBox:hover > .searchContent {
+.main .container .nav_banner .navBannerRight .searchBox:hover > .searchContent {
   width: 80%;
   height: 1.0667rem;
   transition: all 0.5s;
   margin-left: 0.2667rem;
   color: white;
 }
-.mainContainer .headerBox .navBannerRight .searchBox .searchContent {
+.main .container .nav_banner .navBannerRight .searchBox .searchContent {
   width: 0;
 }
-.mainContainer .headerBox .navBannerRight .searchBoxOpen {
+.main .container .nav_banner .navBannerRight .searchBoxOpen {
   justify-content: flex-start;
   padding: 0 0.2667rem;
   width: 5.3333rem;
   border-radius: 0.9333rem;
 }
-.mainContainer .headerBox .navBannerRight .searchBoxOpen .searchContent {
+.main .container .nav_banner .navBannerRight .searchBoxOpen .searchContent {
   width: 80%;
   padding: 0.08rem 0.2667rem 0;
 }
-.mainContainer .headerBox .menuBtn,
-.mainContainer .headerBox .menuBtnOpen {
+.main .container .nav_banner .menuBtn,
+.main .container .nav_banner .menuBtnOpen {
   display: flex;
-  margin: 0 1.3333rem 0 0.8rem;
+  margin: 0 0.5333rem 0 0.8rem;
   padding: 0.1333rem;
   flex-direction: column;
   justify-content: space-around;
@@ -184,212 +143,138 @@ body {
   height: 1.0667rem;
   cursor: pointer;
 }
-.mainContainer .headerBox .menuBtn em,
-.mainContainer .headerBox .menuBtnOpen em {
+.main .container .nav_banner .menuBtn em,
+.main .container .nav_banner .menuBtnOpen em {
   display: block;
   width: 100%;
   height: 0.1067rem;
   background-color: #ffffff;
   transition: all 0.3s;
 }
-.mainContainer .headerBox .menuBtn em:nth-child(2),
-.mainContainer .headerBox .menuBtnOpen em:nth-child(2) {
+.main .container .nav_banner .menuBtn em:nth-child(2),
+.main .container .nav_banner .menuBtnOpen em:nth-child(2) {
   width: 100%;
 }
-.mainContainer .headerBox .menuBtn em:nth-child(3),
-.mainContainer .headerBox .menuBtnOpen em:nth-child(3) {
+.main .container .nav_banner .menuBtn em:nth-child(3),
+.main .container .nav_banner .menuBtnOpen em:nth-child(3) {
   width: 100%;
 }
-.mainContainer .headerBox .menuBtnOpen {
+.main .container .nav_banner .menuBtnOpen {
   align-items: flex-end;
 }
-.mainContainer .headerBox .menuBtnOpen em:nth-child(2) {
+.main .container .nav_banner .menuBtnOpen em:nth-child(2) {
   width: 80%;
 }
-.mainContainer .headerBox .menuBtnOpen em:nth-child(3) {
+.main .container .nav_banner .menuBtnOpen em:nth-child(3) {
   width: 40%;
 }
-
-.contentBox {
-  margin: 3.2rem 0 2.9333rem 0.8rem;
-}
-.contentBox ul li {
-  font-size: 1.0667rem;
-  color: var(--cl-fontColor);
+.main .container .memory_info {
+  display: flex;
   font-weight: 700;
   text-transform: capitalize;
-  letter-spacing: 0.0533rem;
-  margin: 0.4rem 0;
+  margin: 0.8rem 0 0 0.8rem;
 }
-.contentBox ul li:last-child {
-  margin-top: 2.1333rem;
-  width: 4.8rem;
+.main .container .memory_info .font {
+  flex: 1;
+}
+.main .container .memory_info .font p {
+  font-size: 0.96rem;
+}
+.main .container .memory_info .font p:nth-child(2) {
+  margin: 0.4rem 0 0.16rem 0;
+}
+.main .container .memory_info .font p:nth-child(3) {
+  font-size: var(--cl-font-14);
+  font-weight: normal;
+  text-transform: lowercase;
+  margin-bottom: 0.8rem;
+}
+.main .container .memory_info .font button {
+  width: 3.2rem;
   height: 1.3333rem;
-  line-height: 1.3333rem;
-  border-radius: 1.5em;
-  text-align: center;
-  font-weight: 400;
-  font-size: 0.5867rem;
-  cursor: pointer;
-  background-color: rgba(43, 23, 23, 0.45);
-  box-shadow: 0 0 0.1067rem #ccc;
+  border: none;
+  border-radius: 0.8rem;
+  color: #ccc;
+  background-color: rgba(48, 47, 47, 0.685);
+  font-size: var(--cl-font-24);
 }
-.contentBox ul li:last-child:hover {
-  background-color: rgba(255, 255, 255, 0.603);
-  color: rgb(70, 70, 70);
-  text-shadow: 1px 1px 2px #ffffff;
-}
-
-.timerBox {
-  transition: all 5s;
-  opacity: 0;
-  display: none;
-}
-.timerBox ul {
+.main .container .memory_info .card_box {
+  flex: 1;
   display: flex;
+  justify-content: end;
+  margin-right: 0.5333rem;
 }
-.timerBox ul li {
-  position: relative;
-  margin: 0 0.8rem;
-  width: 2.6667rem;
-  height: 2.6667rem;
-  border-radius: 50%;
-  backdrop-filter: blur(1px);
-  font-size: 0.7467rem;
-  font-weight: 700;
-  color: var(--cl-fontColor);
-  text-align: center;
-  line-height: 2.6667rem;
-  box-shadow: 0 0 20px rgba(204, 204, 204, 0.699);
-}
-.timerBox ul li span {
-  transition: all 2s;
-}
-.timerBox ul li .timeBox {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2.6667rem;
-  height: 2.6667rem;
-  border-radius: 50%;
-  transform: rotate(0deg);
-}
-.timerBox ul li .timeBox div {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  display: block;
-  width: 0.0533rem;
-  height: 50%;
-  background-color: var(--i);
-  filter: blur(0.0213rem);
-}
-.timerBox ul li .timeBox div em {
-  position: absolute;
-  transform: translate(-0.1333rem, -0.1333rem);
-  width: 0.2667rem;
-  height: 0.2667rem;
-  border-radius: 50%;
-  background-color: var(--i);
-}
-.timerBox .textBox {
-  display: flex;
-  justify-content: space-around;
-  width: 12.8rem;
-  font-size: 0.4267rem;
-  color: var(--cl-fontColor);
-  margin-top: 0.5333rem;
-}
-
-.InformationCard {
+.main .container .memory_info .card_box .card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  position: absolute;
-  top: 35%;
-  right: 8%;
-  padding: 0.2667rem;
-  width: 6.9333rem;
+  width: 6.4rem;
   height: 10.6667rem;
-  backdrop-filter: blur(0.1333rem);
-  box-shadow: 0 0 0.2667rem rgba(15, 15, 15, 0.1);
-  color: var(--cl-fontColor);
+  backdrop-filter: blur(0.1067rem);
+  box-shadow: 0.0267rem 0.0267rem 0.16rem rgba(22, 22, 22, 0.411);
 }
-.InformationCard .avatar {
+.main .container .memory_info .card_box .card .headPortrait {
+  padding-bottom: 0.5333rem;
+}
+.main .container .memory_info .card_box .card .headPortrait .avatar {
   position: relative;
-  margin: 0.5333rem 0;
-  width: 2.6667rem;
-  height: 2.6667rem;
+  width: 2.1333rem;
+  height: 2.1333rem;
   border-radius: 50%;
-  background: url(../images/avatar.png) no-repeat;
-  background-size: 100%;
-  box-shadow: 0 0 0.32rem rgba(112, 214, 255, 0.836);
+  margin: 0.5333rem 0 0.4rem;
+  padding: 0.1333rem;
+  background: url(../images/avatar.png) center no-repeat;
+  background-size: cover;
 }
-.InformationCard .avatar::after {
+.main .container .memory_info .card_box .card .headPortrait .avatar::after {
   position: absolute;
   top: 0;
   left: 0;
   transform: translate(-0.1333rem, -0.1333rem);
   content: "";
   display: block;
-  width: 2.9333rem;
-  height: 2.9333rem;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 50%;
-  border: 1px solid skyblue;
+  border: 0.0267rem solid skyblue;
 }
-.InformationCard span {
-  font-size: 0.3733rem;
-  font-weight: 300;
+.main .container .memory_info .card_box .card .headPortrait span {
+  padding-left: 0.2667rem;
 }
-.InformationCard em {
-  margin-top: 0.5333rem;
-  display: block;
+.main .container .memory_info .card_box .card .information {
+  padding: 0.5333rem;
+  flex: 1;
   width: 100%;
-  height: 0.04rem;
-  background-color: rgba(233, 233, 233, 0.24);
+  border-top: 0.0267rem solid rgba(128, 128, 128, 0.466);
 }
-.InformationCard table {
-  width: 100%;
-  margin: 0.5333rem 0 0.4rem 0;
-}
-.InformationCard table tr {
-  width: 100%;
-  height: 0.8rem;
-}
-.InformationCard table tr td:first-child {
-  padding-left: 0.5333rem;
-  width: 40%;
-}
-.InformationCard table tr td:nth-child(2) {
-  padding-left: 0.5333rem;
-}
-.InformationCard .infoLogo {
+.main .container .memory_info .card_box .card .contact {
   display: flex;
-  justify-content: space-around;
-  width: 90%;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 1.0667rem;
 }
-.InformationCard .infoLogo a {
+.main .container .memory_info .card_box .card .contact a {
   display: block;
   width: 0.8rem;
   height: 0.8rem;
-  border: 1px solid rgba(204, 204, 204, 0.301);
   border-radius: 50%;
 }
-.InformationCard .infoLogo a:nth-child(1) {
+.main .container .memory_info .card_box .card .contact a:nth-child(1) {
   background: url("../images/weChat.png") no-repeat;
-  background-size: 100%;
+  background-size: 95%;
 }
-.InformationCard .infoLogo a:nth-child(2) {
+.main .container .memory_info .card_box .card .contact a:nth-child(2) {
   background: url("../images/qq.png") no-repeat;
-  background-size: 100%;
+  background-size: 95%;
 }
-.InformationCard .infoLogo a:nth-child(3) {
+.main .container .memory_info .card_box .card .contact a:nth-child(3) {
   background: url("../images/weBo.png") no-repeat;
-  background-size: 100%;
+  background-size: 95%;
 }
-.InformationCard .infoLogo a:nth-child(4) {
+.main .container .memory_info .card_box .card .contact a:nth-child(4) {
   background: url("../images/github.png") no-repeat;
-  background-size: 100%;
+  background-size: 95%;
 }
 
 /*# sourceMappingURL=index.css.map */

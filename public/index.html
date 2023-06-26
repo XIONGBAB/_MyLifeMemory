@@ -13,9 +13,58 @@
         <link id="icon-link" rel="Shortcut Icon" href="" />
         <title><%=htmlWebpackPlugin.options.title%></title>
     </head>
-
     <body>
-        <div class="mainContainer">
+        <div class="main">
+            <div class="focus"></div>
+            <div class="container">
+                <div class="nav_banner">
+                    <a href="javascript:;" class="nav_logo">XIONGBAB</a>
+                    <ul class="nav_list">
+                        <li><a href="javascritp:;" name="#home">home</a></li>
+                        <li><a href="javascritp:;" name="#link">link</a></li>
+                        <li><a href="javascritp:;" name="#memory">memory</a></li>
+                        <li><a href="javascritp:;" name="#About">about</a></li>
+                    </ul>
+                    <div class="navBannerRight">
+                        <div id="searchContainer" class="searchBoxOpen">
+                            <a href="javascript:void(0)" class="searchIcon"></a>
+                            <input class="searchContent" type="text" placeholder="Search..." />
+                        </div>
+                        <div id="menuBtnContainer" class="menuBtnOpen">
+                            <em></em>
+                            <em></em>
+                            <em></em>
+                        </div>
+                    </div>
+                </div>
+                <div class="memory_info">
+                    <div class="font">
+                        <p>my life memory</p>
+                        <p>to record in detail.</p>
+                        <p>Record the memory in my mind. Even if I forget it one day.</p>
+                        <button>More</button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card">
+                            <div class="headPortrait">
+                                <div class="avatar"></div>
+                                <span>喜欢一个人！</span>
+                            </div>
+                            <div class="information">当宽度不够了，旋转</div>
+                            <div class="contact">
+                                <a href="javascript:;"></a>
+                                <a href="javascript:;"></a>
+                                <a href="javascript:;"></a>
+                                <a href="javascript:;"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_time"></div>
+            </div>
+        </div>
+
+        <!-- <div class="mainContainer">
             <div class="headerBox">
                 <div class="navBanner">
                     <span><a href="javascript:void(0)"></a></span>
@@ -97,12 +146,9 @@
                     </tbody>
                 </table>
                 <div class="infoLogo">
-                    <a href="javascript:;"></a>
-                    <a href="javascript:;"></a>
-                    <a href="javascript:;"></a>
-                    <a href="javascript:;"></a>
+
                 </div>
             </div>
-        </div>
+        </div> -->
     </body>
 </html>

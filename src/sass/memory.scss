@@ -12,7 +12,7 @@ body {
     .container {
         display: flex;
         width: 100%;
-        width: 100%;
+        padding: 0 0 0.8rem 0;
         .navLeft {
             position: relative;
             flex: 0 0 6.1333rem;
@@ -386,6 +386,9 @@ body {
                             color: #8300fd;
                             font-size: 0.3733rem;
                         }
+                        span:nth-child(even) {
+                            color: rgb(179, 177, 177);
+                        }
                     }
                     .modifyTime {
                         font-size: 0.3733rem;
@@ -394,10 +397,44 @@ body {
                         letter-spacing: 0.0267rem;
                     }
                 }
+                .topBox {
+                    width: 100%;
+                    margin-top: 1.6rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #008080;
+                    padding: 0.5333rem 0;
+                    background-color: #fff;
+                    box-shadow: 0 0 0.1067rem rgb(202, 202, 202);
+                    h1 {
+                        margin: 0;
+                        font-size: 0.8rem;
+                    }
+                }
                 .rContainer {
+                    width: 100%;
+                    overflow: hidden;
                     // common css start
                     a {
                         color: blue;
+                        button {
+                            border: 0;
+                            background-color: #0f95d3;
+                            color: #fff;
+                            width: 1.3333rem;
+                            font-size: 0.3733rem;
+                            height: 0.5333rem;
+                            border-radius: 0.1333rem;
+                            cursor: pointer;
+                        }
+                    }
+                    h3 {
+                        span {
+                            padding-left: 0.2667rem;
+                            color: #878787;
+                            font-size: 0.4267rem;
+                        }
                     }
                     .redTag {
                         color: #fd3a44;
@@ -431,6 +468,10 @@ body {
                                     list-style: square;
                                 }
                             }
+                            ul {
+                                padding: 0;
+                                margin: 0;
+                            }
                         }
                     }
                     table {
@@ -444,6 +485,9 @@ body {
                             border: 1px solid rgb(190, 190, 190);
                         }
                         tr {
+                            &:nth-child(even) {
+                                background-color: rgba(153, 225, 208, 0.2);
+                            }
                             th {
                                 text-align: center;
                                 border: 1px solid rgb(190, 190, 190);
@@ -477,10 +521,10 @@ body {
                         .preButton {
                             position: absolute;
                             top: 0.2667rem;
-                            color: #ffe200;
                         }
                         .preSpan {
                             left: 0.5333rem;
+                            color: #ffe200;
                         }
                         .preButton {
                             right: 0.5333rem;
@@ -488,6 +532,7 @@ body {
                             border: none;
                             padding: 0;
                             margin: 0;
+                            color: #fff;
                             cursor: pointer;
                             &:before,
                             &::after {
@@ -510,7 +555,8 @@ body {
                             }
                         }
                         pre {
-                            // padding: 0.8rem;
+                            padding-top: 1.3333rem;
+                            padding-bottom: 0.6667rem;
                             background-color: #181a22;
                             border-radius: 0.4rem 0.4rem 0 0;
                             &::-webkit-scrollbar {
@@ -523,24 +569,10 @@ body {
                         }
                     }
                     // common css end
-                    height: 10000px;
-                    margin-top: 2rem;
-                    padding: 0.8rem 0.8rem 0;
+                    padding: 0 0.8rem 0;
                     background-color: #fff;
                     box-shadow: 0 0 0.1067rem rgb(202, 202, 202);
                     .contentBox {
-                        .topBox {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            color: #008080;
-                            padding: 0 0 0.5333rem;
-                            border-bottom: 1px solid rgb(230, 230, 230);
-                            h1 {
-                                margin: 0;
-                                font-size: 0.8rem;
-                            }
-                        }
                         .centerBox {
                             margin-top: 1.3333rem;
                             .tipBtn {

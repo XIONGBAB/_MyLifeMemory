@@ -1,12 +1,9 @@
 :root {
-    --cl-fontColor: white;
-    --cl-backUp: #fa6c9b;
-    --cl-white: white;
-    --cl-black: black;
-    --cl-gray: #f2efef;
-    --cl-gray-100: #e9e6e6;
-    --cl-gray-200: #afafaf;
-    --cl-gray-300: rgb(214, 214, 214);
+    --cl-text-color: white;
+    --cl-font-24: 0.64rem;
+    --cl-font-18: 0.48rem;
+    --cl-font-16: 0.4267rem;
+    --cl-font-14: 0.3733rem;
 }
 
 *,
@@ -28,9 +25,7 @@ html {
     -ms-text-size-adjust: 100%;
     overflow-x: hidden;
 }
-body {
-    margin: 0;
-}
+
 h1 {
     font-size: 2em;
     margin: 0.67em 0;
@@ -155,13 +150,11 @@ progress {
 textarea {
     overflow: auto;
 }
-
 [type="checkbox"],
 [type="radio"] {
     box-sizing: border-box;
     padding: 0;
 }
-
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
     height: auto;
@@ -173,12 +166,10 @@ textarea {
 [type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
 }
-
 ::-webkit-file-upload-button {
     -webkit-appearance: button;
     font: inherit;
 }
-
 details {
     display: block;
 }
@@ -188,17 +179,14 @@ summary {
 template {
     display: none;
 }
-
 [hidden] {
     display: none;
 }
-
 input {
     border: none;
     outline: none;
     background: none;
 }
-
 ul,
 li {
     padding: 0;
@@ -209,5 +197,6 @@ p {
 }
 img {
     display: block;
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }

@@ -1,0 +1,222 @@
+@media screen and (min-width: 750px) {
+    html {
+        font-size: 37.5px !important;
+    }
+}
+html {
+    body {
+        margin: 1.3333rem 0;
+        em,
+        i {
+            font-style: normal;
+        }
+        .contentBox {
+            width: 34.1333rem;
+            margin: 0 auto;
+            font-size: 0.4267rem;
+            // overflow: hidden;
+            // common css start
+            a {
+                color: blue;
+                button {
+                    border: 0;
+                    background-color: #0f95d3;
+                    color: #fff;
+                    width: 1.3333rem;
+                    font-size: 0.3733rem;
+                    height: 0.5333rem;
+                    border-radius: 0.1333rem;
+                    cursor: pointer;
+                }
+            }
+            h3 {
+                span {
+                    padding-left: 0.2667rem;
+                    color: #878787;
+                    font-size: 0.4267rem;
+                }
+            }
+            .redTag {
+                color: #fd3a44;
+                padding: 0;
+                margin: 0;
+            }
+            .blackTag {
+                color: black;
+            }
+            .greenTag {
+                color: #6a9955;
+            }
+            .brownTag {
+                color: #b3843d;
+            }
+            .noList {
+                li {
+                    min-width: 100%;
+                    width: 1.3333rem;
+                    list-style: none;
+                    margin: 0.2667rem;
+                }
+            }
+            ul {
+                margin: 0.5333rem 0 1.0667rem;
+                li {
+                    list-style: decimal;
+                    margin: 0.2667rem 0.8rem;
+                    ol {
+                        li {
+                            list-style: square;
+                        }
+                    }
+                    ul {
+                        padding: 0;
+                        margin: 0;
+                    }
+                }
+            }
+            table {
+                border-collapse: collapse;
+                border: 1px solid rgb(190, 190, 190);
+                color: #575757;
+                caption {
+                    font-weight: 700;
+                    font-size: 0.48rem;
+                    padding: 0.1333rem 0;
+                    border: 1px solid rgb(190, 190, 190);
+                }
+                tr {
+                    &:nth-child(even) {
+                        background-color: rgba(153, 225, 208, 0.2);
+                    }
+                    th {
+                        text-align: center;
+                        border: 1px solid rgb(190, 190, 190);
+                        padding: 0.1333rem;
+                    }
+                    td {
+                        padding: 0.2133rem 1.3333rem 0.1333rem 0.1333rem;
+                        font-weight: 400;
+                        font-size: 0.3733rem;
+                        text-align: left;
+                        border: 1px solid rgb(190, 190, 190);
+                        border-collapse: collapse;
+                    }
+                }
+            }
+            .preBox {
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 0.9067rem;
+                    background-color: #536464;
+                    border-radius: 0.4rem 0.4rem 0 0;
+                }
+                position: relative;
+                border-radius: 0.2667rem;
+                .preSpan,
+                .preButton {
+                    position: absolute;
+                    top: 0.2667rem;
+                }
+                .preSpan {
+                    left: 0.5333rem;
+                    color: #ffe200;
+                }
+                .preButton {
+                    right: 0.5333rem;
+                    background-color: transparent;
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    color: #fff;
+                    cursor: pointer;
+                    &:before,
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        display: block;
+                        width: 0.4rem;
+                        height: 0.4rem;
+                        border: 1px solid #fff;
+                        border-radius: 0.0533rem;
+                    }
+                    &:before {
+                        top: -0.0267rem;
+                        left: -0.96rem;
+                    }
+                    &::after {
+                        top: 0.1067rem;
+                        left: -0.8rem;
+                        clip-path: polygon(0.2667rem 0, 0.4267rem 0, 0.4267rem 0.4267rem, -0.1067rem 0.4rem);
+                    }
+                }
+                pre {
+                    padding-top: 1.3333rem;
+                    padding-bottom: 0.6667rem;
+                    background-color: #181a22;
+                    border-radius: 0.4rem 0.4rem 0 0;
+                    &::-webkit-scrollbar {
+                        height: 0.2667rem;
+                    }
+                    &::-webkit-scrollbar-thumb {
+                        background-color: #929292;
+                        border-radius: 0.4rem;
+                    }
+                }
+            }
+            // common css end
+
+            // margin-top: 1.3333rem;
+            .centerBox {
+                width: 100%;
+                .tipBtn {
+                    display: inline-block;
+                    margin-right: 0.5333rem;
+                    width: 2.1333rem;
+                    height: 0.8rem;
+                    text-align: center;
+                    line-height: 0.8rem;
+                    color: #fff;
+                    background-color: #ef335c;
+                }
+                .tipContent {
+                    width: 100%;
+                    display: flex;
+                    height: 1.8667rem;
+                    margin-bottom: 1.6rem;
+                    .tipBtn {
+                        background-color: #ef335c;
+                    }
+                    .tipText {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        i {
+                            font-weight: 700;
+                            &:nth-child(2) {
+                                color: #fd3a44;
+                            }
+                            &:nth-child(3) {
+                                color: #6a9955;
+                            }
+                            &:nth-child(4) {
+                                color: #b3843d;
+                            }
+                        }
+                    }
+                }
+                .tagContent {
+                    width: 100%;
+                    .tipBtn {
+                        background-color: #00aeff;
+                        margin-bottom: 0.8rem;
+                    }
+                }
+            }
+        }
+    }
+}

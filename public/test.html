@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .page-wrap {
+                width: 100%;
+                overflow: hidden;
+            }
+            .shadow-left,
+            .shadow-right,
+            .shadow-top,
+            .shadow-bottom {
+                float: left;
+                width: 25%;
+            }
+
+            .shadow-left {
+                box-shadow: 0 20px 20px -20px #333 inset;
+            }
+
+            .shadow-right {
+                box-shadow: 0 -20px 20px -20px #333 inset;
+            }
+
+            .shadow-top {
+                box-shadow: -20px 0 20px -20px #333 inset;
+            }
+
+            .shadow-bottom {
+                box-shadow: 20px 0 20px -20px #333 inset;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-wrap">
+            <div class="shadow-left">1</div>
+            <div class="shadow-right">2</div>
+            <div class="shadow-top">3</div>
+            <div class="shadow-bottom">4</div>
+        </div>
+    </body>
+</html>

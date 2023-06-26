@@ -1,5 +1,4 @@
 import "../css/index.css";
-import "../css/iconfont.css";
 import "../css/normalize.css";
 import "../js/flexible.js";
 document.querySelector("#icon-link").href = require("../images/favicon.ico");
@@ -26,55 +25,72 @@ if ("serviceWorker" in navigator) {
 // rotate timer
 
 window.addEventListener("load", function () {
-    function updateTime() {
-        const now = new Date();
-        const hours = now.getHours().toString().padStart(2, "0");
-        const minutes = now.getMinutes().toString().padStart(2, "0");
-        const seconds = now.getSeconds().toString().padStart(2, "0");
+    // information card
+    // let tagBox = document.querySelectorAll(".tag_box > span");
+    // for (let i = 0; i < tagBox.length; i++) {
+    //     // let a = parseInt(Math.random() * 60);
+    //     // let b = parseInt(document.documentElement.style.fontSize);
+    //     let c = tagBox[i].style.getPropertyValue("--i");
+    //     tagBox[i].style.left = c * 4 + "rem";
+    //     tagBox[i].style.top = c * 2 + "rem";
+    //     console.log(c);
+    // }
+    // tagBox.forEach(e => {
+    //     // let a = ( * Math.random() * 60) / ;
+    //     // e.style.left = +"rem";
+    //     let a = e.style.getPropertyValue("--i");
+    //     console.log(a);
+    //     e.style.top = (e.style.getPropertyValue("--i") * Math.random() * 60) / document.documentElement.style.fontSize + "rem";
+    // });
+    // function updateTime() {
+    //     const now = new Date();
+    //     const hours = now.getHours().toString().padStart(2, "0");
+    //     const minutes = now.getMinutes().toString().padStart(2, "0");
+    //     const seconds = now.getSeconds().toString().padStart(2, "0");
 
-        const hourDegree = hours * 30 + minutes / 2;
-        const minuteDegree = minutes * 6 + seconds / 10;
-        const secondDegree = seconds * 6;
+    //     const hourDegree = hours * 30 + minutes / 2;
+    //     const minuteDegree = minutes * 6 + seconds / 10;
+    //     const secondDegree = seconds * 6;
 
-        let timerArr = [hours, minutes, seconds];
-        let rotatingDegree = [hourDegree, minuteDegree, secondDegree];
-        const timerBox = document.querySelectorAll(".timerBox ul li span");
-        const pointers = document.querySelectorAll(".timeBox");
+    //     let timerArr = [hours, minutes, seconds];
+    //     let rotatingDegree = [hourDegree, minuteDegree, secondDegree];
+    //     const timerBox = document.querySelectorAll(".timerBox ul li span");
+    //     const pointers = document.querySelectorAll(".timeBox");
 
-        for (let i = 0; i < timerBox.length; i++) {
-            timerBox[i].innerHTML = timerArr[i];
-            pointers[i].style.transform = `rotate(${rotatingDegree[i]}deg)`;
-        }
-    }
-    const timerContainer = document.querySelector(".timerBox");
-    timerContainer.style.display = "block";
-    let opacitySpeed = 0;
-    let closeSetinterval = setInterval(() => {
-        opacitySpeed += 0.1;
-        if (opacitySpeed >= 1) {
-            opacitySpeed = 1;
-            clearInterval(closeSetinterval);
-        }
-        document.querySelector(".timerBox").style.opacity = opacitySpeed;
-    }, 100);
+    //     for (let i = 0; i < timerBox.length; i++) {
+    //         timerBox[i].innerHTML = timerArr[i];
+    //         pointers[i].style.transform = `rotate(${rotatingDegree[i]}deg)`;
+    //     }
+    // }
+    // const timerContainer = document.querySelector(".timerBox");
+    // timerContainer.style.display = "block";
+    // let opacitySpeed = 0;
+    // let closeSetinterval = setInterval(() => {
+    //     opacitySpeed += 0.1;
+    //     if (opacitySpeed >= 1) {
+    //         opacitySpeed = 1;
+    //         clearInterval(closeSetinterval);
+    //     }
+    //     document.querySelector(".timerBox").style.opacity = opacitySpeed;
+    // }, 100);
 
-    setInterval(updateTime, 1000);
+    // setInterval(updateTime, 1000);
 
-    // JavaScript
-    let navList = document.querySelectorAll(".navBanner ul li");
-    navList.forEach(item => {
-        item.addEventListener("mouseenter", () => {
-            item.querySelector("a").classList.add("navBorder");
-        });
-        item.addEventListener("click", () => {
-            item.classList.add("navCircle");
-            navList.forEach(sibling => {
-                if (sibling !== item) {
-                    sibling.classList.remove("navCircle");
-                }
-            });
-        });
-    });
+    // // JavaScript
+    // let navList = document.querySelectorAll(".navBanner ul li");
+    // navList.forEach(item => {
+    //     item.addEventListener("mouseenter", () => {
+    //         item.querySelector("a").classList.add("navBorder");
+    //     });
+    //     item.addEventListener("click", () => {
+    //         item.classList.add("navCircle");
+    //         navList.forEach(sibling => {
+    //             if (sibling !== item) {
+    //                 sibling.classList.remove("navCircle");
+    //             }
+    //         });
+    //     });
+    // });
 
     // click menu button
     const searchBox = document.querySelector("#searchContainer");

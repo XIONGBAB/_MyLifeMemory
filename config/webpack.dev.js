@@ -8,7 +8,7 @@ module.exports = {
     entry: {
         main: "./src/js/main.js",
         memory: "./src/js/memory.js",
-        flexible: "./src/js/flexible.js",
+        iframeJs: "./src/js/iframeStyle.js",
     },
     output: {
         path: undefined,
@@ -78,6 +78,12 @@ module.exports = {
             template: path.resolve(__dirname, "../public/memory.html"),
             filename: "memory.html",
             chunks: ["memory"],
+        }),
+        new HtmlWebpackPlugin({
+            title: "Html",
+            template: path.resolve(__dirname, "../public/proHtml.html"),
+            filename: "proHtml.html",
+            chunks: ["iframeJs"],
         }),
     ],
     devServer: {

@@ -77,10 +77,16 @@ window.addEventListener("load", function () {
         .join("");
     lifeLists.innerHTML = lifeMenu;
     let thirdMenuLiTag = document.querySelectorAll(".thirdMenuLiTag");
+    // let contentBox = document.querySelector(".contentBox");
+    // let iframeContainer = document.getElementById("iframeContainer");
+    let theFramework = document.getElementById("theFramework");
     for (let t = 0; t < thirdMenuLiTag.length; t++) {
         thirdMenuLiTag[t].addEventListener("click", e => {
             e.stopPropagation();
             e.preventDefault();
+            let contentHeight = theFramework.contentWindow.document.documentElement.scrollHeight;
+            // iframeContainer.style.height = contentHeight + "px";
+            theFramework.style.height = contentHeight + "px";
         });
     }
     // left nav style js
