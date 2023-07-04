@@ -25,6 +25,19 @@ if ("serviceWorker" in navigator) {
 // rotate timer
 
 window.addEventListener("load", function () {
+    //nav line js
+    let navLine = document.querySelector(".nav_line");
+    let navList = document.querySelectorAll(".nav_list>li");
+    let fontSize = window.getComputedStyle(document.documentElement).fontSize.slice(0, 4);
+    navLine.style.left = navList[0].offsetLeft / fontSize + "rem";
+    navLine.style.width = navList[0].offsetWidth / fontSize + "rem";
+    for (let i = 0; i < navList.length; i++) {
+        navList[i].addEventListener("mouseenter", function () {
+            navLine.style.opacity = 1;
+            navLine.style.left = navList[i].offsetLeft / fontSize + "rem";
+            navLine.style.width = navList[i].offsetWidth / fontSize + "rem";
+        });
+    }
     // information card
     // let tagBox = document.querySelectorAll(".tag_box > span");
     // for (let i = 0; i < tagBox.length; i++) {

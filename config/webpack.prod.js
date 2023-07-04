@@ -30,6 +30,7 @@ module.exports = {
     entry: {
         main: "./src/js/main.js",
         memory: "./src/js/memory.js",
+        iframeJs: "./src/js/iframeStyle.js",
     },
     output: {
         path: path.resolve(__dirname, "../dist"),
@@ -100,6 +101,12 @@ module.exports = {
             template: path.resolve(__dirname, "../public/memory.html"),
             filename: "memory.html",
             chunks: ["memory"],
+        }),
+        new HtmlWebpackPlugin({
+            title: "Html",
+            template: path.resolve(__dirname, "../public/proHtml.html"),
+            filename: "proHtml.html",
+            chunks: ["iframeJs"],
         }),
         new MiniCssExtractPlugin({
             filename: "static/css/[name].[contenthash:8].css",

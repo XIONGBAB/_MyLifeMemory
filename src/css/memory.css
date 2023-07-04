@@ -4,584 +4,127 @@
   }
 }
 body {
+  position: relative;
   background-color: rgb(243, 243, 243);
 }
-body em,
-body i {
-  font-style: normal;
-}
-body .container {
+body .top_title {
+  position: fixed;
+  inset: 0;
   display: flex;
   width: 100%;
-  padding: 0 0 0.8rem 0;
-}
-body .container .navLeft {
-  position: relative;
-  flex: 0 0 6.1333rem;
-  height: 100%;
-}
-body .container .navLeft .navContainer {
-  z-index: 10;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 6.1333rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #282b38;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-body .container .navLeft .navContainer .searchBgBox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 6.1333rem;
   height: 1.3333rem;
-  background-color: #979797;
-  z-index: 100;
-  opacity: 0;
-  transition: all 0.5s;
+  z-index: 999;
 }
-body .container .navLeft .navContainer .searchBoxOpen {
-  position: sticky;
-  top: 0.2667rem;
-  left: 0;
+body .top_title .top_search {
+  flex: 0 0 6.1333rem;
+  position: relative;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  margin-top: 0.5333rem;
-  padding: 0 0.2667rem;
+  height: 100%;
+  background-color: var(--cl-nav-bg);
+  border-bottom: 0.0267rem solid rgba(214, 214, 214, 0.103);
+}
+body .top_title .top_search .search_box {
   width: 5.3333rem;
-  height: 0.8rem;
-  border-radius: 0.4rem;
-  border: 1px solid transparent;
-  background-color: #6a6a6a;
-  z-index: 120;
-}
-body .container .navLeft .navContainer .searchBoxOpen:hover {
-  box-shadow: 0 0 0.1067rem #ffffff;
-}
-body .container .navLeft .navContainer .searchBoxOpen .searchIcon {
-  display: block;
-  width: 0.64rem;
-  height: 0.64rem;
-  background: url(../images/search.png) no-repeat;
-  background-size: 100%;
-}
-body .container .navLeft .navContainer .searchBoxOpen .searchContent {
-  padding: 0.08rem 0.2667rem 0;
-  width: 80%;
+  height: 0.6933rem;
+  border-radius: 0.5333rem;
+  box-shadow: 0 0 0.0533rem var(--cl-box-bg);
   font-size: 0.3733rem;
-  color: #ebebeb;
-  letter-spacing: 0.0533rem;
-}
-body .container .navLeft .navContainer .searchBoxOpen .searchContent::placeholder {
-  color: #ebebeb;
-}
-body .container .navLeft .navContainer .navListContainer {
-  position: absolute;
-  top: 2.1333rem;
-  width: 100%;
-  font-size: 0.3733rem;
-  color: #cccccc;
-  cursor: pointer;
-}
-body .container .navLeft .navContainer .navListContainer .MenuTitle {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 0.8rem;
-  background-color: #fd3a44;
-}
-body .container .navLeft .navContainer .navListContainer .MenuTitle .navSubMenuEmTag {
-  display: inline-block;
-  margin: 0 0.16rem 0 0.4267rem;
-  width: 0.48rem;
-  height: 0.48rem;
-  background: url(../images/book.svg) no-repeat;
-  background-size: 100%;
-  opacity: 1;
-}
-body .container .navLeft .navContainer .navListContainer .MenuTitle .navSubMenuSpanTag {
-  color: #ffffff;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem {
-  width: 100%;
-  line-height: 0.8rem;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem input[type=checkbox] {
-  display: none;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .navMenuLabel,
-body .container .navLeft .navContainer .navListContainer .navMenuItem .navSecondLabel,
-body .container .navLeft .navContainer .navListContainer .navMenuItem .navThirdLabel {
-  display: block;
-  width: 100%;
-  height: 0.8rem;
-  cursor: pointer;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox,
-body .container .navLeft .navContainer .navListContainer .navMenuItem .thirdSubMenuBox {
-  width: 100%;
-  overflow: hidden;
-  transition: height 0.3s ease-in;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondSubMenuLiTag,
-body .container .navLeft .navContainer .navListContainer .navMenuItem .thirdMenuLiTag {
-  width: 100%;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .navSubMenuATag {
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .navSubMenuATag .navSubMenuEmTag {
-  display: inline-block;
-  margin: 0 0.16rem 0 0.6667rem;
-  width: 0.48rem;
-  height: 0.48rem;
-  background: url(../images/bookOpen.svg) no-repeat;
-  background-size: 100%;
-  opacity: 0.7;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .navSubMenuATag .navSubMenuSpanTag {
-  color: #949494;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .navSubMenuATag .navSubMenuSpanTag em {
-  display: inline-block;
-  width: 0.8rem;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem #menuItem:checked ~ .secondMenuBox {
-  height: 2.4rem;
-  transition: height 0.3s ease-in;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem #menuItem:checked ~ .navMenuLabel {
-  background-color: #fd3a44;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem #menuItem:checked ~ .navMenuLabel .navSubMenuEmTag {
-  opacity: 1;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem #menuItem:checked ~ .navMenuLabel .navSubMenuSpanTag {
-  color: #fff;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem #menuItem2:checked ~ .thirdSubMenuBox {
-  height: 3.2rem;
-  transition: height 0.3s ease-in;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem #menuItem2:checked ~ .navSecondLabel {
-  background-color: #575757;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem #menuItem2:checked ~ .navSecondLabel .navSubMenuEmTag {
-  opacity: 1;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem #menuItem2:checked ~ .navSecondLabel .navSubMenuSpanTag {
-  color: #fff;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox {
-  height: 0;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .navSecondLabel .navSubMenuATag {
   padding-left: 1.0133rem;
+  color: rgba(219, 219, 219, 0.87);
 }
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .navSecondLabel .navSubMenuATag .navSubMenuEmTag {
-  margin: 0 0.16rem 0 0.1333rem;
-  color: #ffffff;
+body .top_title .top_search .search_box::placeholder {
+  color: rgba(219, 219, 219, 0.87);
 }
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .navSecondLabel .navSubMenuATag:hover {
-  padding-left: 0.9067rem;
-  transition: all 0.3s;
-  background-color: rgba(78, 78, 78, 0.69);
+body .top_title .top_search .search_icon {
+  position: absolute;
+  top: 0.3733rem;
+  left: 0.64rem;
+  width: 0.5333rem;
+  height: 0.5333rem;
+  background: url(../images/search.png) no-repeat;
+  background-size: cover;
 }
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .navSecondLabel .navSubMenuATag:hover .navSubMenuEmTag {
-  transition: all 0.3s;
-  opacity: 1;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .navSecondLabel .navSubMenuATag:hover .navSubMenuSpanTag {
-  transition: all 0.3s;
-  font-size: 0.4rem;
-  color: rgb(207, 207, 207);
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag:hover .navSecondLabel .navSubMenuATag {
-  background-color: #5f5f5f;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag:hover .navSecondLabel .navSubMenuATag .navSubMenuEmTag {
-  opacity: 1;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag:hover .navSecondLabel .navSubMenuATag .navSubMenuSpanTag {
-  color: #ccc;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox {
-  height: 0;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox .thirdMenuLiTag .navSubMenuATag {
-  transition: all 0.3s;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox .thirdMenuLiTag .navSubMenuATag .navSubMenuEmTag {
-  margin-left: 1.5467rem;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox .thirdMenuLiTag:hover .navSubMenuATag {
-  padding-left: 0.0533rem;
-  transition: all 0.3s;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox .thirdMenuLiTag:hover .navSubMenuATag .navSubMenuEmTag {
-  opacity: 1;
-  transition: 0.3s;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem .secondMenuBox .secondSubMenuLiTag .thirdSubMenuBox .thirdMenuLiTag:hover .navSubMenuATag .navSubMenuSpanTag {
-  color: yellow;
-  font-size: 0.4rem;
-  transition: all 0.3s;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem:hover .navMenuLabel {
-  background-color: #fd3a44;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem:hover .navMenuLabel .navSubMenuATag .navSubMenuEmTag {
-  opacity: 1;
-}
-body .container .navLeft .navContainer .navListContainer .navMenuItem:hover .navMenuLabel .navSubMenuATag .navSubMenuSpanTag {
-  color: #ffffff;
-}
-body .container .navLeft .navContainer::-webkit-scrollbar {
-  display: none;
-}
-body .container .mainRight {
+body .top_title .top_nav {
   position: relative;
   flex: 1;
-  width: 100%;
+  display: flex;
+  align-items: center;
   height: 100%;
+  background-color: var(--cl-box-bg);
+  box-shadow: 0.0533rem 0.0533rem 0.2133rem var(--cl-shadow);
 }
-body .container .mainRight .rightBackground {
+body .top_title .top_nav::after {
+  position: absolute;
+  inset: 50% 0.8rem auto auto;
+  transform: translateY(-0.16rem);
+  content: attr(data-text);
   display: block;
+  color: #979797;
+  font-size: 0.3733rem;
+}
+body .top_title .top_nav .first_text,
+body .top_title .top_nav .second_text,
+body .top_title .top_nav .third_text {
+  margin: 0 0.5333rem;
+  color: #00aeff;
+  font-size: var(--cl-font-18);
+}
+body .top_title .top_nav .first_text {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  background: url(../images/containerRightBg.png) no-repeat;
-  background-size: auto cover;
-  background-position: center;
-  background-attachment: fixed;
-  opacity: 1;
-  transition: opacity 0.8s ease-out;
-}
-body .container .mainRight .rightBackground .memoryTitle {
-  position: absolute;
-  left: 5.3333rem;
-  color: var(--cl-fontColor);
-}
-body .container .mainRight .rightBackground .memoryTitle:nth-child(1) {
-  top: 20%;
-  font-size: 2.6667rem;
-  font-weight: 700;
-}
-body .container .mainRight .rightBackground .memoryTitle:nth-child(2) {
-  top: 35%;
-  font-size: 1.6rem;
-}
-body .container .mainRight .rightBackground .memoryTitle:nth-child(2) span {
   margin-left: 1.3333rem;
-  font-size: 0.8rem;
-  color: yellow;
 }
-body .container .mainRight .rightBackground .memoryTitle:nth-child(2) em {
-  margin-top: 0.5333rem;
-  display: block;
-  font-size: 0.5333rem;
-}
-body .container .mainRight .rightBackground .memoryTitle:nth-child(2) em:last-child {
-  width: 85%;
-  margin-top: 0.2667rem;
-  font-size: 0.48rem;
-  text-transform: capitalize;
-  letter-spacing: 0.0267rem;
-}
-body .container .mainRight .rightBackground .goButton {
-  position: absolute;
-  bottom: 25%;
-  left: 5.3333rem;
-  width: 4.8rem;
-  height: 1.6rem;
-  font-size: 0.9333rem;
-  font-weight: 700;
-  line-height: 1.6rem;
-  color: rgb(218, 217, 217);
-  border-radius: 1.3333rem;
-  text-align: center;
-  background-color: rgba(77, 77, 77, 0.69);
-  box-shadow: 0 0 0.08rem #f5f5f5;
-  cursor: pointer;
-}
-body .container .mainRight .rightBackground .goButton:hover {
-  color: rgb(255, 255, 255);
-  background-color: rgba(41, 41, 41, 0.69);
-  box-shadow: 1px 1px 0.08rem #f5f5f5;
-}
-body .container .mainRight .rightContent {
-  padding: 0 0.5333rem;
-  font-size: 0.4267rem;
-}
-body .container .mainRight .rightContent .topTitle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 1.3333rem;
-  background-color: #fff;
-  box-shadow: 0 0.1067rem 0.2133rem rgb(218, 218, 218);
-}
-body .container .mainRight .rightContent .topTitle .titleBox {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  font-size: 0.4267rem;
-  padding-left: 0.9333rem;
-}
-body .container .mainRight .rightContent .topTitle .titleBox::before {
+body .top_title .top_nav .first_text::before {
   position: absolute;
   top: 50%;
-  left: 0.5333rem;
-  transform: translateY(-0.2667rem);
+  left: -0.4rem;
+  transform: translateY(-0.2133rem);
   content: "";
   display: block;
   width: 0.08rem;
-  height: 0.5333rem;
+  height: 0.4267rem;
   background-color: #00aeff;
 }
-body .container .mainRight .rightContent .topTitle .titleBox span {
-  margin-right: 0.4rem;
-}
-body .container .mainRight .rightContent .topTitle .titleBox span:nth-child(1) {
-  color: #00aeff;
-  font-size: 0.48rem;
-}
-body .container .mainRight .rightContent .topTitle .titleBox span:nth-child(3) {
-  color: #029eb3;
-  font-size: 0.4267rem;
-}
-body .container .mainRight .rightContent .topTitle .titleBox span:last-child {
-  color: #8300fd;
-  font-size: 0.3733rem;
-}
-body .container .mainRight .rightContent .topTitle .titleBox span:nth-child(even) {
-  color: rgb(179, 177, 177);
-}
-body .container .mainRight .rightContent .topTitle .modifyTime {
-  font-size: 0.3733rem;
-  margin-right: 1.3333rem;
-  color: #979797;
-  letter-spacing: 0.0267rem;
-}
-body .container .mainRight .rightContent .topBox {
-  width: 100%;
-  margin-top: 1.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #008080;
-  padding: 0.5333rem 0;
-  background-color: #fff;
-  box-shadow: 0 0 0.1067rem rgb(202, 202, 202);
-}
-body .container .mainRight .rightContent .topBox h1 {
-  margin: 0;
-  font-size: 0.8rem;
-}
-body .container .mainRight .rightContent .rContainer {
-  width: 100%;
-  overflow: hidden;
-  padding: 0 0.8rem 0;
-  background-color: #fff;
-  box-shadow: 0 0 0.1067rem rgb(202, 202, 202);
-}
-body .container .mainRight .rightContent .rContainer a {
-  color: blue;
-}
-body .container .mainRight .rightContent .rContainer a button {
-  border: 0;
-  background-color: #0f95d3;
-  color: #fff;
-  width: 1.3333rem;
-  font-size: 0.3733rem;
-  height: 0.5333rem;
-  border-radius: 0.1333rem;
-  cursor: pointer;
-}
-body .container .mainRight .rightContent .rContainer h3 span {
-  padding-left: 0.2667rem;
-  color: #878787;
-  font-size: 0.4267rem;
-}
-body .container .mainRight .rightContent .rContainer .redTag {
-  color: #fd3a44;
-  padding: 0;
-  margin: 0;
-}
-body .container .mainRight .rightContent .rContainer .blackTag {
-  color: black;
-}
-body .container .mainRight .rightContent .rContainer .greenTag {
-  color: #6a9955;
-}
-body .container .mainRight .rightContent .rContainer .brownTag {
-  color: #b3843d;
-}
-body .container .mainRight .rightContent .rContainer .noList li {
-  min-width: 100%;
-  width: 1.3333rem;
-  list-style: none;
-  margin: 0.2667rem;
-}
-body .container .mainRight .rightContent .rContainer ul {
-  margin: 0.5333rem 0 1.0667rem;
-}
-body .container .mainRight .rightContent .rContainer ul li {
-  list-style: decimal;
-  margin: 0.2667rem 0.8rem;
-}
-body .container .mainRight .rightContent .rContainer ul li ol li {
-  list-style: square;
-}
-body .container .mainRight .rightContent .rContainer ul li ul {
-  padding: 0;
-  margin: 0;
-}
-body .container .mainRight .rightContent .rContainer table {
-  border-collapse: collapse;
-  border: 1px solid rgb(190, 190, 190);
-  color: #575757;
-}
-body .container .mainRight .rightContent .rContainer table caption {
-  font-weight: 700;
-  font-size: 0.48rem;
-  padding: 0.1333rem 0;
-  border: 1px solid rgb(190, 190, 190);
-}
-body .container .mainRight .rightContent .rContainer table tr:nth-child(even) {
-  background-color: rgba(153, 225, 208, 0.2);
-}
-body .container .mainRight .rightContent .rContainer table tr th {
-  text-align: center;
-  border: 1px solid rgb(190, 190, 190);
-  padding: 0.1333rem;
-}
-body .container .mainRight .rightContent .rContainer table tr td {
-  padding: 0.2133rem 1.3333rem 0.1333rem 0.1333rem;
-  font-weight: 400;
-  font-size: 0.3733rem;
-  text-align: left;
-  border: 1px solid rgb(190, 190, 190);
-  border-collapse: collapse;
-}
-body .container .mainRight .rightContent .rContainer .preBox {
+body .top_title .top_nav .second_text {
   position: relative;
-  border-radius: 0.2667rem;
+  color: #029eb3;
 }
-body .container .mainRight .rightContent .rContainer .preBox::before {
-  position: absolute;
-  top: 0;
-  left: 0;
+body .top_title .top_nav .second_text::before, body .top_title .top_nav .second_text::after {
   content: "";
-  display: block;
-  width: 100%;
-  height: 0.9067rem;
-  background-color: #536464;
-  border-radius: 0.4rem 0.4rem 0 0;
-}
-body .container .mainRight .rightContent .rContainer .preBox .preSpan,
-body .container .mainRight .rightContent .rContainer .preBox .preButton {
   position: absolute;
-  top: 0.2667rem;
-}
-body .container .mainRight .rightContent .rContainer .preBox .preSpan {
-  left: 0.5333rem;
-  color: #ffe200;
-}
-body .container .mainRight .rightContent .rContainer .preBox .preButton {
-  right: 0.5333rem;
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  margin: 0;
-  color: #fff;
-  cursor: pointer;
-}
-body .container .mainRight .rightContent .rContainer .preBox .preButton:before, body .container .mainRight .rightContent .rContainer .preBox .preButton::after {
-  position: absolute;
-  content: "";
+  top: 50%;
+  transform: translateY(-0.1867rem);
   display: block;
-  width: 0.4rem;
-  height: 0.4rem;
-  border: 1px solid #fff;
-  border-radius: 0.0533rem;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border: 0.2133rem solid transparent;
+  border-left-color: #00aeff;
 }
-body .container .mainRight .rightContent .rContainer .preBox .preButton:before {
-  top: -0.0267rem;
-  left: -0.96rem;
+body .top_title .top_nav .second_text::before {
+  left: -0.5867rem;
 }
-body .container .mainRight .rightContent .rContainer .preBox .preButton::after {
-  top: 0.1067rem;
-  left: -0.8rem;
-  clip-path: polygon(0.2667rem 0, 0.4267rem 0, 0.4267rem 0.4267rem, -0.1067rem 0.4rem);
+body .top_title .top_nav .second_text::after {
+  right: -0.8533rem;
+  border-left-color: #8300fd;
 }
-body .container .mainRight .rightContent .rContainer .preBox pre {
-  padding-top: 1.3333rem;
-  padding-bottom: 0.6667rem;
-  background-color: #181a22;
-  border-radius: 0.4rem 0.4rem 0 0;
+body .top_title .top_nav .third_text {
+  font-size: var(--cl-font-16);
+  color: #8300fd;
 }
-body .container .mainRight .rightContent .rContainer .preBox pre::-webkit-scrollbar {
-  height: 0.2667rem;
-}
-body .container .mainRight .rightContent .rContainer .preBox pre::-webkit-scrollbar-thumb {
-  background-color: #929292;
-  border-radius: 0.4rem;
-}
-body .container .mainRight .rightContent .rContainer .contentBox .centerBox {
+body .container {
+  display: flex;
   margin-top: 1.3333rem;
+  width: 100vw;
+  height: 100vh;
 }
-body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipBtn {
-  display: inline-block;
-  margin-right: 0.5333rem;
-  width: 2.1333rem;
-  height: 0.8rem;
-  text-align: center;
-  line-height: 0.8rem;
-  color: #fff;
-  background-color: #ef335c;
+body .container .left_link {
+  flex: 0 0 6.1333rem;
+  background-color: var(--cl-nav-bg);
 }
-body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipContent {
-  display: flex;
-  height: 1.8667rem;
-  margin-bottom: 1.6rem;
-}
-body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipContent .tipBtn {
-  background-color: #ef335c;
-}
-body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipContent .tipText {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipContent .tipText i {
-  font-weight: 700;
-}
-body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipContent .tipText i:nth-child(2) {
-  color: #fd3a44;
-}
-body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipContent .tipText i:nth-child(3) {
-  color: #6a9955;
-}
-body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tipContent .tipText i:nth-child(4) {
-  color: #b3843d;
-}
-body .container .mainRight .rightContent .rContainer .contentBox .centerBox .tagContent .tipBtn {
-  background-color: #00aeff;
-  margin-bottom: 0.8rem;
+body .container .right_iframe {
+  flex: 1;
 }
 
 /*# sourceMappingURL=memory.css.map */
