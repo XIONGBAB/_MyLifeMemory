@@ -6,6 +6,13 @@
 body {
   position: relative;
   background-color: rgb(243, 243, 243);
+  /* top nav banner start*/
+  /* top nav banner end*/
+  /* text and link in main container start */
+  /* text and link in main container end */
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 body .top_title {
   position: fixed;
@@ -120,11 +127,120 @@ body .container {
   height: 100vh;
 }
 body .container .left_link {
-  flex: 0 0 6.1333rem;
+  overflow: visible;
+  position: fixed;
+  top: 1.3333rem;
+  left: 0;
+  width: 6.1333rem;
+  height: 100%;
+  color: rgb(148, 148, 148);
+  font-size: var(--cl-font-14);
   background-color: var(--cl-nav-bg);
+}
+body .container .left_link .link_title {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5333rem;
+  width: 100%;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  background-color: var(--cl-link-bg);
+}
+body .container .left_link .link_title .title_icon {
+  display: block;
+  width: 0.48rem;
+  height: 18px;
+  background: url(../images/book.svg);
+  background-size: cover;
+  margin: 0 0.16rem 0 0.4267rem;
+}
+body .container .left_link .link_title .title_content {
+  color: var(--cl-text-color);
+}
+body .container .left_link .list_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .container .left_link .list_container .first_lists {
+  width: 100%;
+}
+body .container .left_link .list_container .first_lists a {
+  display: flex;
+  align-items: center;
+  line-height: 0.8rem;
+  color: rgb(148, 148, 148);
+}
+body .container .left_link .list_container .first_lists a i {
+  display: block;
+  margin: 0 0.2667rem 0 0.6667rem;
+  width: 0.48rem;
+  height: 0.48rem;
+  background: url(../images/bookOpen.svg);
+  background-size: cover;
+  opacity: 0.7;
+}
+body .container .left_link .list_container .first_lists dl {
+  width: 100%;
+  height: 0;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+body .container .left_link .list_container .first_lists dl dt a i {
+  margin-left: 1.0667rem;
+}
+body .container .left_link .list_container .first_lists dl dt ol {
+  width: 100%;
+  height: 0;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+body .container .left_link .list_container .first_lists dl dt ol li a i {
+  margin-left: 1.4667rem;
+}
+body .container .left_link .list_container .first_lists .list_hover i,
+body .container .left_link .list_container .first_lists .list_hover_second i,
+body .container .left_link .list_container .first_lists .list_hover_third i {
+  opacity: 1;
+}
+body .container .left_link .list_container .first_lists .list_hover span,
+body .container .left_link .list_container .first_lists .list_hover_second span,
+body .container .left_link .list_container .first_lists .list_hover_third span {
+  color: var(--cl-text-color);
+}
+body .container .left_link .list_container .first_lists .list_hover {
+  background-color: var(--cl-link-bg);
+}
+body .container .left_link .list_container .first_lists .list_hover_second {
+  background-color: #575757;
+}
+body .container .left_link .list_container .first_lists .list_hover_third {
+  background-color: var(--cl-nav-bg);
+}
+body .container .left_link .list_container .first_lists .list_hover_third span {
+  color: orange;
+}
+body .container .left_link .list_container .link_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 0.8rem;
+  background-color: var(--cl-link-bg);
+  z-index: -1;
+  opacity: 0;
 }
 body .container .right_iframe {
   flex: 1;
+  padding: 0.5333rem 0.5333rem 0.8rem;
+  margin-left: 6.1333rem;
+}
+body .container .right_iframe .iframe_box {
+  width: 100%;
+  height: 100%;
+  background-color: var(--cl-box-bg);
+  box-shadow: 0 0 0.16rem rgb(190, 190, 190);
 }
 
 /*# sourceMappingURL=memory.css.map */

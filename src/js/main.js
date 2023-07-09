@@ -108,6 +108,7 @@ window.addEventListener("load", function () {
     // click menu button
     const searchBox = document.querySelector("#searchContainer");
     const menuBox = document.querySelector("#menuBtnContainer");
+    console.log(menuBox);
     document.querySelector(".menuBtnOpen").addEventListener("click", () => {
         const searchBoxText = searchBox.classList.toggle("searchBox");
         const searchBoxOpenText = searchBox.classList.toggle("searchBoxOpen");
