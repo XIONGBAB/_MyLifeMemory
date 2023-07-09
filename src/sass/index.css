@@ -3,6 +3,7 @@
     font-size: 37.5px !important;
   }
 }
+
 body {
   position: relative;
   width: 100vw;
@@ -287,7 +288,7 @@ body::before {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  font-size: 0.3733rem;
+  font-size: .3733rem;
 }
 
 .main .container .memory_info .card_box .card .head_portrait::before {
@@ -339,7 +340,7 @@ body::before {
   padding: 0.2667rem;
   transition: all 0.4s;
   opacity: 1;
-  font-size: 0.3733rem;
+  font-size: .3733rem;
 }
 
 .main .container .memory_info .card_box .card .text_content h2 {
@@ -353,7 +354,7 @@ body::before {
   word-break: break-all;
   line-height: 1.4em;
   text-indent: 2em;
-  font-size: 0.3733rem;
+  font-size: .3733rem;
 }
 
 .main .container .memory_info .card_box .card .text_content em {
@@ -374,7 +375,7 @@ body::before {
   color: rgba(224, 224, 224, 0.904);
   opacity: 0;
   transition: all 0.4s;
-  font-size: 0.3733rem;
+  font-size: .3733rem;
 }
 
 .main .container .memory_info .card_box .card .info_content:hover {
@@ -479,5 +480,3 @@ body::before {
   opacity: 0;
   transition: all 0.3s;
 }
-
-/*# sourceMappingURL=index.css.map */

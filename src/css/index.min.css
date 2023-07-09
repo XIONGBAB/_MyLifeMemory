@@ -96,8 +96,7 @@ body::before {
   display: flex;
 }
 
-.main .container .nav_banner .navBannerRight .searchBox,
-.main .container .nav_banner .navBannerRight .searchBoxOpen {
+.main .container .nav_banner .navBannerRight .searchBox, .main .container .nav_banner .navBannerRight .searchBoxOpen {
   display: flex;
   align-items: center;
   height: 1.0667rem;
@@ -106,8 +105,7 @@ body::before {
   transition: all 0.3s;
 }
 
-.main .container .nav_banner .navBannerRight .searchBox .searchIcon,
-.main .container .nav_banner .navBannerRight .searchBoxOpen .searchIcon {
+.main .container .nav_banner .navBannerRight .searchBox .searchIcon, .main .container .nav_banner .navBannerRight .searchBoxOpen .searchIcon {
   display: block;
   width: 0.7467rem;
   height: 0.7467rem;
@@ -115,15 +113,13 @@ body::before {
   background-size: 100%;
 }
 
-.main .container .nav_banner .navBannerRight .searchBox .searchContent,
-.main .container .nav_banner .navBannerRight .searchBoxOpen .searchContent {
+.main .container .nav_banner .navBannerRight .searchBox .searchContent, .main .container .nav_banner .navBannerRight .searchBoxOpen .searchContent {
   font-size: 0.4267rem;
   transition: all 0.3s;
   color: #ccc;
 }
 
-.main .container .nav_banner .navBannerRight .searchBox .searchContent::placeholder,
-.main .container .nav_banner .navBannerRight .searchBoxOpen .searchContent::placeholder {
+.main .container .nav_banner .navBannerRight .searchBox .searchContent::placeholder, .main .container .nav_banner .navBannerRight .searchBoxOpen .searchContent::placeholder {
   color: #ccc;
 }
 
@@ -163,8 +159,7 @@ body::before {
   padding: 0.08rem 0.2667rem 0;
 }
 
-.main .container .nav_banner .menuBtn,
-.main .container .nav_banner .menuBtnOpen {
+.main .container .nav_banner .menuBtn, .main .container .nav_banner .menuBtnOpen {
   display: flex;
   margin: 0 0.5333rem 0 0.8rem;
   padding: 0.1333rem;
@@ -175,8 +170,7 @@ body::before {
   height: 1.0667rem;
 }
 
-.main .container .nav_banner .menuBtn em,
-.main .container .nav_banner .menuBtnOpen em {
+.main .container .nav_banner .menuBtn em, .main .container .nav_banner .menuBtnOpen em {
   display: block;
   width: 100%;
   height: 0.1067rem;
@@ -184,13 +178,11 @@ body::before {
   transition: all 0.3s;
 }
 
-.main .container .nav_banner .menuBtn em:nth-child(2),
-.main .container .nav_banner .menuBtnOpen em:nth-child(2) {
+.main .container .nav_banner .menuBtn em:nth-child(2), .main .container .nav_banner .menuBtnOpen em:nth-child(2) {
   width: 100%;
 }
 
-.main .container .nav_banner .menuBtn em:nth-child(3),
-.main .container .nav_banner .menuBtnOpen em:nth-child(3) {
+.main .container .nav_banner .menuBtn em:nth-child(3), .main .container .nav_banner .menuBtnOpen em:nth-child(3) {
   width: 100%;
 }
 
@@ -399,22 +391,19 @@ body::before {
   border-right: 0.0267rem solid rgba(185, 185, 185, 0.247);
 }
 
-.main .container .memory_info .card_box .card .info_content .info .info_left p:nth-child(2),
-.main .container .memory_info .card_box .card .info_content .info .info_right p:nth-child(2) {
+.main .container .memory_info .card_box .card .info_content .info .info_left p:nth-child(2), .main .container .memory_info .card_box .card .info_content .info .info_right p:nth-child(2) {
   text-align: center;
   font-size: var(--cl-font-18);
 }
 
-.main .container .memory_info .card_box .card .info_content .info .info_left p:nth-child(4),
-.main .container .memory_info .card_box .card .info_content .info .info_right p:nth-child(4) {
+.main .container .memory_info .card_box .card .info_content .info .info_left p:nth-child(4), .main .container .memory_info .card_box .card .info_content .info .info_right p:nth-child(4) {
   height: 0.5333rem;
   width: 2.4rem;
   margin-top: 0.1333rem;
   border-top: 0.0267rem solid rgba(185, 185, 185, 0.247);
 }
 
-.main .container .memory_info .card_box .card .info_content .info .info_left p:nth-child(6),
-.main .container .memory_info .card_box .card .info_content .info .info_right p:nth-child(6) {
+.main .container .memory_info .card_box .card .info_content .info .info_left p:nth-child(6), .main .container .memory_info .card_box .card .info_content .info .info_right p:nth-child(6) {
   margin-top: 0.1333rem;
   text-align: center;
   font-size: var(--cl-font-16);
@@ -480,4 +469,4 @@ body::before {
   transition: all 0.3s;
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.min.css.map */
