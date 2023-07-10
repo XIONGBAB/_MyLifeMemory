@@ -7,8 +7,7 @@ html body {
   margin: 1.3333rem 0;
 }
 
-html body em,
-html body i {
+html body em, html body i {
   font-style: normal;
 }
 
@@ -131,8 +130,7 @@ html body .contentBox .preBox::before {
   border-radius: 0.4rem 0.4rem 0 0;
 }
 
-html body .contentBox .preBox .preSpan,
-html body .contentBox .preBox .preButton {
+html body .contentBox .preBox .preSpan, html body .contentBox .preBox .preButton {
   position: absolute;
   top: 0.2667rem;
 }
@@ -246,4 +244,4 @@ html body .contentBox .centerBox .tagContent .tipBtn {
   margin-bottom: 0.8rem;
 }
 
-/*# sourceMappingURL=iframeStyle.css.map */
+/*# sourceMappingURL=iframeStyle.min.css.map */
