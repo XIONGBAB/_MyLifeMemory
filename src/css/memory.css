@@ -180,6 +180,10 @@ body .container .left_link .list_container .first_lists a i {
   background-size: cover;
   opacity: 0.7;
 }
+body .container .left_link .list_container .first_lists a span em {
+  display: inline-block;
+  width: 0.8rem;
+}
 body .container .left_link .list_container .first_lists dl {
   width: 100%;
   height: 0;

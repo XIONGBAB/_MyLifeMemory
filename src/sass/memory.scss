@@ -175,6 +175,12 @@ body {
                             background-size: cover;
                             opacity: 0.7;
                         }
+                        span {
+                            em {
+                                display: inline-block;
+                                width: 0.8rem;
+                            }
+                        }
                     }
                     dl {
                         width: 100%;

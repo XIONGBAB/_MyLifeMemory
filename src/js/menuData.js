@@ -26,7 +26,6 @@ const programming = [
     { id: 25, name: "Pro_Webpack" },
     { id: 26, name: "Pro_ChatGPT" },
 ];
-
 const studyOther = [
     { id: 1, name: "O_Video" },
     { id: 2, name: "O_VIPN" },
@@ -63,7 +62,6 @@ const sourceMaterial = [
     { id: 9, name: "Link_Programming" },
     { id: 10, name: "Link_Plug in" },
 ];
-
 const softwareList = [
     { id: 1, name: "Pro_IDM" },
     { id: 2, name: "Pro_CDR" },
@@ -156,6 +154,10 @@ const systemList = [
     { id: 2, name: "C_PlugIn" },
     { id: 3, name: "C_Windows" },
 ];
+const github = [
+    { id: 1, name: "G_github" },
+    { id: 2, name: "G_git/gitee" },
+];
 const subTitleList = [
     { id: 1, name: "S_创造营" },
     { id: 2, name: "S_新游记" },
@@ -172,5 +174,6 @@ const lifeList = [
     { id: 4, name: "L_Question" },
     { id: 6, name: "L_Language" },
 ];
+const storage = [{ id: 1, name: "T_text" }];
 
-export { programming, studyOther, working, sourceMaterial, softwareList, adobeList, systemList, subTitleList, lifeList };
+export { programming, github, studyOther, working, sourceMaterial, softwareList, adobeList, systemList, subTitleList, lifeList, storage };
