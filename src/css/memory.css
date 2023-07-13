@@ -124,15 +124,16 @@ body .container {
   display: flex;
   margin-top: 1.3333rem;
   width: 100vw;
-  height: 100vh;
+  height: 94vh;
 }
 body .container .left_link {
-  overflow: visible;
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 1.3333rem;
   left: 0;
   width: 6.1333rem;
-  height: 100%;
+  height: calc(100vh - 1.3333rem);
   color: rgb(148, 148, 148);
   font-size: var(--cl-font-14);
   background-color: var(--cl-nav-bg);
@@ -158,9 +159,14 @@ body .container .left_link .link_title .title_content {
   color: var(--cl-text-color);
 }
 body .container .left_link .list_container {
+  flex: 1;
+  overflow-y: scroll;
   position: relative;
   width: 100%;
   height: 100%;
+}
+body .container .left_link .list_container::-webkit-scrollbar {
+  display: none;
 }
 body .container .left_link .list_container .first_lists {
   width: 100%;
@@ -170,6 +176,15 @@ body .container .left_link .list_container .first_lists a {
   align-items: center;
   line-height: 0.8rem;
   color: rgb(148, 148, 148);
+}
+body .container .left_link .list_container .first_lists a:hover {
+  background-color: var(--cl-link-bg);
+}
+body .container .left_link .list_container .first_lists a:hover i {
+  opacity: 1;
+}
+body .container .left_link .list_container .first_lists a:hover span {
+  color: var(--cl-text-color);
 }
 body .container .left_link .list_container .first_lists a i {
   display: block;
@@ -199,40 +214,19 @@ body .container .left_link .list_container .first_lists dl dt ol {
   transition: all 0.3s;
   overflow: hidden;
 }
+body .container .left_link .list_container .first_lists dl dt ol li a {
+  transition: translate 0.3s;
+}
 body .container .left_link .list_container .first_lists dl dt ol li a i {
   margin-left: 1.4667rem;
 }
-body .container .left_link .list_container .first_lists .list_hover i,
-body .container .left_link .list_container .first_lists .list_hover_second i,
-body .container .left_link .list_container .first_lists .list_hover_third i {
-  opacity: 1;
+body .container .left_link .list_container .first_lists dl dt ol li a:hover span {
+  transform: translateX(0.16rem);
 }
-body .container .left_link .list_container .first_lists .list_hover span,
-body .container .left_link .list_container .first_lists .list_hover_second span,
-body .container .left_link .list_container .first_lists .list_hover_third span {
-  color: var(--cl-text-color);
-}
-body .container .left_link .list_container .first_lists .list_hover {
-  background-color: var(--cl-link-bg);
-}
-body .container .left_link .list_container .first_lists .list_hover_second {
-  background-color: #575757;
-}
-body .container .left_link .list_container .first_lists .list_hover_third {
-  background-color: var(--cl-nav-bg);
-}
-body .container .left_link .list_container .first_lists .list_hover_third span {
-  color: orange;
-}
-body .container .left_link .list_container .link_bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
+body .container .left_link .bottom_line {
   width: 100%;
   height: 0.8rem;
-  background-color: var(--cl-link-bg);
-  z-index: -1;
+  box-shadow: 0 0 0.0533rem #ccc;
   opacity: 0;
 }
 body .container .right_iframe {

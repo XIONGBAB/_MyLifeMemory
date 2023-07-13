@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="autdor" content="XIONGBAB" />
+        <meta name="description" content="MyLifeMemory" />
+        <meta name="keywords" content="XIONGBAB,MyLifeMemory," />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Window-target" content="_top" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0 user-scalable=no" />
+        <link id="icon-link" rel="Shortcut Icon" href="" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" />
+        <title><%=htmlWebpackPlugin.options.title%></title>
+    </head>
+    <body>
+        <div class="contentBox">
+            <div class="centerBox">
+                <div class="tipContent">
+                    <span class="tipBtn">重要提示</span>
+                    <div class="tipText">
+                        <em>1、在任何开发下（代码 /单词 / 正规写法，都不能写错，写错了检查起来会头痛）</em>
+                        <em>
+                            2、颜色分类：文本
+                            <i>黑色</i>
+                            、重点
+                            <i>红色</i>
+                            、注释
+                            <i>绿色</i>
+                            、特殊
+                            <i>棕色</i>
+                            、首行缩进两个字符、链接默认蓝色
+                        </em>
+                        <em>3、字符默认大小16px，重点20px，标题24px，特殊28px，最小为14px</em>
+                    </div>
+                </div>
+                <div class="tagContent">
+                    <span class="tipBtn">文本内容</span>
+                    <h3>一、制作项目步骤</h3>
+                    <ul>
+                        <li>
+                            创建好对应文件夹
+                            <ol>
+                                <li>主页 index.html</li>
+                                <li>样式 css</li>
+                                <li>文件 js</li>
+                                <li>图片 images</li>
+                                <li>视频 videos</li>
+                                <li>插件 libs ，使用方法：链接 => 库名 => 引用文件</li>
+                            </ol>
+                        </li>
+                        <li>
+                            引入相关js css libs(库文件)
+                            <ol>
+                                <li>书写规范代码，初始化css load加载js</li>
+                                <li>二倍图使用Fireworks制作精灵图，Ps插件Cutterman panel切图</li>
+                                <li>规划好布局思路，然后再书写代码</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <h3>二、什么是web服务器</h3>
+                    <ul>
+                        <li>
+                            <i class="redTag">服务器</i>
+                            （我们也会称之为主机）是提供计算服务的设备，
+                            <i class="redTag">它也是一台计算机</i>
+                            。在网络环境下，根据服务器提供的服务类型不同， 服务器又分为文件服务器、数据库服务器、应用程序服务器、Web服务器等。
+                        </li>
+                        <li>
+                            <i class="redTag">服务器一般指网站服务器</i>
+                            ，是指驻留于因特网上某种类型计算机的程序，可以向浏览器等Web客户端提供文档，也可以放置网站文件， 让全世界浏览；可以放置数据文件，让全世界下载。
+                        </li>
+                        <li>
+                            以下服务器我们主要指的是Web服务器。根据服务器在网络中所在的位置不同，又可分为
+                            <i class="redTag">本地服务器</i>
+                            和
+                            <i class="redTag">远程服务器</i>
+                            。
+                        </li>
+                        <li>
+                            <i class="redTag">本地服务器</i>
+                            主要在局域网中访问，如果想要在互联网中访问，可以把品优购网站上传到为远程服务器
+                        </li>
+                        <li>远程服务器。是通常是别的公司为我们提供的一台电脑（主机），我们只要把网站项目上传到这台电脑上，任何人都可以利用域名访问我们的网站了。</li>
+                        <li>
+                            将自己的网站上传到远程服务器。注意：一般稳定的服务器都是需要收费的。比如：阿里云这里给大家推荐一个免费的远程服务器（免费空间）
+                            <ol>
+                                <li><a href="https://free.3v.do/">https://free.3v.do/</a></li>
+                                <li>
+                                    去免费空间网站注册账号。
+                                    <a href="javascript:;">www.baidu.com</a>
+                                </li>
+                                <li>记录下主机名、用户名、密码、域名。</li>
+                                <li>利用cutftp软件上传网站到远程服务器。</li>
+                                <li>在浏览器中输入域名，即可访问我们的品优购网站了。 以上做法要认证要10元，Gitdub免费</li>
+                            </ol>
+                        </li>
+                        <li>
+                            "." &nbsp;全球有13个根（root）服务器。10台在美国，另外3台分别在英国 瑞士 日本。DNS根域下面是顶级域，也由Internet 域名注册授权机构管理。共有3种类型的顶级域。
+                            <ol>
+                                <li>组织域：采用3个字符的代号，表示DNS域中所包含的组织的主要功能或活动。比如com为商业机构组织， edu 为教育机构组织，gov 为政府机构组织，mil 为军事机构组织，net 为网络机构组织，org为非营利机构组织，int为国际机构组织。</li>
+                                <li>地址域：采用两个字符的国家或地区代号。如cn为中国，kr为韩国，us 为美国。</li>
+                                <li>反向域：这是个特殊域，名字为in-addr.arpa，用于将IP地址映射到名字（反向查询）。</li>
+                            </ol>
+                        </li>
+                        <li>
+                            架构
+                            <ol>
+                                <li>B/S架构 browser server</li>
+                                <li>C/S 架构 client server</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <h3>三、HTML</h3>
+                    <ul>
+                        <li>
+                            HTML指的是
+                            <i class="redTag">超文本标记语言（Hyper Text Markup Language）</i>
+                            ，它是用来描述网页的一种语言。
+                        </li>
+                        <li>国际通用浏览器： 浏览器是网页显示运行的平台。常用浏览器有IE、火狐（Firefox）、谷歌（Chrome）、Safari和Opera等。称为五大浏览器。</li>
+                    </ul>
+                    <h3>四、内核</h3>
+                    <ul class="noList">
+                        <li>浏览器内核（渲染引擎）：负责读取网页内容，整理讯息，计算网页的显示方式并显示页面。</li>
+                        <li>
+                            <table>
+                                <caption>内核(渲染引擎)</caption>
+                                <tr>
+                                    <th>浏览器</th>
+                                    <th>内核</th>
+                                    <th>在用的浏览器</th>
+                                </tr>
+                                <tr>
+                                    <td>IE</td>
+                                    <td>Trident</td>
+                                    <td>IE、猎豹安全、360极速浏览器、百度浏览器</td>
+                                </tr>
+                                <tr>
+                                    <td>Firefox</td>
+                                    <td>Gecko</td>
+                                    <td>火狐浏览器内核</td>
+                                </tr>
+                                <tr>
+                                    <td>Safari</td>
+                                    <td>Webkit</td>
+                                    <td>苹果浏览器内核</td>
+                                </tr>
+                                <tr>
+                                    <td>chrome / opera</td>
+                                    <td>Blink</td>
+                                    <td>chrome/opera浏览器内核。Blink其实是WebKit的分支。</td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ul>
+                    <h3>五、Web标准的构成</h3>
+                    <ul>
+                        <li>
+                            主要包括
+                            <i class="redTag">结构（Structure）</i>
+                            、
+                            <i class="redTag">表现（Presentation）</i>
+                            和
+                            <i class="redTag">行为（Behavior）</i>
+                            三个方面。
+                        </li>
+                        <li>结构用于对网页元素进行整理和分类，现阶段主要学的是HTML。</li>
+                        <li>表现用于设置网页元素的版式、颜色、大小等外观样式，主要指的是CSS</li>
+                        <li>行为是指网页模型的定义及交互的编写，现阶段主要学的是Javascript</li>
+                    </ul>
+                    <span class="tipBtn" style="background-color: #238d9f">标签语法</span>
+                    <h3>六、html的文档结构</h3>
+                    <ul class="noList">
+                        <li class="codeListContainer">
+                            <div class="preBox">
+                                <span class="preSpan">Html</span>
+                                <button class="preButton">Copy&nbsp;code</button>
+                                <pre><code class="language-html">&lt;!DOCTYPE html&gt;   &lt;!-- 声明文档类型,告诉浏览器我的当前页面是那个版本的html H5 --&gt;
+&lt;html lang="en"&gt;  &lt;!-- 告诉浏览器后面的代码是html代码 --&gt;
+&lt;html lang="zh"&gt;  &lt;!-- 告诉浏览器这是中文网站 这样就不会弹出需要翻译的窗口--&gt;
+&lt;head&gt;            &lt;!-- 告诉浏览器，这是网页的头部，包括了定义网页的一些内容的标签，如：标题、字符集等 --&gt; 
+    &lt;!-- &lt;meta&gt; 标签就是定义网页字符集、描述、关键词等内容的。 --&gt;
+    &lt;meta charset="UTF-8"&gt;  &lt;!-- 字符集-功能：告诉浏览器，如何翻译汉字。 utf-8 gb2312等--&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;  &lt;!-- 告诉浏览器如果是IE浏览器，用最高版本执行 --&gt;
+    &lt;meta name="author" content=""&gt; &lt;!-- 作者 --&gt;
+    &lt;meta name="description" content=""&gt; &lt;!-- 简介，网页定义描述内容 --&gt;
+    &lt;meta name="keywords" content=""&gt; &lt;!-- 关键字 --&gt;
+    &lt;meta http-equiv="pragma" content="no-cache"&gt; &lt;!-- // 禁止浏览器从本地机的缓存中调阅页面内容 --&gt;
+    &lt;meta http-equiv="window-target" content="_top"&gt; &lt;!-- // 用来防止别人在框架里调用你的页面 --&gt;
+    &lt;meta http-equiv="Refresh" content="5;URL=http://www.baidu.com"&gt;&lt;!-- // 自动跳转 5指5秒 url不写就是刷新--&gt;
+    &lt;!-- 网页搜索机器人向导。用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。 CONTENT的参数有all,none,index,noindex,follow,nofollow。默认是all。 --&gt;
+    &lt;meta name="robots" content="none"&gt;
+    &lt;meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"&gt;
+    &lt;link rel="Shortcut Icon" href=""&gt; &lt;!-- 收藏夹图标 --&gt;
+    &lt;title&gt;&lt;/title&gt; &lt;!-- 网页标题，参考SEO优化 --&gt;
+&lt;/head&gt;
+&lt;body bgcolor="#fff"&gt;&lt;/body&gt;  &lt;!-- 网页的主体部分,网页中主要内容都要写到body里。 --&gt;
+&lt;/html&gt;</code>
+</pre>
+                            </div>
+                        </li>
+                        <li>
+                            <ol>
+                                <li>http-equiv：模拟http协议的文件头原信息，主要目的是服务器向客户端返回时，用什么格式显示。</li>
+                                <li>Content-type：内容类型。</li>
+                                <li>Content：详细内容类型介绍。</li>
+                                <li>Text/html：网页是text格式，html是文本中的小格式。</li>
+                                <li>Charset：字符集，主要控制汉字如何显示。</li>
+                                <li>Utf-8：多国语言编码，什么国家的语言都可以正常显示。</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <h3>七、常用标签</h3>
+                    <ul class="noList">
+                        <li>
+                            <table>
+                                <tr>
+                                    <td>&lt;h1&gt;&lt;/h1&gt;</td>
+                                    <td>1-6，1最大标题，是行内块元素</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;p&gt;&lt;/p&gt;</td>
+                                    <td>段落标签</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;br /&gt;</td>
+                                    <td>单标签 换行</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;pre&gt;&lt;/pre&gt;</td>
+                                    <td>保存代码样式</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;strong&gt;&lt;/strong&gt;或者&lt;b&gt;&lt;/b&gt;</td>
+                                    <td>加粗 更推荐使用&lt;strong&gt;标签加粗语义更强烈</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;em&gt;&lt;/em&gt;或者&lt;i&gt;&lt;/i&gt;</td>
+                                    <td>倾斜 更推荐使用&lt;em&gt;标签加租语义更强烈</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;del&gt;&lt;/del&gt;或者&lt;s&gt;&lt;/s&gt;</td>
+                                    <td>删除线 更推荐使用&lt;del&gt;标签加粗语义更强烈</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;ins&gt;&lt;/ins&gt;或者&lt;u&gt;&lt;/u&gt;</td>
+                                    <td>下划线更推荐使用&lt;ins&gt;标签加租语义更强烈</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;sub&gt;&lt;/sub&gt;</td>
+                                    <td>上标</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;sup&gt;&lt;/sup&gt;</td>
+                                    <td>下标</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;div&gt;&lt;/div&gt;</td>
+                                    <td>无语义盒子 一行只能放一个，css后可以浮动，块元素</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;span&gt;&lt;/span&gt;</td>
+                                    <td>无语义盒子 一行可以多放 用来布局 ， 行内元素</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;!--content--&gt;</td>
+                                    <td>注释</td>
+                                </tr>
+                                <tr>
+                                    <td>& nbsp;</td>
+                                    <td>空格</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;font&gt;&lt;/font&gt;：</td>
+                                    <td>文本的修饰 ，例：&lt;font&gt;文本&lt;/font&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;blink&gt;&lt;/blink&gt;</td>
+                                    <td>里面的文字会闪烁 ，被废弃</td>
+                                </tr>
+                                <tr>
+                                    <td>UTF-8常用符号</td>
+                                    <td>参考文档https://www.runoob.com/charsets/ref-utf-punctuation.html</td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ul>
+                    <h3>
+                        八、img标签
+                        <span>(样式用css控制，样式与结构分离，更好控制)</span>
+                    </h3>
+                    <ul class="noList">
+                        <li class="codeListContainer">
+                            <div class="preBox">
+                                <span class="preSpan">Html</span>
+                                <button class="preButton">Copy&nbsp;code</button>
+                                <pre><code class="language-html">&lt;img src="./img/jpg|png|gif" alt="替换文本，当图像不存在" title="鼠标放上显示文字" width="" height="" border="边框"
+align="left|center|right 直接给图片是不起作用，需要块元素包裹，方法用于图文混排" hspace="左右边距 值为数字" vspace="上下边距 值为数字" &gt;</code></pre>
+                            </div>
+                        </li>
+                        <li>图片热点-功能：在图片中添加可以点击的链接</li>
+                        <li>
+                            <div class="preBox">
+                                <span class="preSpan">Html</span>
+                                <button class="preButton">Copy&nbsp;code</button>
+                                <pre><code class="language-html">&lt;img src="url路径" usemap="#图片名称"&gt;
+&lt;map name="图片名称"&gt;
+    &lt;area shape="rect" coords="251,413,413,467" href="www.baidu.com" target="_blank"&gt;
+    &lt;area shape="circle" coords="230,304,45" href="拖动到一个文件以创建链接"&gt;
+    &lt;area shape="poly" coords="552,548,646,507,597,460,554,448,524,450,524,522" href="#"&gt;
+    &lt;!-- &lt;area shape="热区形状" coords="热区坐标" href="链接的地址"&gt; 
+    如果shape="rect"时，那么，coords=x1，y1，x2，y2"   例如1：coords="50，50，200，150"
+    如果shape="circle"时，那么，coords="x,y,r"   其中（x）为圆心半径，r为半径
+    rect：矩形，坐标：左上角和右下角
+    circle：圆形，坐标：中心点和半径
+    poly：多边形，坐标：每两个数字为一个点
+    href：跳转链接的地址
+    target：打开新链接的方式 值：_blank（新窗口）、_self（原窗口--默认）、_parent（父窗口-框架）、_top（顶级窗口--框架）--&gt;
+&lt;/map&gt;</code></pre>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>九、滚动标记(废弃)，用css3动画来做</h3>
+                    <ul class="noList">
+                        <li class="codeListContainer">
+                            <div class="preBox">
+                                <span class="preSpan">Html</span>
+                                <button class="preButton">Copy&nbsp;code</button>
+                                <pre><code class="language-html">&lt;marquee&gt;要滚动的元素&lt;/marquee&gt;
+&lt;!-- 常用的属性：
+    direction：滚动方向       值：up、down、left、right
+    width：滚动的宽度
+    height：滚动的高度
+    bgcolor：背景颜色
+    scrollamount：滚动步长值，值越大，滚动越快
+    scrolldelay：两步的停留时间，以毫秒为单位，1秒=1000毫秒
+    loop：滚动次数--&gt;</code></pre>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>十、多媒体标记</h3>
+                    <ul class="noList">
+                        <li class="codeListContainer">
+                            <div class="preBox">
+                                <span class="preSpan">Html</span>
+                                <button class="preButton">Copy&nbsp;code</button>
+                                <pre><code class="language-html">&lt;embed src="./img/j.png|mp4|mp3|swf" width="712" height="429"&gt;&lt;/embed&gt;
+&lt;!-- 语法常用的属性：
+    src：多媒体的地址                值：路径
+    width：调整多媒体宽度            值：数字
+    height：调整高度                值：数字
+--&gt;</code></pre>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>十一、超链接标签与锚点链接</h3>
+                    <ul class="noList">
+                        <li class="codeListContainer">
+                            <div class="preBox">
+                                <span class="preSpan">Html</span>
+                                <button class="preButton">Copy&nbsp;code</button>
+                                <pre><code class="language-html">&lt;a href="#" target="_blank" alt="图片" this="img" name="锚点名称"&gt;&lt;/a&gt;
+&lt;a href="#锚点名称"&gt;返回顶部&lt;/a&gt;
+&lt;!-- 常用的属性：
+    href：  链接的网址或ip或地址 值：就是具体的地址
+    target：打开新链接方式值：_blank(新窗口)、_self(当前页面)、_parent(父窗口)、_top(顶级-框架)、content(跳转链接页面内容)
+    alt:    当图片不加载的时候出现文字
+    title： 鼠标放上会显示文字
+    name：  锚点链接(当点击链接时进行的跳转--回到顶部)       值：锚点的名称
+ --&gt;
+
+&lt;a href="文件名#锚点名称"&gt;。。。。。。&lt;/a&gt;
+&lt;!-- 文件名：可有可无，如果是同一个网页的不同部分跳转，不需要文件名,如果是跳到另一个网页的不同部分，这时必须要有文件名 --&gt;
+
+&lt;a href=#top2&gt;返回顶部&lt;/a&gt;                    &lt;!--  例1：跳转到同一个网页的不同部分 --&gt;
+&lt;a href="news.html#bottom"&gt;返回底部&lt;/a&gt;       &lt;!--  例2：跳转到news.html文件的底部 --&gt;
+
+&lt;a name="bottom"&gt;&lt;/a&gt;                       &lt;!-- 例2：在另一个文档添加跳转锚点标记 --&gt;
+
+//  锚点  -------------------------------------------------------------------- 
+    &lt;a href="#" name="here"&gt;头部&lt;/a&gt;
+    &lt;!-- 内容区域 --&gt;
+    &lt;!-- 内容区域 --&gt;
+    &lt;!-- 内容区域 --&gt;
+    &lt;div&gt;&lt;a href="#here"&gt;点我回头部&lt;/a&gt;&lt;/div&gt;
+
+    &lt;!-- 但是注意：以上方法 html5去掉了name，只有在a标签上才能使用name ,其他标签使用id作为标识 --&gt;
+
+    &lt;div id="abc" name="abc"&gt;&lt;/div&gt; &lt;!-- 非a标签，使用name="锚点名称" 是不起作用的  --&gt;
+    &lt;!-- 内容区域 --&gt;
+    &lt;!-- 内容区域 --&gt;
+    &lt;!-- 内容区域 --&gt;
+    &lt;a href="#abc"&gt;返回&lt;/a&gt;</code></pre>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>十二、路径</h3>
+                    <ul>
+                        <li>
+                            绝对路径：
+                            <ol>
+                                <li>有一个具体的地址（位置），某个盘某个文件夹某个文件 如：d:/itull/xxxx/xxx.xx</li>
+                                <li>
+                                    本地的绝对路径显示：
+                                    <a href="javascript:;">file:///D:/itbull/lesson/PHP07/day02/code/01.超链接.html</a>
+                                </li>
+                                <li>
+                                    远程的绝对路径：
+                                    <a href="javasrcipt:;">http://www.baidu.com</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>相对路径：就是要访问的文件相对于当前的文件的位置</li>
+                        <li>
+                            注意事项
+                            <ul>
+                                <li>当前文件与目标文件在同一个目录（文件夹）中，直接写文件名就可以了，建议写 ./ (表示当前目录)</li>
+                                <li>目标文件所在的文件夹与当前文件同一个目录中，当前文件直接找到文件夹名下再找文件 ./news/01.news.html</li>
+                                <li>目标文件在当前的文件的上级，最高3级，上级表示方式：../ (表示当期那目录的上一级目录)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3>十三、表格</h3>
+                    <ul class="noList">
+                        <li class="codeListContainer">
+                            <div class="preBox">
+                                <span class="preSpan">Html</span>
+                                <button class="preButton">Copy&nbsp;code</button>
+                                <pre><code class="language-html">&lt;table border="1"&gt;                 &lt;!-- 表格标签 --&gt;
+  &lt;caption&gt;&lt;/caption&gt;            &lt;!-- 表格标题&lt;caption&gt;标记是table的子标记，放在table开始标记之后 --&gt;
+  &lt;thead&gt;                        &lt;!-- 表格头部 用来放标题之类的东西 --&gt;
+      &lt;tr&gt;                       
+          &lt;th&gt;Head&lt;/th&gt;          &lt;!-- th会居中 加粗 --&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tfoot&gt;                        &lt;!-- 表格尾部 不管写在哪里都会在表格最后一行 放表格脚注之类 --&gt;
+      &lt;tr&gt;&lt;td&gt;Footer&lt;/td&gt;&lt;/tr&gt;   &lt;!-- th标题   tr行   td列--&gt;
+  &lt;/tfoot&gt;
+  &lt;tbody&gt;                        &lt;!-- 表格身体 放数据本体 --&gt;
+      &lt;tr&gt;&lt;td&gt;Body&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;!-- 
+//  表格属性 学完css会用css样式来控制 html则用行内样式 
+合并单元格方式：
+  跨行合并：rowspan="合并单元格的个数"
+  跨列合并：colspan="合并单元格的个数"
+Table标记的属性：
+  border：表格边框                 值：数字
+  align：表格在网页中的水平方向       值：left|center|right
+  bordercolor：边框颜色            值：颜色
+  width：表格宽度                  值：数字
+  height：表格高度                 值：数字
+  bgcolor：表格背景颜色             值：颜色
+  background：背景图片             值：图片的地址
+  cellpadding：内填充（边框到内容的距离）        值：数字
+  cellspacing：间距（单元格到单元格之间的距离）   值：数字
+Tr的属性：
+  align：行内的内容水平对齐          值：left|center|right
+  valign：上下对齐方式             值：top|middle|bottom
+  height：行的高度
+  bgcolor：行的背景颜色
+Td的属性：
+  align：单元格的水平对齐方式        值：left|center|right
+  height：单元格的高度             值：数字，影响的整个行
+  valign：垂直对齐方式             值：top|middle|bottom
+  bgcolor：单元格背景颜色
+  background：单元格的背景图片      值：图片的地址
+  rowspan：跨行合并               值：要合并的数量 注意把原来被合并的单元格删除
+  colspan：跨列合并               值：要合并的列数 注意把原来被合并的单元格删除
+--&gt;</code></pre>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>
+                        十四、普通框架(废弃) 使用html框架网站：
+                        <a href="https://www.runoob.com/w3cnote/16-best-free-responsive-html5-frameworks.html"><button>Link</button></a>
+                    </h3>
+                    <ul class="noList">
+                        <li class="codeListContainer">
+                            <div class="preBox">
+                                <span class="preSpan">Html</span>
+                                <button class="preButton">Copy&nbsp;code</button>
+                                <pre><code class="language-html">&lt;frameset&gt;  &lt;!-- 划分用的 --&gt;
+  &lt;frame /&gt; &lt;!-- 显示用的 --&gt;
+  &lt;frame /&gt;
+  ..................
+  &lt;noframe&gt;您的浏览器不支持框架，请炸了重买！&lt;/noframe&gt;
+&lt;/frameset&gt;
+
+&lt;!--       
+  注意：划分遵循先上下再左右。如果是框架结构的网页，不能有body，而且它的文档头是frameset的，而不是普通的 
+  划分窗口的嵌套，需要在那个位置上在次划分窗口，就把原来的frame换成一个新的frameset。   
+  目的：框架就是对当前页面进行分割，划分成每个小窗口，每个小窗口显示不同的页面 
+  作用：用于后台的制作，前台不再推荐使用，兼容性不好（浏览器显示效果不同）。
+  框架技术：将一个浏览器窗口划分成若干个小窗口，每个小窗口显示一个独立的网页
+  &lt;! DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"&gt;
+  &lt;html xmlns="http://www.w3. org/1999/xhtml"xml: lang="zh-cn"&gt;
+  frameset的属性：
+  rows：跨行划分 值：划分窗口的方式
+  rows：10,* //上面是10，其他的都给下面了
+  rows：10,20,* //上面10，中间20，其他给下面
+  rows：10,*,20 //上面10，下面20，其他中间
+  rows：20%,* //上面百分之20，其他下面
+  cols：左右划分 值：划分窗口的方式
+  cols：10,* //左边10，其他右边
+  cols：20%,*,10 //左边百分之20，右边10，其他中间
+  border：边框 值：数字
+  bordercolor：边框颜色
+  frame的属性：
+  src：要显示页面的路径
+  scorlling：取消滚动条 值：yes或no
+  noresize:不能滑动 值：yes或no
+  name：要把显示页面显示到那个窗口，给这个窗口起一个名称
+  target：打开方式 值：_blank,_self,_top,_parent
+--&gt;</code></pre>
+                            </div>
+                        </li>
+                        <li>内嵌框架</li>
+                        <li class="codeListContainer">
+                            <div class="preBox">
+                                <span class="preSpan">Html</span>
+                                <button class="preButton">Copy&nbsp;code</button>
+                                <pre><code class="language-html">&lt;iframe loading="lazy" src="other.html" width="200" height="200"&gt;&lt;/iframe&gt;
+
+&lt;!-- 
+常用的属性：
+    align：水平对齐方式           值：left|center|right
+    给外层块元素使用align可以对iframe进行位置的移动
+    Scrolling：滚动条            值：yes或no
+    src：要显示到窗口的页面的路径
+    width：窗口的宽度             值：数字
+    height：窗口的高度            值：数字
+    frameborder：框架边框         值：0或1，yes或no
+ --&gt;
+
+&lt;iframe src="text.html" name="iframe_a"&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://www.bilibili.com/" target="iframe_a"&gt;点我之后框架内容就会跳转到其他网页&lt;/a&gt;&lt;/p&gt;</code></pre>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>十五、列表</h3>
+                    <ul class="noList">
+                        <li class="codeListContainer">
+                            <div class="preBox">
+                                <span class="preSpan">Html</span>
+                                <button class="preButton">Copy&nbsp;code</button>
+                                <pre><code class="language-html">&lt;ul type="disc|square|circle"&gt;
+  &lt;li&gt;无序列表1&lt;/li&gt;
+  &lt;li&gt;无序列表1&lt;/li&gt;
+  &lt;li&gt;无序列表1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol type="i I 1 A a " start="5"&gt;
+  &lt;li&gt;无序列表1&lt;/li&gt;
+  &lt;li&gt;无序列表1&lt;/li&gt;
+  &lt;li&gt;无序列表1&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;自定义列表&lt;/dt&gt;
+  &lt;dt&gt;自定义列表&lt;/dt&gt;
+  &lt;dt&gt;自定义列表&lt;/dt&gt;
+&lt;/dl&gt;</code></pre>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>十六、表单</h3>
+                    <ul class="noList">
+                        <li class="codeListContainer">
+                            <div class="preBox">
+                                <span class="preSpan">Html</span>
+                                <button class="preButton">Copy&nbsp;code</button>
+                                <pre><code class="language-html">&lt;form action="url服务器地址" method="get|post提交方式" name="表单域名称区多个表单域"&gt;
+  文本框： &lt;input type="text" name="名称" value="不写默认为空" id="" readonly autocomplete="off"&gt; 
+         &lt;!-- readonly表示只读，填写不了内容 autocomplete="off" 关闭自动补全 disabled 只读，禁用的意思autofocus 自动获取焦点--&gt;
+  密码框： &lt;input type="password" name="" id="" value="" &gt;
+  单选按钮： &lt;input type="radio" name="单选一组名称" id="" checked&gt; &lt;!-- 默认单选 checked="checked" --&gt;
+  复选框： &lt;input type="checkbox" name="多选一组名称" id="" value=""&gt;
+  上传： &lt;input type="file" name="" id=""&gt; &lt;!--  上传必须在form属性中设置，而且必须是post方式--&gt;
+  提交： &lt;input type="submit" value="显示到按钮上名称" /&gt;
+  图片提交： &lt;input type="image" src="图片的地址" value="" /&gt;
+  普通按钮： &lt;input type="button" /&gt; &lt;!-- 没有任何意义的按钮，和js关联使用 --&gt;
+  重置按钮： &lt;input type="reset" name="值" value="名称" /&gt;
+  隐藏域： &lt;input type="hidden" name="值" value="值" /&gt; &lt;!-- 在浏览器中看不到的传递数据表单 --&gt;
+  多行文本域：&lt;textarea rows="行" cols="列" value="值" name="名称"&gt;&lt;/textarea&gt;
+  &lt;style&gt;
+      textarea { width: 500px;height: 100px;resize: none; /* 控制多行文本域不能拖动大小 */}
+  &lt;/style&gt;
+
+  &lt;select name="" id="" multiple size="2"&gt;&lt;!-- select 可以用multiple进行显示内容并多选 size显示行数 --&gt;
+      &lt;option value=""&gt;下拉列表1&lt;/option&gt; &lt;!-- select中至少包含一对标签 --&gt;
+      &lt;option value="" selected="selected"&gt;下拉列表2&lt;/option&gt; &lt;!-- 默认显示用selected --&gt;
+      &lt;option value=""&gt;下拉列表2&lt;/option&gt; &lt;!-- 默认显示用selected --&gt;
+      &lt;option value=""&gt;下拉列表2&lt;/option&gt; &lt;!-- 默认显示用selected --&gt;
+      &lt;option value=""&gt;下拉列表2&lt;/option&gt; &lt;!-- 默认显示用selected --&gt; 
+  &lt;/select&gt;
+
+&lt;/form&gt;
+
+&lt;!-- 
+  Form标记，是表单域的显示，需要用form标记把表单内容括起来，这个时候才可以提交
+  原因是form的属性中有：提交方式(get和post)、提交地址(具体提交页面)、上传文件的设置(如果不设置无法上传) 
+  提交地址：action="具体提交地址"
+  提交方式method 值： get 和 post （在网站中数据直接的传递，只有get和post方式） 
+  D:/itull/getuserinfo.php?user_name=itbullwyt&pass_word=123456789
+  &lt;a href="d:/itull/getuserinfo.php?"&gt;你好 &lt;/a&gt; 
+  Get方式传递数据有表单和超链接,表单是用户自己添写的数据。超链接是管理员规定要传递的数据。
+  get方式：数据以浏览器地址栏的方式（明文）提交到另一个页面中。
+            要提交到的页面路径和名称?参数名称=值&参数名称=值&参数名称=值.......
+  Post方式：数据隐藏方式传递，post现在是有表单传递
+             数据传递的信息方式：有文本，有图片、视频等
+  Enctype：指定表单的编码方式（解密方式），这个属性只能用在method=’post”方式中
+
+属性：
+  name        由用户自定义定义        input元素的名称。
+  value       由用户自定义规定        input元素的值。
+  checked     checked              规定此input元素首次加载时应当被选中。
+  maxlength   正整数                规定输入字段中的字符的最大长度。 
+      
+  1、name 和value是每个表单元素都有的属性值，主要给后台人员使用
+  2、name 表单元素的名字，要求单选按钮和复选框要有相同的name值
+--&gt;</code></pre>
+                            </div>
+                        </li>
+                        <li>label标签</li>
+                        <li class="codeListContainer">
+                            <div class="preBox">
+                                <span class="preSpan">Html</span>
+                                <button class="preButton">Copy&nbsp;code</button>
+                                <pre><code class="language-html">&lt;input type="radio" name="sex" value="男" id="nan"&gt;&lt;label for="nan"&gt; 男&lt;/label&gt;
+&lt;input type="radio" name="sex" value="女" id="nv"&gt;&lt;label for="nv"&gt;女 &lt;/label&gt;
+&lt;!--    
+   &lt;label&gt;标签为input元素定义标注（标签）。
+   &lt;label&gt;标签用于绑定一个表单元素当点击&lt;label&gt;标签内的文本时，浏览器就会自动将焦点
+         （光标转到或者选择对应的表单元素上，用来增加用户体验。 
+   注意：for不能一样，否则会只能点中第一个，后面的则选不中
+--&gt;</code></pre>
+                            </div>
+                        </li>
+                    </ul>
+                    <h2>总结</h2>
+                    <ul class="noList">
+                        <li class="codeListContainer">
+                            <div class="preBox">
+                                <span class="preSpan">Html</span>
+                                <button class="preButton">Copy&nbsp;code</button>
+                                <pre><code class="language-html">&lt;!--迭代
+网页的版本
+    HTML4
+    XHTML2.0
+    HTML5
+
+文档声明（doctype）
+        文档声明用来告诉浏览器当前网页的版本
+        html5的文档声明
+        &lt;！doctype html&gt;
+        &lt;！Doctype HTML&gt;
+
+进制（计算机可以进行转换）:
+    十进制（日常使用）
+        - 特点：满10进1
+        - 计数：0 1 2 3 4 5 6 7 8 9 10 11 12 13...19 20
+        - 单位数字：10个（0-9）
+    二进制（计算机底层的进制）
+        - 特点：满2进1
+        - 计数：011011100101110111
+        - 单位数字：2个（0-1）
+        - 扩展：
+        - 所有数据在计算机底层都会以二进制的形式保存可以将内存想象为一个有多个小格子组成的容器，每一个小格子中可以存储一个1或一个0
+          这一个小格子在内存中被称为1位（bit）
+            8bit = 1byte（字节）
+            1024byte = 1kb（千字节）
+            1024kb = 1mb（兆字节）
+            1024mb = 1gb(吉字节)
+            1024gb = 1tb(特字节)
+            1024tp = 1pb(拍字节)
+    八进制（很少用）
+        - 特点：满8进1
+        - 计数：0 1 2 3 4 5 6 7 10 11 12...17 20
+        - 单位数字：8个（0-7）
+    十六进制（一般显示一个二进制数字时，都会转换为十六进制）
+        - 特点：满16进1
+        - 计数：0 1 2 3 4 5 6 7 8 9 a b c d e f 10 11 12...1a 1b 1c 1d 1e 1f 20..
+        - 单位数字：16个（0-f）
+    字符编码
+        - 所有的数据在计算机中存储时都是以二进制形式存储的，文字也不例外。
+        - 所以一段文字在存储到内存中时，都需要转换为二进制编码
+        - 当我们读联这段文字时，计算机会将编码转换为字符，供我们阅读
+        - 编码
+          - 将字符转换为二进制码的过程称为编码
+        - 解码
+          - 将二进制码转换为字符的过程称为解码
+        - 字符集
+          - 编码和解码所采用的规则称为字符集
+        - 常见字符集：
+          - ASCII      美国
+          - IS088591   欧洲
+          - GB2312     国标
+          - GBK        国标
+          - UTF-8      万国（包含世界所有语言）
+    实体（转义符）
+        - &nbsp;  &gt;  &lt;  ......
+
+标签 
+    - &lt;!DOCTYPE html&gt; 声明文档
+    - &lt;html&gt;     :root  根标签
+    - &lt;head&gt;     头部
+    - &lt;meta&gt;     charset   name  content
+    - &lt;body&gt;     身体
+    - &lt;h1&gt;       h4-h6 很少用
+    - &lt;p&gt;        段落
+    - &lt;hgroup&gt;   双标签，用来为标题分组。可以将一组相关的标题同事放入到hgroup里面
+    - &lt;em&gt;       斜体
+    - &lt;strong&gt;   加粗
+    - &lt;blockquote&gt;   双标签  标示一个长引用，块元素      
+    - &lt;q&gt;        双标签，标示一个短引用
+    - &lt;br&gt;       换行
+    - &lt;hr&gt;       分行    
+布局标签
+    - &lt;header&gt;   头部     
+    - &lt;main&gt;     主体，一个页面只有一个
+    - &lt;footer&gt;   底部
+    - &lt;nav&gt;      导航     
+    - &lt;aside&gt;    侧边栏     
+    - &lt;article&gt;  文章     
+    - &lt;section&gt;  独立的区块     
+    - &lt;div&gt;      块元素
+    - &lt;span&gt;     行内元素
+    
+列表list
+    - &lt;ul&gt;       无序列表
+      &lt;li&gt;       列表 
+    - &lt;ol&gt;       有序列表
+    - &lt;dl&gt;       定义列表   
+      &lt;dt&gt;       定义的内容    
+      &lt;dd&gt;       描述    
+超链接
+    - &lt;a&gt;        href   alt  target="_blank | _parent | _top" 
+图片
+    - &lt;img&gt;      src  title  alt    
+内联框架
+    - &lt;iframe&gt;   双标签  src  frameborder   很少用，SEO
+    
+媒体标签
+    - &lt;audio&gt;    双标器  src  controls  autoplay  loop  
+      &lt;source&gt;   这里填写 src路径，可避免支持的浏览器显示播放控件，不支持的显示audi标签下的文字，可指定多个
+    - &lt;video&gt;   
+  --&gt;</code></pre>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footerBox"></div>
+        </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            Prism.highlightAll();
+        });
+    </script>
+</html>
+
+<!-- 
+
+<li class="codeListContainer">
+                                            <div class="preBox">
+                                                <span class="preSpan">Html</span>
+                                                <button class="preButton">Copy&nbsp;code</button>
+                                                <pre><code class="language-html">&lt;embed src="./img/j.png|mp4|mp3|swf" width="712" height="429"&gt;&lt;/embed&gt;
+&lt;!-- 语法常用的属性：
+    src：多媒体的地址                值：路径
+    width：调整多媒体宽度            值：数字
+    height：调整高度                值：数字
+--&gt;</code></pre>
+                                            </div>
+                                        </li>
+
+
+ -->

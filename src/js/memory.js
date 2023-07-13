@@ -16,13 +16,13 @@ window.addEventListener("load", function () {
     }
     // list link mouseenter and mouseleave js
     let fontSize = window.getComputedStyle(document.documentElement).fontSize.slice(0, 4);
-    let link_bg = document.querySelector(".link_bg");
     let first_lists = document.querySelectorAll(".list_container>.first_lists");
     let second_lists = document.querySelectorAll(".second_lists");
     let third_lists = document.querySelectorAll(".third_lists");
-    linkHover(first_lists, link_bg, fontSize, "list_hover");
-    linkHover(second_lists, link_bg, fontSize, "list_hover_second");
-    linkHover(third_lists, link_bg, fontSize, "list_hover_third");
+    let linkTitle = document.querySelector(".link_title").offsetHeight;
+    linkHover(first_lists, fontSize);
+    linkHover(second_lists, fontSize);
+    linkHover(third_lists, fontSize);
     // list add html page js
     /**
      * @param {string} tag
@@ -40,25 +40,13 @@ window.addEventListener("load", function () {
     // Custom function js
     /**
      * @param {variable} listNode
-     * @param {variable} listBgHeight
      * @param {variable} htmlFontSize
-     * @param {string} listHoverStyle
      */
-    function linkHover(listNode, listBgHeight, htmlFontSize, listHoverStyle) {
+    function linkHover(listNode, htmlFontSize) {
         let activeLink = null;
         let isClicked = true;
+
         for (let i = 0; i < listNode.length; i++) {
-            listNode[i].addEventListener("mouseenter", function (event) {
-                event.stopPropagation();
-                listBgHeight.style.opacity = 1;
-                listBgHeight.style.top = listNode[i].offsetTop / htmlFontSize + "rem";
-                listNode[i].firstElementChild.classList.toggle(listHoverStyle);
-            });
-            listNode[i].addEventListener("mouseleave", function (event) {
-                event.stopPropagation();
-                listBgHeight.style.opacity = 0;
-                listNode[i].firstElementChild.classList.remove(listHoverStyle);
-            });
             listNode[i].addEventListener("click", function (event) {
                 event.stopPropagation();
                 switch (listNode[i].className) {
@@ -75,7 +63,7 @@ window.addEventListener("load", function () {
                         if (second_container.style.height === "0px" || second_container.style.height === "") {
                             activeLink = this;
                             let second_list_length = second_container.children.length;
-                            second_container.style.height = (listBgHeight.offsetHeight * second_list_length) / htmlFontSize + "rem";
+                            second_container.style.height = (linkTitle * second_list_length) / htmlFontSize + "rem";
                         } else {
                             // 当不等于空的时候，再次点击后收缩
                             activeLink = null;
@@ -98,7 +86,7 @@ window.addEventListener("load", function () {
                         }
                         if (third_container.style.height === "0px" || third_container.style.height === "") {
                             activeLink = this;
-                            third_container.style.height = (listBgHeight.offsetHeight * third_container.children.length) / htmlFontSize + "rem";
+                            third_container.style.height = (linkTitle * third_container.children.length) / htmlFontSize + "rem";
                             if (isClicked) {
                                 this.parentNode.style.height = parseFloat(third_container.style.height) + parseFloat(listNode[i].parentNode.style.height) + "rem";
                             } else {
@@ -108,7 +96,7 @@ window.addEventListener("load", function () {
                             activeLink = null;
                             isClicked = true;
                             third_container.removeAttribute("style");
-                            this.parentNode.style.height = (listBgHeight.offsetHeight * listNode[i].parentNode.children.length) / htmlFontSize + "rem";
+                            this.parentNode.style.height = (linkTitle * listNode[i].parentNode.children.length) / htmlFontSize + "rem";
                         }
                         break;
                     }

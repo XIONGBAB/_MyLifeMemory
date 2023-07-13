@@ -3,7 +3,8 @@ const path = require("path");
 const ESLintWebpackPlugin = require("eslint-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const threads = os.cpus().length;
-
+const glob = require("glob");
+const htmlFiles = glob.sync("./public/iframeFile/*.html");
 module.exports = {
     entry: {
         main: "./src/js/main.js",
@@ -79,11 +80,13 @@ module.exports = {
             filename: "memory.html",
             chunks: ["memory"],
         }),
-        new HtmlWebpackPlugin({
-            title: "Html",
-            template: path.resolve(__dirname, "../public/proHtml.html"),
-            filename: "proHtml.html",
-            chunks: ["iframeJs"],
+        ...htmlFiles.map(file => {
+            const filename = path.basename(file);
+            return new HtmlWebpackPlugin({
+                template: file,
+                filename: path.join("iframeFile", filename),
+                chunks: ["iframeJs"], // 指定使用的入口文件
+            });
         }),
     ],
     devServer: {

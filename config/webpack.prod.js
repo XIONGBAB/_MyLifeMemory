@@ -9,7 +9,8 @@ const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const PreloadWebpackPlugin = require("@vue/preload-webpack-plugin");
 const WorkboxPlugin = require("workbox-webpack-plugin");
 const threads = os.cpus().length;
-
+const glob = require("glob");
+const htmlFiles = glob.sync("./public/iframeFile/*.html");
 const getStyleLoaders = preProcessor => {
     return [
         MiniCssExtractPlugin.loader,
@@ -102,11 +103,13 @@ module.exports = {
             filename: "memory.html",
             chunks: ["memory"],
         }),
-        new HtmlWebpackPlugin({
-            title: "Html",
-            template: path.resolve(__dirname, "../public/proHtml.html"),
-            filename: "proHtml.html",
-            chunks: ["iframeJs"],
+        ...htmlFiles.map(file => {
+            const filename = path.basename(file);
+            return new HtmlWebpackPlugin({
+                template: file,
+                filename: path.join("iframeFile", filename),
+                chunks: ["iframeJs"], // 指定使用的入口文件
+            });
         }),
         new MiniCssExtractPlugin({
             filename: "static/css/[name].[contenthash:8].css",
